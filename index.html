@@ -6,6 +6,49 @@
 <title>VÉLI SAFE — Location de vélos à Colmar, Alsace</title>
 <meta name="description" content="Location de vélos classiques et électriques à Colmar, de la demi-journée à la semaine. Onze balades mesurées dans le vignoble, la vallée de Munster et la plaine du Rhin.">
 <meta name="theme-color" content="#C7CFC0">
+
+<!-- Référencement : adresse canonique, variantes de langue, partage -->
+<link rel="canonical" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/">
+<link rel="alternate" hreflang="fr" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=fr">
+<link rel="alternate" hreflang="en" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=en">
+<link rel="alternate" hreflang="de" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=de">
+<link rel="alternate" hreflang="es" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=es">
+<link rel="alternate" hreflang="it" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=it">
+<link rel="alternate" hreflang="x-default" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VÉLI SAFE">
+<meta property="og:title" content="VÉLI SAFE — Location de vélos à Colmar, Alsace">
+<meta property="og:description" content="Vélos classiques et électriques, de la demi-journée à la semaine. Onze balades mesurées dans le vignoble et la plaine du Rhin. Casque, antivol et itinéraire compris.">
+<meta property="og:url" content="https://jeanmartinfischer-rgb.github.io/velisafe-site/">
+<meta property="og:image" content="https://jeanmartinfischer-rgb.github.io/velisafe-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BikeStore",
+  "name": "VÉLI SAFE",
+  "description": "Location de vélos classiques et électriques à Colmar, Alsace.",
+  "url": "https://jeanmartinfischer-rgb.github.io/velisafe-site/",
+  "image": "https://jeanmartinfischer-rgb.github.io/velisafe-site/assets/og.jpg",
+  "telephone": "+33664432803",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Colmar",
+    "postalCode": "68000",
+    "addressCountry": "FR"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  },
+  "priceRange": "€"
+}
+</script>
 <link rel="icon" href="assets/logo.png">
 <!-- Aucune ressource tierce : Leaflet et les polices sont locales. Seuls
      les fonds de carte sont téléchargés, et seulement à l'ouverture d'une carte. -->
@@ -197,6 +240,7 @@
           </div>
           <button class="btn btn-wa" id="ok-whatsapp" data-t="book.waBtn">Envoyer la demande par WhatsApp</button>
           <p class="note" style="text-align:left;margin:0 0 12px" data-t="book.waNote">WhatsApp s'ouvre avec votre demande déjà écrite : il ne reste qu'à appuyer sur Envoyer. La réservation est ferme dès notre réponse. Sans WhatsApp ? Appelez le 06 64 43 28 03.</p>
+          <button class="btn btn-blanc" id="ok-pdf" style="width:100%;margin-bottom:8px;border-color:var(--beige);color:var(--texte)" data-t="book.pdfBtn">Télécharger le récapitulatif (PDF)</button>
           <button class="btn btn-blanc" id="ok-vers-msg" style="margin-bottom:8px;border-color:var(--beige);color:var(--texte)" data-t="book.goMsg">Ouvrir la messagerie</button>
           <button class="btn btn-vert" id="retour" data-t="book.again">Nouvelle réservation</button>
         </div>
@@ -372,6 +416,7 @@
 </div>
 
 <script src="vendor/leaflet.js"></script>
+<script src="vendor/jspdf.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/data.js"></script>
 <script src="js/legal.js"></script>

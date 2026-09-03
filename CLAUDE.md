@@ -263,3 +263,23 @@ index.html, style.css (palette sauge) et app.js (tuiles OSM, lien WhatsApp)
 servis correctement. Le bandeau « maquette de démonstration » reste affiché
 tant que tarifs et pages légales ne sont pas validés. Prochaine étape
 possible : un nom de domaine personnalisé (champ Custom domain de Pages).
+
+**03/09/2026, soirée — PDF, contrat, SEO.**
+- Récapitulatif PDF généré dans le navigateur (jsPDF 3.0.4 vendorisée dans
+  `vendor/jspdf.js`, inlinée par gen-demo) : bouton à la confirmation, logo
+  dans un cartouche, récap complet, conditions de location en annexe avec
+  l'avertissement document de travail. L'envoi automatique de PDF par
+  WhatsApp exigerait l'API payante de Meta : écarté, le client télécharge
+  son PDF avant l'envoi.
+- Contrat de location (docx, logo en tête) dans `documents-internes/`
+  (gitignoré, jamais publié) : document de travail à faire valider par un
+  juriste, champs [à compléter].
+- SEO : canonical, Open Graph + image 1200×630 (`assets/og.jpg`), Twitter
+  card, JSON-LD BikeStore (adresse minimale Colmar 68000, horaires
+  provisoires du site), `?lang=` prioritaire sur la langue du navigateur +
+  hreflang ×6, sitemap.xml, robots.txt. Les URL absolues pointent vers
+  jeanmartinfischer-rgb.github.io/velisafe-site — À METTRE À JOUR partout
+  (canonical, hreflang, OG, JSON-LD, sitemap, robots) si un domaine
+  personnalisé arrive.
+- Hors code, leviers à activer par Jean-Martin : fiche Google Business
+  Profile (levier n° 1 en local), avis clients, domaine personnalisé.

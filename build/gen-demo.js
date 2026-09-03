@@ -17,7 +17,7 @@ html = html.replace(/(src|href)="(assets\/[^"]+)"/g, (m,attr,f)=>{
 html = html.replace(/<link rel="stylesheet" href="(vendor\/leaflet\.css|css\/style\.css)">/g,
   (m,f)=>`<style>\n/* ===== ${f} ===== */\n${lire(f)}\n</style>`);
 // 3. scripts -> <script> en ligne
-html = html.replace(/<script src="(vendor\/leaflet\.js|js\/[a-z0-9]+\.js)"><\/script>/g,
+html = html.replace(/<script src="(vendor\/leaflet\.js|vendor\/jspdf\.js|js\/[a-z0-9]+\.js)"><\/script>/g,
   (m,f)=>`<script>\n/* ===== ${f} ===== */\n${lire(f)}\n</script>`);
 // 3 bis. chemins d'images dans le JavaScript (vignettes des vélos) -> data URI
 html = html.replace(/assets\/velos\/([a-z]+)\.(?:svg|jpg)/g,
@@ -26,7 +26,7 @@ html = html.replace(/assets\/velos\/([a-z]+)\.(?:svg|jpg)/g,
 html = html.replace('<title>', '<!-- Fichier unique, généré le ' + new Date().toISOString().slice(0,10) +
   ' par build/gen-demo.js. Ne pas modifier à la main : régénérer depuis les sources. -->\n<title>');
 
-const reste = [...html.matchAll(/(?:src|href)="(?!data:|#|tel:|https?:|\$\{)([^"]+)"/g)].map(m=>m[1]);
+const reste = [...html.matchAll(/(?:src|href)="(?!data:|#|tel:|https?:|\$\{)([a-zA-Z0-9_.\/-]+)"/g)].map(m=>m[1]);
 if(reste.length){ console.error('RESSOURCES NON INTÉGRÉES :', [...new Set(reste)]); process.exit(1); }
 
 fs.mkdirSync(path.join(R,'demo'),{recursive:true});

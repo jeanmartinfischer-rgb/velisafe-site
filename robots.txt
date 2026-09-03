@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jeanmartinfischer-rgb.github.io/velisafe-site/sitemap.xml
