@@ -242,3 +242,12 @@ parasite) ; il est inutilisé — à supprimer sur github.com à l'occasion. Les
 fichiers de verrou impossibles à supprimer (montage sans droit d'unlink) :
 ils sont déplacés dans `_to_delete/` ; préférer GitHub Desktop pour les
 opérations Git courantes.
+
+**03/09/2026, audit de fin de journée — voir `AUDIT-2026-09-03.md`.**
+24 tests utilisateur automatisés (Chromium, desktop 1280 × 900 et mobile
+390 × 844) : 24/24 réussis. Audit statique : 12 contrôles validés, zéro
+défaut — 162 clés i18n alignées sur les 5 langues, données complètes et
+traduites, tarifs croissants, ids uniques, alt partout, seul hôte réseau
+actif tile.openstreetmap.org. Restent non testables d'ici : l'arrivée réelle
+du message WhatsApp sur le téléphone, et le rendu des tuiles (à valider dans
+Safari — l'aperçu intégré de l'app Claude bloque internet).
