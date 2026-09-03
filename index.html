@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VÉLI SAFE — Location de vélos à Colmar, Alsace</title>
+<meta name="description" content="Location de vélos classiques et électriques à Colmar. Demi-journée ou journée, balades dans le vignoble, Route des Vins et plaine du Rhin.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="badge-demo" data-t="demo">Maquette de démonstration — contenus et tarifs à valider, aucun paiement réel</div>
+
+<header>
+  <div class="wrap head">
+    <img class="logo" src="assets/logo.png" alt="VÉLI SAFE">
+    <nav class="onglets" id="onglets">
+      <button class="onglet actif" data-page="accueil" data-t="nav.home">Accueil</button>
+      <button class="onglet" data-page="reservation" data-t="nav.book">Réservation</button>
+      <button class="onglet" data-page="balades" data-t="nav.rides">Balades</button>
+      <button class="onglet" data-page="vignoble" data-t="nav.wine">Vignoble</button>
+      <button class="onglet" data-page="alsace" data-t="nav.discover">Découvrir l'Alsace</button>
+      <button class="onglet" data-page="messagerie" data-t="nav.msg">Messagerie</button>
+    </nav>
+    <select class="langue" id="langue" aria-label="Langue">
+      <option value="fr">🇫🇷 FR</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="es">🇪🇸 ES</option>
+      <option value="it">🇮🇹 IT</option>
+    </select>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ ACCUEIL ============ -->
+<div class="page actif" id="page-accueil">
+  <div class="hero">
+    <img class="fond" src="assets/hero.jpg" alt="Vélo au bord des canaux de la Petite Venise à Colmar">
+    <div class="voile"></div>
+    <div class="contenu">
+      <h1 data-t="hero.title">L'Alsace au rythme du vélo.</h1>
+      <p data-t="hero.sub">Vélos classiques et électriques à louer à Colmar, à la demi-journée ou à la journée. Casque, antivol et itinéraire compris.</p>
+      <div class="boutons">
+        <button class="btn btn-lime" data-goto="reservation" data-t="hero.cta1">Réserver un vélo</button>
+        <button class="btn btn-blanc" data-goto="balades" data-t="hero.cta2">Voir les balades</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="atouts">
+    <div class="atout"><div class="pic">🚲</div><h3 data-t="home.a1t">Classique ou électrique</h3><p data-t="home.a1d">Vélos de ville sept vitesses et VAE avec 90 km d'autonomie.</p></div>
+    <div class="atout"><div class="pic">⏱️</div><h3 data-t="home.a2t">Demi-journée ou journée</h3><p data-t="home.a2d">Retrait dès 9 h, retour avant 12 h 30 ou avant 19 h.</p></div>
+    <div class="atout"><div class="pic">🗺️</div><h3 data-t="home.a3t">Parcours prêts à suivre</h3><p data-t="home.a3d">Cinq itinéraires balisés du vignoble à la plaine du Rhin.</p></div>
+    <div class="atout"><div class="pic">🛡️</div><h3 data-t="home.a4t">Tout est compris</h3><p data-t="home.a4d">Casque, antivol, sacoche, kit crevaison et assistance.</p></div>
+  </div>
+
+  <div class="tarifs-rapide">
+    <h2 data-t="home.priceT">Tarifs</h2>
+    <table class="tab-tarifs">
+      <thead><tr>
+        <th data-t="home.thBike">Vélo</th><th data-t="home.thHalf">Demi-journée</th><th data-t="home.thDay">Journée</th>
+      </tr></thead>
+      <tbody id="tbody-tarifs"></tbody>
+    </table>
+    <p style="margin:14px 0 0;font-size:13.5px;color:var(--gris)" data-t="home.priceNote">Caution par empreinte bancaire : 300 € par vélo classique, 600 € par vélo électrique. Aucun débit sauf dommage.</p>
+  </div>
+</div>
+
+<!-- ============ RÉSERVATION ============ -->
+<div class="page" id="page-reservation">
+  <section>
+    <div class="entete">
+      <h2 data-t="book.title">Réserver vos vélos</h2>
+      <p data-t="book.sub">Choisissez la date et la durée : les disponibilités affichées sont réservables immédiatement.</p>
+    </div>
+
+    <div class="reservation">
+      <div class="bloc">
+        <div class="champs">
+          <div class="champ">
+            <label for="date" data-t="book.date">Date</label>
+            <input type="date" id="date">
+          </div>
+          <div class="champ">
+            <label for="duree" data-t="book.duration">Durée</label>
+            <select id="duree">
+              <option value="demi" data-t="book.half">Demi-journée</option>
+              <option value="jour" selected data-t="book.full">Journée</option>
+            </select>
+          </div>
+        </div>
+        <div id="liste-velos"></div>
+      </div>
+
+      <div class="bloc">
+        <div id="etape-panier">
+          <h3 style="font-family:'Inter';font-size:16px;margin-bottom:10px" data-t="book.recap">Votre réservation</h3>
+          <div class="recap-lignes" id="recap"></div>
+          <div class="champs" style="margin-top:16px;grid-template-columns:1fr">
+            <div class="champ"><label for="nom" data-t="book.name">Nom et prénom</label><input id="nom" type="text"></div>
+            <div class="champ"><label for="mail" data-t="book.email">E-mail</label><input id="mail" type="email"></div>
+            <div class="champ"><label for="tel" data-t="book.phone">Téléphone</label><input id="tel" type="tel"></div>
+            <div class="champ"><label for="heure" data-t="book.hour">Heure de retrait</label>
+              <select id="heure"><option>9:00</option><option>10:00</option><option>11:00</option><option>14:00</option></select>
+            </div>
+          </div>
+          <button class="btn btn-vert" style="width:100%" id="valider" data-t="book.cta">Confirmer la réservation</button>
+          <p class="note" data-t="book.pay">Aucun paiement en ligne : le règlement se fait sur place au retrait du vélo. Ce site ne demande et ne conserve aucune donnée bancaire.</p>
+          <p class="note" data-t="book.note">Annulation gratuite jusqu'à 24 h avant le retrait. Pièce d'identité demandée au retrait. Caution prise sur place.</p>
+        </div>
+        <div class="ok" id="etape-ok">
+          <div class="rond">✓</div>
+          <h3 style="font-family:'Inter';font-size:18px" data-t="book.okT">Réservation confirmée</h3>
+          <p id="ok-texte" style="color:var(--gris);font-size:14px"></p>
+          <div class="code-cadre">
+            <span style="font-size:12.5px;color:var(--gris)" data-t="book.code">Votre code de réservation</span>
+            <span class="code" id="ok-code"></span>
+            <span style="font-size:12.5px;color:var(--gris)" data-t="book.codeNote">Notez-le : il ouvre la messagerie avec l'équipe, sans compte ni mot de passe.</span>
+          </div>
+          <button class="btn btn-blanc" id="ok-vers-msg" style="margin-bottom:8px;border-color:var(--beige);color:var(--texte)" data-t="book.goMsg">Ouvrir la messagerie</button>
+          <button class="btn btn-vert" id="retour" data-t="book.again">Nouvelle réservation</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ BALADES ============ -->
+<div class="page" id="page-balades">
+  <section>
+    <div class="entete">
+      <h2 data-t="rides.title">Balades au départ de Colmar</h2>
+      <p data-t="rides.sub">Cinq parcours en boucle, du plus facile au plus sportif. Cliquez sur un parcours pour l'afficher sur la carte.</p>
+    </div>
+    <div class="carte-bloc">
+      <div class="liste" id="liste-balades"></div>
+      <div class="map" id="map-balades"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ VIGNOBLE ============ -->
+<div class="page" id="page-vignoble">
+  <section>
+    <div class="entete">
+      <h2 data-t="wine.title">Le vignoble à vélo</h2>
+      <p data-t="wine.sub">Les villages viticoles accessibles depuis Colmar, avec leurs grands crus. Comptez une dégustation par sortie, pas davantage.</p>
+    </div>
+    <div class="carte-bloc">
+      <div class="liste" id="liste-vignoble"></div>
+      <div class="map" id="map-vignoble"></div>
+    </div>
+    <p class="note" data-t="wine.note">Les caves ouvrent en général du lundi au samedi ; beaucoup reçoivent sur rendez-vous. Vérifiez les horaires avant de partir. Ne dégustez jamais avant de reprendre le vélo : l'alcool au guidon relève des mêmes règles que sur la route.</p>
+  </section>
+</div>
+
+<!-- ============ ALSACE ============ -->
+<div class="page" id="page-alsace">
+  <section>
+    <div class="entete">
+      <h2 data-t="disc.title">Découvrir l'Alsace</h2>
+      <p data-t="disc.sub">Les incontournables autour de Colmar, à vélo, en train ou en voiture selon la distance.</p>
+    </div>
+    <div class="carte-bloc">
+      <div class="liste" id="liste-alsace"></div>
+      <div class="map" id="map-alsace"></div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ============ MESSAGERIE ============ -->
+<div class="page" id="page-messagerie">
+  <section>
+    <div class="entete">
+      <h2 data-t="msg.title">Suivi de votre réservation</h2>
+      <p data-t="msg.sub">Entrez le code reçu à la réservation pour écrire à l'équipe. Aucun compte à créer, aucun mot de passe.</p>
+    </div>
+    <div class="msg-bloc">
+      <div class="bloc" id="msg-connexion">
+        <div class="champs" style="grid-template-columns:1fr auto;align-items:end">
+          <div class="champ">
+            <label for="code-input" data-t="msg.code">Code de réservation</label>
+            <input id="code-input" type="text" placeholder="VS-XXXXXX" autocapitalize="characters">
+          </div>
+          <button class="btn btn-vert" id="ouvrir-fil" data-t="msg.open">Ouvrir la conversation</button>
+        </div>
+        <p class="note" id="msg-erreur" style="color:#E9A23B;display:none"></p>
+        <p class="note" data-t="msg.urgent">Problème urgent sur la route, crevaison ou chute : appelez le 06 64 43 28 03. La messagerie est relevée pendant les heures d'ouverture.</p>
+      </div>
+
+      <div class="fil" id="fil" style="display:none">
+        <div class="fil-haut">
+          <b id="fil-code"></b>
+          <span data-t="msg.hours">Réponse pendant les heures d'ouverture, 8 h 30 – 19 h</span>
+        </div>
+        <div class="fil-corps" id="fil-corps"></div>
+        <div class="fil-bas">
+          <input id="fil-texte" type="text" data-tph="msg.ph" placeholder="Écrivez votre message">
+          <button id="fil-envoi" data-t="msg.send">Envoyer</button>
+        </div>
+      </div>
+      <p class="note" id="msg-mode"></p>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="liens">
+      <a href="#" data-t="foot.legal">Mentions légales</a>
+      <a href="#" data-t="foot.terms">Conditions de location</a>
+      <a href="#" data-t="foot.privacy">Politique de confidentialité</a>
+      <a href="#" data-t="foot.contact">Contact</a>
+    </div>
+    <div data-t="foot.addr">VÉLI SAFE — Colmar, Alsace · 06 64 43 28 03 · Un service de la Conciergerie SAFE</div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
