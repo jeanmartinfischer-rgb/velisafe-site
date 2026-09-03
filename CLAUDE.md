@@ -287,9 +287,14 @@ possible : un nom de domaine personnalisé (champ Custom domain de Pages).
 **03/09/2026, atelier du loueur.** Le mécanisme wa.me ne transporte que du
 texte : aucun fichier ne peut être joint à la demande WhatsApp (limitation
 WhatsApp, pas un défaut du site). Le PDF récapitulatif reste côté client.
-Pour le loueur : `atelier.html` + `js/atelier.js` — page interne (noindex,
-absente de la navigation et du sitemap) où l'on colle le message WhatsApp
-reçu, dans n'importe laquelle des cinq langues ; le parseur s'appuie sur les
+Pour le loueur : l'atelier est un FICHIER AUTONOME HORS LIGNE
+(`documents-internes/atelier-velisafe.html`, jamais publié — retiré du site
+le jour même à la demande de Jean-Martin : un outil interne n'a rien à faire
+sur un dépôt public). Antoine l'ouvre d'un double-clic ; COLLER le message WhatsApp (Cmd+V
+n'importe où sur la page, cinq langues acceptées) télécharge aussitôt le
+contrat — l'automatisation complète (PDF sans aucun geste) exigerait un
+serveur et l'API WhatsApp payante, écartés le 03/09/2026 : à reconsidérer
+seulement si le volume dépasse ~10-15 locations/jour ; le parseur s'appuie sur les
 libellés exacts de i18n.js et retraduit durée et noms de vélos en français,
 puis produit le contrat de location PDF pré-rempli (jsPDF, logo chargé
 depuis assets/) à imprimer en deux exemplaires. Testé : message italien →
