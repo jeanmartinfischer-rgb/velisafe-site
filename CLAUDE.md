@@ -283,3 +283,16 @@ possible : un nom de domaine personnalisé (champ Custom domain de Pages).
   personnalisé arrive.
 - Hors code, leviers à activer par Jean-Martin : fiche Google Business
   Profile (levier n° 1 en local), avis clients, domaine personnalisé.
+
+**03/09/2026, atelier du loueur.** Le mécanisme wa.me ne transporte que du
+texte : aucun fichier ne peut être joint à la demande WhatsApp (limitation
+WhatsApp, pas un défaut du site). Le PDF récapitulatif reste côté client.
+Pour le loueur : `atelier.html` + `js/atelier.js` — page interne (noindex,
+absente de la navigation et du sitemap) où l'on colle le message WhatsApp
+reçu, dans n'importe laquelle des cinq langues ; le parseur s'appuie sur les
+libellés exacts de i18n.js et retraduit durée et noms de vélos en français,
+puis produit le contrat de location PDF pré-rempli (jsPDF, logo chargé
+depuis assets/) à imprimer en deux exemplaires. Testé : message italien →
+contrat français complet, zéro erreur JS. Le format du message WhatsApp
+(messageWA dans app.js) et le parseur (analyser dans atelier.js) doivent
+évoluer ENSEMBLE.
