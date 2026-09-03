@@ -62,6 +62,15 @@ sur `index.html`, sans serveur local. Ordre de chargement :
   halo clair (drop-shadow).
 - **Pas de compte utilisateur.** La messagerie s'ouvre avec le code de réservation.
 - **Durées de location** : demi-journée, journée, 2, 3 et 7 jours, tarif dégressif.
+- **Site en une seule page depuis le 03/09/2026 (demande de Jean-Martin)** :
+  les sept « pages » sont des sections empilées qui défilent ; les onglets
+  font glisser vers leur section (`aller()` = scrollIntoView) et l'onglet
+  actif suit le défilement (scroll-spy sur `offsetTop`). Les sections
+  dormantes portent la classe `dormant` (display:none). Les cartes ne
+  s'initialisent que quand leur section approche de l'écran
+  (IntersectionObserver, marge 300 px) — ce qui garde vraie la promesse de
+  la page Cookies, reformulée dans les cinq langues (« lorsqu'une carte
+  apparaît à l'écran », plus de « onglets »).
 - **Photos de vélos fournies par Jean-Martin le 03/09/2026** :
   `assets/velos/*.jpg` (ville = duo cadre femme/homme, vae, enfant, remorque),
   découpées depuis sa planche studio, + `assets/flotte.jpg` (panoramique de la

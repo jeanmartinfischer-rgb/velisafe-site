@@ -428,18 +428,45 @@ function fermerBulles(){
   });
 }
 
-/* ===================== NAVIGATION ===================== */
+/* ===================== NAVIGATION =====================
+   Le site est une seule page qui défile : chaque « page » est une section
+   empilée, et les onglets font glisser jusqu'à la section voulue.
+   L'onglet actif suit la position de défilement. */
 function aller(page){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('actif'));
-  document.getElementById('page-'+page).classList.add('actif');
+  const el=document.getElementById('page-'+page);
+  if(!el || el.classList.contains('dormant')) return;
   document.querySelectorAll('.onglet').forEach(o=>o.classList.toggle('actif',o.dataset.page===page));
-  window.scrollTo({top:0,behavior:'instant'});
-  setTimeout(()=>{
-    if(page==='balades'){ maps.balades ? redimensionner(maps.balades) : initBalades(); }
-    if(page==='vignoble'){ maps.vignoble ? redimensionner(maps.vignoble) : initVignoble(); }
-    if(page==='alsace'){ maps.alsace ? redimensionner(maps.alsace) : initAlsace(); }
-  },80);
+  majActifBloquee=Date.now()+900;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
 }
+
+/* les cartes ne s'initialisent (et leurs fonds ne se téléchargent) que
+   lorsque leur section approche de l'écran */
+const INIT_CARTES={balades:initBalades, vignoble:initVignoble, alsace:initAlsace};
+const carteFaite={};
+function lancerCarte(p){
+  if(carteFaite[p] || !INIT_CARTES[p]) return;
+  carteFaite[p]=true; INIT_CARTES[p]();
+}
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){ lancerCarte(e.target.id.replace('page-','')); io.unobserve(e.target); }
+  }),{rootMargin:'300px 0px'});
+  ['balades','vignoble','alsace'].forEach(p=>io.observe(document.getElementById('page-'+p)));
+} else { ['balades','vignoble','alsace'].forEach(lancerCarte); }
+
+/* l'onglet actif suit le défilement */
+const sectionsNav=[...document.querySelectorAll('.page:not(.dormant)')];
+let majActifBloquee=0;
+function majOngletActif(){
+  if(Date.now()<majActifBloquee) return;
+  const y=window.scrollY+150;
+  let cur=sectionsNav[0];
+  sectionsNav.forEach(s=>{ if(s.offsetTop<=y) cur=s; });
+  const page=cur.id.replace('page-','');
+  document.querySelectorAll('.onglet').forEach(o=>o.classList.toggle('actif',o.dataset.page===page));
+}
+window.addEventListener('scroll',majOngletActif,{passive:true});
 
 document.getElementById('onglets').addEventListener('click',e=>{
   const b=e.target.closest('.onglet'); if(b) aller(b.dataset.page);
@@ -766,3 +793,4 @@ document.getElementById('date').min=new Date().toISOString().slice(0,10);
 const nav=(navigator.language||'fr').slice(0,2);
 if(T[nav]){ lang=nav; document.getElementById('langue').value=nav; }
 appliquerLangue();
+majOngletActif();

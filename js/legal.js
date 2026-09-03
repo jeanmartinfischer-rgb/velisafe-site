@@ -106,7 +106,7 @@ Téléphone : 06 64 43 28 03 · Courriel : [adresse].</p>
 <h3>Qui y a accès</h3>
 <p>Le personnel du loueur, dans la limite de ce que son travail exige. [Le cas échéant, l'hébergeur du site et le prestataire de messagerie, en qualité de sous-traitants, dont l'identité et la localisation des serveurs sont à préciser ici.] Aucun transfert hors de l'Union européenne n'est effectué [à confirmer selon l'hébergeur retenu].</p>
 <h3>Ce que le site charge depuis l'extérieur</h3>
-<p>Les pages du site n'appellent aucun service tiers, à une exception près : lorsque vous ouvrez un onglet contenant une carte, les fonds de carte sont téléchargés depuis les serveurs de la Fondation OpenStreetMap. Cette requête transmet votre adresse IP à ce fournisseur. Tant que vous n'ouvrez aucune carte, aucune donnée ne quitte votre navigateur vers un tiers.</p>
+<p>Les pages du site n'appellent aucun service tiers, à une exception près : lorsqu'une carte apparaît à l'écran, son fond est téléchargé depuis les serveurs de la Fondation OpenStreetMap. Cette requête transmet votre adresse IP à ce fournisseur. Tant qu'aucune carte n'apparaît à l'écran, aucune donnée ne quitte votre navigateur vers un tiers.</p>
 <h3>Vos droits</h3>
 <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur les données qui vous concernent. Vous pouvez les exercer en écrivant à [adresse courriel] ou à l'adresse postale du siège. Si la réponse ne vous satisfait pas, vous pouvez introduire une réclamation auprès de la Commission nationale de l'informatique et des libertés, dont les coordonnées figurent sur le site cnil.fr.</p>
 <h3>Sécurité</h3>
@@ -120,7 +120,7 @@ Téléphone : 06 64 43 28 03 · Courriel : [adresse].</p>
 <h3>Ce que le site conserve dans votre navigateur</h3>
 <p>Rien. Le code de réservation affiché après une demande et les messages échangés en mode démonstration vivent dans la page et disparaissent dès que vous la rechargez ou la fermez.</p>
 <h3>Les cartes, seule exception</h3>
-<p>Les cartes des onglets « Balades », « Vignoble » et « Découvrir l'Alsace » affichent des fonds téléchargés depuis les serveurs de la Fondation OpenStreetMap. Ces requêtes ne partent que si vous ouvrez l'un de ces onglets. Elles transmettent votre adresse IP au fournisseur, qui applique sa propre politique. Si vous ne souhaitez pas que cette requête ait lieu, il suffit de ne pas ouvrir ces onglets : le reste du site fonctionne sans.</p>
+<p>Les cartes des sections « Balades », « Vignoble » et « Découvrir l'Alsace » affichent des fonds téléchargés depuis les serveurs de la Fondation OpenStreetMap. Ces requêtes ne partent que lorsque vous faites défiler la page jusqu'à l'une de ces cartes. Elles transmettent votre adresse IP au fournisseur, qui applique sa propre politique. Si vous ne souhaitez pas que cette requête ait lieu, il suffit de ne pas faire défiler la page jusqu'à ces cartes : le reste du site fonctionne sans.</p>
 <h3>Si cela change</h3>
 <p>L'ajout d'un outil de statistiques, d'une carte interactive tierce ou d'un module de réservation externe modifierait ce constat. Le jour où ce sera le cas, cette page sera mise à jour et un bandeau de consentement sera mis en place avant tout dépôt.</p>`
  },
@@ -206,7 +206,7 @@ Telephone: +33 6 64 43 28 03 · E-mail: [address].</p>
 <h3>Who has access</h3>
 <p>The hirer's staff, only as far as their work requires. [Where applicable, the site host and the messaging provider, as processors, whose identity and server locations are to be stated here.] No transfer outside the European Union takes place [to be confirmed once the host is chosen].</p>
 <h3>What the site loads from outside</h3>
-<p>The pages call no third-party service, with one exception: when you open a tab containing a map, the map backgrounds are downloaded from the OpenStreetMap Foundation's servers. That request passes your IP address to that provider. As long as you open no map, no data leaves your browser to a third party.</p>
+<p>The pages call no third-party service, with one exception: when a map comes into view, its background is downloaded from the OpenStreetMap Foundation's servers. That request passes your IP address to that provider. As long as no map comes into view, no data leaves your browser to a third party.</p>
 <h3>Your rights</h3>
 <p>You have rights of access, rectification, erasure, restriction, objection and portability over data concerning you. Exercise them by writing to [e-mail] or to the registered office. If the reply does not satisfy you, you may lodge a complaint with the French data protection authority, whose details are on cnil.fr.</p>
 <h3>Security</h3>
@@ -219,7 +219,7 @@ Telephone: +33 6 64 43 28 03 · E-mail: [address].</p>
 <h3>What the site keeps in your browser</h3>
 <p>Nothing. The booking code shown after a request, and the messages exchanged in demonstration mode, live in the page and disappear as soon as you reload or close it.</p>
 <h3>Maps, the only exception</h3>
-<p>The maps in the "Rides", "Vineyards" and "Discover Alsace" tabs display backgrounds downloaded from the OpenStreetMap Foundation's servers. Those requests are only sent if you open one of those tabs. They pass your IP address to the provider, which applies its own policy. If you would rather that did not happen, simply do not open those tabs: the rest of the site works without them.</p>
+<p>The maps in the "Rides", "Vineyards" and "Discover Alsace" sections display backgrounds downloaded from the OpenStreetMap Foundation's servers. Those requests are only sent when you scroll to one of those maps. They pass your IP address to the provider, which applies its own policy. If you would rather that did not happen, simply do not scroll down to those maps: the rest of the site works without them.</p>
 <h3>If this changes</h3>
 <p>Adding a statistics tool, a third-party interactive map or an external booking module would change this. On the day that happens, this page will be updated and a consent banner will be put in place before anything is stored.</p>`
  },
@@ -305,7 +305,7 @@ Telefon: +33 6 64 43 28 03 · E-Mail: [Adresse].</p>
 <h3>Wer Zugriff hat</h3>
 <p>Das Personal des Vermieters, nur soweit die Arbeit es erfordert. [Gegebenenfalls der Hoster und der Nachrichtendienstleister als Auftragsverarbeiter, deren Identität und Serverstandorte hier zu nennen sind.] Eine Übermittlung außerhalb der Europäischen Union findet nicht statt [nach Wahl des Hosters zu bestätigen].</p>
 <h3>Was die Website von außen lädt</h3>
-<p>Die Seiten rufen keinen Drittdienst auf, mit einer Ausnahme: Wenn Sie einen Reiter mit einer Karte öffnen, werden die Kartenhintergründe von den Servern der OpenStreetMap Foundation geladen. Diese Anfrage übermittelt Ihre IP-Adresse an diesen Anbieter. Solange Sie keine Karte öffnen, verlassen keine Daten Ihren Browser Richtung Dritte.</p>
+<p>Die Seiten rufen keinen Drittdienst auf, mit einer Ausnahme: Sobald eine Karte sichtbar wird, werden die Kartenhintergründe von den Servern der OpenStreetMap Foundation geladen. Diese Anfrage übermittelt Ihre IP-Adresse an diesen Anbieter. Solange keine Karte sichtbar wird, verlassen keine Daten Ihren Browser Richtung Dritte.</p>
 <h3>Ihre Rechte</h3>
 <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit. Wenden Sie sich an [E-Mail] oder an die Anschrift des Sitzes. Sind Sie mit der Antwort nicht zufrieden, können Sie sich bei der französischen Datenschutzbehörde beschweren; die Kontaktdaten finden Sie auf cnil.fr.</p>
 <h3>Sicherheit</h3>
@@ -318,7 +318,7 @@ Telefon: +33 6 64 43 28 03 · E-Mail: [Adresse].</p>
 <h3>Was die Website in Ihrem Browser speichert</h3>
 <p>Nichts. Der nach einer Anfrage angezeigte Buchungscode und die im Demo-Modus ausgetauschten Nachrichten leben in der Seite und verschwinden beim Neuladen oder Schließen.</p>
 <h3>Karten, die einzige Ausnahme</h3>
-<p>Die Karten in den Reitern „Touren", „Weinberge" und „Elsass entdecken" zeigen Hintergründe, die von den Servern der OpenStreetMap Foundation geladen werden. Diese Anfragen gehen nur ab, wenn Sie einen dieser Reiter öffnen. Sie übermitteln Ihre IP-Adresse an den Anbieter, der seine eigene Richtlinie anwendet. Wenn Sie das nicht möchten, öffnen Sie diese Reiter einfach nicht: Der Rest der Website funktioniert auch ohne.</p>
+<p>Die Karten in den Abschnitten „Touren", „Weinberge" und „Elsass entdecken" zeigen Hintergründe, die von den Servern der OpenStreetMap Foundation geladen werden. Diese Anfragen gehen nur ab, wenn Sie bis zu einer dieser Karten scrollen. Sie übermitteln Ihre IP-Adresse an den Anbieter, der seine eigene Richtlinie anwendet. Wenn Sie das nicht möchten, scrollen Sie einfach nicht bis zu diesen Karten: Der Rest der Website funktioniert auch ohne.</p>
 <h3>Falls sich das ändert</h3>
 <p>Ein Statistikwerkzeug, eine fremde interaktive Karte oder ein externes Buchungsmodul würden das ändern. An dem Tag wird diese Seite aktualisiert und vor jeder Speicherung ein Einwilligungsbanner eingerichtet.</p>`
  },
@@ -404,7 +404,7 @@ Teléfono: +33 6 64 43 28 03 · Correo electrónico: [dirección].</p>
 <h3>Quién accede</h3>
 <p>El personal del arrendador, en la medida en que su trabajo lo exija. [En su caso, el proveedor de alojamiento y el de mensajería, como encargados del tratamiento, cuya identidad y ubicación de servidores debe indicarse aquí.] No se realiza ninguna transferencia fuera de la Unión Europea [por confirmar según el proveedor elegido].</p>
 <h3>Qué carga el sitio desde fuera</h3>
-<p>Las páginas no llaman a ningún servicio de terceros, con una excepción: al abrir una pestaña con un mapa, los fondos se descargan de los servidores de la Fundación OpenStreetMap. Esa petición transmite su dirección IP a dicho proveedor. Mientras no abra ningún mapa, ningún dato sale de su navegador hacia un tercero.</p>
+<p>Las páginas no llaman a ningún servicio de terceros, con una excepción: cuando un mapa aparece en pantalla, su fondo se descarga de los servidores de la Fundación OpenStreetMap. Esa petición transmite su dirección IP a dicho proveedor. Mientras ningún mapa aparezca en pantalla, ningún dato sale de su navegador hacia un tercero.</p>
 <h3>Sus derechos</h3>
 <p>Dispone de derechos de acceso, rectificación, supresión, limitación, oposición y portabilidad sobre sus datos. Puede ejercerlos escribiendo a [correo electrónico] o a la dirección del domicilio social. Si la respuesta no le satisface, puede reclamar ante la autoridad francesa de protección de datos, cuyos datos figuran en cnil.fr.</p>
 <h3>Seguridad</h3>
@@ -417,7 +417,7 @@ Teléfono: +33 6 64 43 28 03 · Correo electrónico: [dirección].</p>
 <h3>Qué guarda el sitio en su navegador</h3>
 <p>Nada. El código de reserva mostrado tras una solicitud y los mensajes intercambiados en modo demostración viven en la página y desaparecen al recargarla o cerrarla.</p>
 <h3>Los mapas, única excepción</h3>
-<p>Los mapas de las pestañas «Rutas», «Viñedos» y «Descubrir Alsacia» muestran fondos descargados de los servidores de la Fundación OpenStreetMap. Esas peticiones solo se envían si abre una de esas pestañas. Transmiten su dirección IP al proveedor, que aplica su propia política. Si prefiere evitarlo, basta con no abrir esas pestañas: el resto del sitio funciona igual.</p>
+<p>Los mapas de las secciones «Rutas», «Viñedos» y «Descubrir Alsacia» muestran fondos descargados de los servidores de la Fundación OpenStreetMap. Esas peticiones solo se envían cuando se desplaza hasta uno de esos mapas. Transmiten su dirección IP al proveedor, que aplica su propia política. Si prefiere evitarlo, basta con no desplazarse hasta esos mapas: el resto del sitio funciona igual.</p>
 <h3>Si esto cambia</h3>
 <p>Añadir una herramienta de estadísticas, un mapa interactivo de terceros o un módulo de reserva externo cambiaría este panorama. Ese día, esta página se actualizará y se instalará un banner de consentimiento antes de cualquier depósito.</p>`
  },
@@ -503,7 +503,7 @@ Telefono: +33 6 64 43 28 03 · E-mail: [indirizzo].</p>
 <h3>Chi vi accede</h3>
 <p>Il personale del noleggiatore, nei limiti di quanto richiesto dal lavoro. [Se del caso, il fornitore di hosting e quello di messaggistica, quali responsabili del trattamento, la cui identità e ubicazione dei server vanno indicate qui.] Non è effettuato alcun trasferimento fuori dall'Unione europea [da confermare in base al fornitore scelto].</p>
 <h3>Cosa carica il sito dall'esterno</h3>
-<p>Le pagine non richiamano alcun servizio di terzi, con un'eccezione: quando aprite una scheda contenente una mappa, le basi cartografiche sono scaricate dai server della OpenStreetMap Foundation. Questa richiesta trasmette il vostro indirizzo IP a tale fornitore. Finché non aprite alcuna mappa, nessun dato lascia il vostro browser verso terzi.</p>
+<p>Le pagine non richiamano alcun servizio di terzi, con un'eccezione: quando una mappa appare sullo schermo, il suo sfondo è scaricato dai server della OpenStreetMap Foundation. Questa richiesta trasmette il vostro indirizzo IP a tale fornitore. Finché nessuna mappa appare sullo schermo, nessun dato lascia il vostro browser verso terzi.</p>
 <h3>I vostri diritti</h3>
 <p>Avete diritto di accesso, rettifica, cancellazione, limitazione, opposizione e portabilità sui dati che vi riguardano. Potete esercitarli scrivendo a [e-mail] o all'indirizzo della sede. Se la risposta non vi soddisfa, potete presentare reclamo all'autorità francese di protezione dei dati, i cui recapiti figurano su cnil.fr.</p>
 <h3>Sicurezza</h3>
@@ -516,7 +516,7 @@ Telefono: +33 6 64 43 28 03 · E-mail: [indirizzo].</p>
 <h3>Cosa conserva il sito nel vostro browser</h3>
 <p>Nulla. Il codice di prenotazione mostrato dopo una richiesta e i messaggi scambiati in modalità dimostrativa vivono nella pagina e spariscono appena la ricaricate o la chiudete.</p>
 <h3>Le mappe, unica eccezione</h3>
-<p>Le mappe delle schede «Itinerari», «Vigneti» e «Scoprire l'Alsazia» mostrano basi scaricate dai server della OpenStreetMap Foundation. Queste richieste partono solo se aprite una di quelle schede. Trasmettono il vostro indirizzo IP al fornitore, che applica la propria politica. Se preferite evitarlo, basta non aprire quelle schede: il resto del sito funziona lo stesso.</p>
+<p>Le mappe delle sezioni «Itinerari», «Vigneti» e «Scoprire l'Alsazia» mostrano basi scaricate dai server della OpenStreetMap Foundation. Queste richieste partono solo quando scorrete fino a una di quelle mappe. Trasmettono il vostro indirizzo IP al fornitore, che applica la propria politica. Se preferite evitarlo, basta non scorrere fino a quelle mappe: il resto del sito funziona lo stesso.</p>
 <h3>Se qualcosa cambia</h3>
 <p>L'aggiunta di uno strumento di statistiche, di una mappa interattiva di terzi o di un modulo di prenotazione esterno cambierebbe questo quadro. In quel giorno la pagina sarà aggiornata e sarà predisposto un banner di consenso prima di qualsiasi deposito.</p>`
  }

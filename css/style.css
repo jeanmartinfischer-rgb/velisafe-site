@@ -81,11 +81,14 @@ nav.onglets::-webkit-scrollbar{display:none}
   .langue{margin-left:auto}
 }
 
-/* ---------- page ---------- */
-.page{display:none;animation:apparait .25s ease}
-.page.actif{display:block}
-@keyframes apparait{from{opacity:0}to{opacity:1}}
-@media(prefers-reduced-motion:reduce){.page{animation:none}}
+/* ---------- pages empilées : le site défile d'un bloc, les onglets sont
+   des raccourcis vers chaque section ---------- */
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.page{display:block;scroll-margin-top:72px}
+.page + .page{border-top:1px solid var(--beige)}
+.page.dormant{display:none}
+@media(max-width:820px){.page{scroll-margin-top:128px}}
 section{padding:clamp(30px,5vh,58px) 0}
 .entete h2{font-size:clamp(24px,3.6vw,34px);color:var(--vert-fonce)}
 .entete p{margin:6px 0 0;color:var(--gris);max-width:70ch;font-size:15px}
