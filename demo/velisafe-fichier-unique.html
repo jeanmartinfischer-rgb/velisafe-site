@@ -812,6 +812,8 @@ section{padding:clamp(30px,5vh,58px) 0}
 .btn-blanc{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.45)}
 .btn-vert{background:var(--vert);color:#F3EEEA;font-weight:700}
 .btn-vert:hover{background:var(--vert-fonce)}
+.btn-wa{background:#25D366;color:#fff;font-weight:700;width:100%;margin-bottom:8px}
+.btn-wa:hover{background:#1EB955}
 
 .atouts{display:grid;gap:16px;grid-template-columns:1fr;margin-top:38px}
 @media(min-width:640px){.atouts{grid-template-columns:1fr 1fr}}
@@ -1193,6 +1195,8 @@ footer a{color:#F3EEEA;text-decoration:none;border-bottom:1px solid rgba(243,238
             <span class="code" id="ok-code"></span>
             <span style="font-size:12.5px;color:var(--gris)" data-t="book.codeNote">Notez-le : il ouvre la messagerie avec l'équipe, sans compte ni mot de passe.</span>
           </div>
+          <button class="btn btn-wa" id="ok-whatsapp" data-t="book.waBtn">Envoyer la demande par WhatsApp</button>
+          <p class="note" style="text-align:left;margin:0 0 12px" data-t="book.waNote">WhatsApp s'ouvre avec votre demande déjà écrite : il ne reste qu'à appuyer sur Envoyer. La réservation est ferme dès notre réponse. Sans WhatsApp ? Appelez le 06 64 43 28 03.</p>
           <button class="btn btn-blanc" id="ok-vers-msg" style="margin-bottom:8px;border-color:var(--beige);color:var(--texte)" data-t="book.goMsg">Ouvrir la messagerie</button>
           <button class="btn btn-vert" id="retour" data-t="book.again">Nouvelle réservation</button>
         </div>
@@ -1409,7 +1413,7 @@ const T = {
   "home.hours3":"Dimanche et jours fériés : retrait sur rendez-vous uniquement",
   "home.stepsT":"Comment ça marche",
   "home.step1t":"Vous réservez en ligne","home.step1d":"Date, durée, nombre de vélos. Trente secondes.",
-  "home.step2t":"Vous recevez un code","home.step2d":"Il ouvre la conversation avec l'équipe. Ni compte, ni mot de passe.",
+  "home.step2t":"Vous envoyez la demande par WhatsApp","home.step2d":"Un appui suffit : le message est déjà écrit, avec votre code de demande.",
   "home.step3t":"Vous réglez au retrait","home.step3d":"Pièce d'identité, caution, contrat signé devant vous. Puis vous partez.",
   "book.title":"Réserver vos vélos","book.sub":"Date, durée, vélos. Ce qui s'affiche est disponible tout de suite.",
   "book.date":"Date de retrait","book.duration":"Durée",
@@ -1418,9 +1422,9 @@ const T = {
   "book.cta":"Confirmer la réservation","book.empty":"Aucun vélo sélectionné.","book.total":"Total à régler sur place",
   "book.pay":"Rien à payer ici. Vous réglez en boutique, au retrait. Ce site ne demande aucune donnée bancaire.",
   "book.alert":"Sélectionnez au moins un vélo, votre nom et votre e-mail.",
-  "book.okT":"Réservation confirmée","book.again":"Nouvelle réservation",
-  "book.okTxt":"Retrait le {d} à {h}, à Colmar. Confirmation envoyée à {m}.",
-  "book.code":"Votre code de réservation","book.codeNote":"Notez-le : il ouvre la messagerie avec l'équipe, sans compte ni mot de passe.","book.goMsg":"Ouvrir la messagerie",
+  "book.okT":"Votre demande est prête","book.again":"Nouvelle réservation",
+  "book.waBtn":"Envoyer la demande par WhatsApp","book.waNote":"WhatsApp s'ouvre avec votre demande déjà écrite : il ne reste qu'à appuyer sur Envoyer. La réservation est ferme dès notre réponse. Sans WhatsApp ? Appelez le 06 64 43 28 03.","wa.title":"Demande de réservation VÉLI SAFE","wa.total":"total indicatif, règlement sur place","book.okTxt":"Retrait souhaité le {d} à {h}, à Colmar. Envoyez la demande par WhatsApp pour la confirmer.",
+  "book.code":"Votre code de demande","book.codeNote":"Gardez-le : c'est la référence de votre demande, elle figure dans le message WhatsApp.","book.goMsg":"Ouvrir la messagerie",
   "book.avail":"disponibles","book.left":"Plus que","book.none":"Complet ce jour-là",
   "book.condT":"Les conditions sont remises au point de location",
   "book.cond1":"Le contrat complet, les conditions de location et l'état du vélo vous sont remis et signés au retrait, pas avant.",
@@ -1493,7 +1497,7 @@ const T = {
   "home.hours3":"Sundays and public holidays: collection by appointment only",
   "home.stepsT":"How it works",
   "home.step1t":"You book online","home.step1d":"Date, duration, number of bikes. Thirty seconds.",
-  "home.step2t":"You receive a code","home.step2d":"It opens the thread with the team. No account, no password.",
+  "home.step2t":"You send it via WhatsApp","home.step2d":"One tap: the message is pre-written, with your request code.",
   "home.step3t":"You pay at collection","home.step3d":"ID, deposit, contract signed in front of you. Then you ride off.",
   "book.title":"Book your bikes","book.sub":"Date, duration, bikes. What you see is available right away.",
   "book.date":"Collection date","book.duration":"Duration",
@@ -1502,9 +1506,9 @@ const T = {
   "book.cta":"Confirm booking","book.empty":"No bike selected.","book.total":"Total, payable on site",
   "book.pay":"Nothing to pay here. You settle up at the shop, when you collect. This site asks for no bank details.",
   "book.alert":"Please select at least one bike, your name and your e-mail.",
-  "book.okT":"Booking confirmed","book.again":"New booking",
-  "book.okTxt":"Pick-up on {d} at {h}, in Colmar. Confirmation sent to {m}.",
-  "book.code":"Your booking code","book.codeNote":"Write it down: it opens the message thread with the team, with no account and no password.","book.goMsg":"Open messages",
+  "book.okT":"Your request is ready","book.again":"New booking",
+  "book.waBtn":"Send the request via WhatsApp","book.waNote":"WhatsApp opens with your request already written: just tap Send. The booking is final once we reply. No WhatsApp? Call +33 6 64 43 28 03.","wa.title":"VÉLI SAFE booking request","wa.total":"indicative total, payment on site","book.okTxt":"Requested pick-up on {d} at {h}, in Colmar. Send the request via WhatsApp to confirm it.",
+  "book.code":"Your request code","book.codeNote":"Keep it: it is the reference of your request and appears in the WhatsApp message.","book.goMsg":"Open messages",
   "book.avail":"available","book.left":"Only","book.none":"Fully booked that day",
   "book.condT":"The terms are handed over at the shop",
   "book.cond1":"The full contract, the hire terms and the condition report are given to you and signed at collection, not before.",
@@ -1577,7 +1581,7 @@ const T = {
   "home.hours3":"Sonn- und Feiertage: Abholung nur nach Vereinbarung",
   "home.stepsT":"So läuft es ab",
   "home.step1t":"Sie buchen online","home.step1d":"Datum, Dauer, Anzahl der Räder. Dreißig Sekunden.",
-  "home.step2t":"Sie erhalten einen Code","home.step2d":"Er öffnet den Verlauf mit dem Team. Kein Konto, kein Passwort.",
+  "home.step2t":"Sie senden die Anfrage per WhatsApp","home.step2d":"Ein Tipp genügt: Die Nachricht ist vorgeschrieben, mit Ihrem Anfragecode.",
   "home.step3t":"Sie zahlen bei der Abholung","home.step3d":"Ausweis, Kaution, Vertrag vor Ihren Augen unterschrieben. Dann geht es los.",
   "book.title":"Räder buchen","book.sub":"Datum, Dauer, Räder. Was angezeigt wird, ist sofort verfügbar.",
   "book.date":"Abholdatum","book.duration":"Dauer",
@@ -1586,9 +1590,9 @@ const T = {
   "book.cta":"Buchung bestätigen","book.empty":"Kein Rad ausgewählt.","book.total":"Gesamt, vor Ort zu zahlen",
   "book.pay":"Hier zahlen Sie nichts. Bezahlt wird im Laden, bei der Abholung. Diese Seite fragt keine Bankdaten ab.",
   "book.alert":"Bitte mindestens ein Rad, Ihren Namen und Ihre E-Mail angeben.",
-  "book.okT":"Buchung bestätigt","book.again":"Neue Buchung",
-  "book.okTxt":"Abholung am {d} um {h} in Colmar. Bestätigung an {m} gesendet.",
-  "book.code":"Ihr Buchungscode","book.codeNote":"Notieren Sie ihn: Er öffnet den Nachrichtenverlauf mit dem Team, ohne Konto und ohne Passwort.","book.goMsg":"Nachrichten öffnen",
+  "book.okT":"Ihre Anfrage ist bereit","book.again":"Neue Buchung",
+  "book.waBtn":"Anfrage per WhatsApp senden","book.waNote":"WhatsApp öffnet sich mit Ihrer fertig geschriebenen Anfrage: nur noch auf Senden tippen. Die Buchung ist verbindlich, sobald wir antworten. Kein WhatsApp? Rufen Sie +33 6 64 43 28 03 an.","wa.title":"Buchungsanfrage VÉLI SAFE","wa.total":"Richtwert, Zahlung vor Ort","book.okTxt":"Gewünschte Abholung am {d} um {h} in Colmar. Senden Sie die Anfrage per WhatsApp, um sie zu bestätigen.",
+  "book.code":"Ihr Anfragecode","book.codeNote":"Bewahren Sie ihn auf: Er ist die Referenz Ihrer Anfrage und steht in der WhatsApp-Nachricht.","book.goMsg":"Nachrichten öffnen",
   "book.avail":"verfügbar","book.left":"Nur noch","book.none":"An diesem Tag ausgebucht",
   "book.condT":"Die Bedingungen erhalten Sie im Laden",
   "book.cond1":"Der vollständige Vertrag, die Mietbedingungen und das Übergabeprotokoll werden bei der Abholung ausgehändigt und unterschrieben, nicht vorher.",
@@ -1661,7 +1665,7 @@ const T = {
   "home.hours3":"Domingos y festivos: recogida solo con cita previa",
   "home.stepsT":"Cómo funciona",
   "home.step1t":"Usted reserva en línea","home.step1d":"Fecha, duración, número de bicis. Treinta segundos.",
-  "home.step2t":"Recibe un código","home.step2d":"Abre la conversación con el equipo. Sin cuenta ni contraseña.",
+  "home.step2t":"Envía la solicitud por WhatsApp","home.step2d":"Un toque basta: el mensaje ya está escrito, con su código de solicitud.",
   "home.step3t":"Paga al recoger","home.step3d":"Documento, fianza, contrato firmado delante de usted. Y a rodar.",
   "book.title":"Reserve sus bicicletas","book.sub":"Fecha, duración, bicis. Lo que se muestra está disponible ya.",
   "book.date":"Fecha de recogida","book.duration":"Duración",
@@ -1670,9 +1674,9 @@ const T = {
   "book.cta":"Confirmar la reserva","book.empty":"Ninguna bicicleta seleccionada.","book.total":"Total a pagar en el local",
   "book.pay":"Aquí no se paga nada. Se abona en la tienda, al recoger. Esta web no pide ningún dato bancario.",
   "book.alert":"Seleccione al menos una bicicleta, su nombre y su correo electrónico.",
-  "book.okT":"Reserva confirmada","book.again":"Nueva reserva",
-  "book.okTxt":"Recogida el {d} a las {h}, en Colmar. Confirmación enviada a {m}.",
-  "book.code":"Su código de reserva","book.codeNote":"Anótelo: abre la conversación con el equipo, sin cuenta ni contraseña.","book.goMsg":"Abrir los mensajes",
+  "book.okT":"Su solicitud está lista","book.again":"Nueva reserva",
+  "book.waBtn":"Enviar la solicitud por WhatsApp","book.waNote":"WhatsApp se abre con su solicitud ya escrita: solo queda pulsar Enviar. La reserva es firme cuando respondemos. ¿Sin WhatsApp? Llame al +33 6 64 43 28 03.","wa.title":"Solicitud de reserva VÉLI SAFE","wa.total":"total indicativo, pago in situ","book.okTxt":"Recogida deseada el {d} a las {h}, en Colmar. Envíe la solicitud por WhatsApp para confirmarla.",
+  "book.code":"Su código de solicitud","book.codeNote":"Guárdelo: es la referencia de su solicitud y figura en el mensaje de WhatsApp.","book.goMsg":"Abrir los mensajes",
   "book.avail":"disponibles","book.left":"Solo quedan","book.none":"Completo ese día",
   "book.condT":"Las condiciones se entregan en el punto de alquiler",
   "book.cond1":"El contrato completo, las condiciones de alquiler y el estado de la bicicleta se entregan y se firman al recoger, no antes.",
@@ -1745,7 +1749,7 @@ const T = {
   "home.hours3":"Domenica e festivi: ritiro solo su appuntamento",
   "home.stepsT":"Come funziona",
   "home.step1t":"Prenotate online","home.step1d":"Data, durata, numero di bici. Trenta secondi.",
-  "home.step2t":"Ricevete un codice","home.step2d":"Apre la conversazione con il team. Niente account, niente password.",
+  "home.step2t":"Inviate la richiesta su WhatsApp","home.step2d":"Basta un tocco: il messaggio è già scritto, con il vostro codice di richiesta.",
   "home.step3t":"Pagate al ritiro","home.step3d":"Documento, cauzione, contratto firmato davanti a voi. Poi si parte.",
   "book.title":"Prenotate le vostre bici","book.sub":"Data, durata, bici. Ciò che appare è disponibile subito.",
   "book.date":"Data di ritiro","book.duration":"Durata",
@@ -1754,9 +1758,9 @@ const T = {
   "book.cta":"Conferma la prenotazione","book.empty":"Nessuna bici selezionata.","book.total":"Totale da pagare in sede",
   "book.pay":"Qui non si paga nulla. Si salda in negozio, al ritiro. Questo sito non chiede dati bancari.",
   "book.alert":"Selezionate almeno una bici, il vostro nome e la vostra e-mail.",
-  "book.okT":"Prenotazione confermata","book.again":"Nuova prenotazione",
-  "book.okTxt":"Ritiro il {d} alle {h}, a Colmar. Conferma inviata a {m}.",
-  "book.code":"Il vostro codice di prenotazione","book.codeNote":"Annotatelo: apre la conversazione con il team, senza account né password.","book.goMsg":"Apri i messaggi",
+  "book.okT":"La vostra richiesta è pronta","book.again":"Nuova prenotazione",
+  "book.waBtn":"Inviare la richiesta su WhatsApp","book.waNote":"WhatsApp si apre con la richiesta già scritta: basta toccare Invia. La prenotazione è definitiva quando rispondiamo. Senza WhatsApp? Chiamate il +33 6 64 43 28 03.","wa.title":"Richiesta di prenotazione VÉLI SAFE","wa.total":"totale indicativo, pagamento sul posto","book.okTxt":"Ritiro desiderato il {d} alle {h}, a Colmar. Inviate la richiesta su WhatsApp per confermarla.",
+  "book.code":"Il vostro codice di richiesta","book.codeNote":"Conservatelo: è il riferimento della vostra richiesta e compare nel messaggio WhatsApp.","book.goMsg":"Apri i messaggi",
   "book.avail":"disponibili","book.left":"Restano solo","book.none":"Esaurito quel giorno",
   "book.condT":"Le condizioni sono consegnate al punto di noleggio",
   "book.cond1":"Il contratto completo, le condizioni di noleggio e lo stato della bici vi sono consegnati e firmati al ritiro, non prima.",
@@ -3547,6 +3551,23 @@ document.getElementById('liste-velos').addEventListener('click',e=>{
 document.getElementById('date').addEventListener('change',rendreVelos);
 document.getElementById('duree').addEventListener('change',()=>{ rendreTarifs(); rendreVelos(); });
 
+/* la demande en cours, figée à la validation ; le message WhatsApp est
+   reconstruit à l'envoi, dans la langue affichée à ce moment-là */
+let demandeWA=null;
+const DUREE_CLE={demi:'book.half',jour:'book.full',j2:'book.d2',j3:'book.d3',j7:'book.d7'};
+function messageWA(){
+  if(!demandeWA) return '';
+  const d=demandeWA, L=[];
+  L.push(tr('wa.title'));
+  L.push(tr('book.code')+' : '+d.code);
+  L.push(tr('book.date')+' : '+d.date+', '+d.heure);
+  L.push(tr('book.duration')+' : '+tr(DUREE_CLE[d.duree]));
+  d.velos.forEach(v=>L.push('- '+v.q+' × '+v.nom[lang]));
+  L.push(tr('book.total')+' : '+euros(d.total)+' ('+tr('wa.total')+')');
+  L.push(tr('book.name')+' : '+d.nom);
+  if(d.tel) L.push(tr('book.phone')+' : '+d.tel);
+  return L.join('\n');
+}
 document.getElementById('valider').addEventListener('click',()=>{
   const n=Object.values(panier).reduce((a,b)=>a+b,0);
   const nom=document.getElementById('nom').value.trim(), mail=document.getElementById('mail').value.trim();
@@ -3556,8 +3577,18 @@ document.getElementById('valider').addEventListener('click',()=>{
   const code=nouveauCode();
   FILS[code]=[{auteur:'systeme',texte:'demo'}];
   document.getElementById('ok-code').textContent=code;
+  demandeWA={
+    code, nom, tel:document.getElementById('tel').value.trim(),
+    date:dateLisible(), heure:document.getElementById('heure').value,
+    duree:document.getElementById('duree').value,
+    velos:VELOS.filter(v=>panier[v.id]>0).map(v=>({q:panier[v.id], nom:v.nom})),
+    total:VELOS.reduce((s,v)=>s+(panier[v.id]||0)*tarif(v),0)
+  };
   document.getElementById('etape-panier').style.display='none';
   document.getElementById('etape-ok').style.display='block';
+});
+document.getElementById('ok-whatsapp').addEventListener('click',()=>{
+  window.open('https://wa.me/33664432803?text='+encodeURIComponent(messageWA()),'_blank');
 });
 document.getElementById('retour').addEventListener('click',()=>{
   Object.keys(panier).forEach(k=>panier[k]=0);

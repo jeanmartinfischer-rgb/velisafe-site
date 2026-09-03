@@ -525,6 +525,23 @@ document.getElementById('liste-velos').addEventListener('click',e=>{
 document.getElementById('date').addEventListener('change',rendreVelos);
 document.getElementById('duree').addEventListener('change',()=>{ rendreTarifs(); rendreVelos(); });
 
+/* la demande en cours, figée à la validation ; le message WhatsApp est
+   reconstruit à l'envoi, dans la langue affichée à ce moment-là */
+let demandeWA=null;
+const DUREE_CLE={demi:'book.half',jour:'book.full',j2:'book.d2',j3:'book.d3',j7:'book.d7'};
+function messageWA(){
+  if(!demandeWA) return '';
+  const d=demandeWA, L=[];
+  L.push(tr('wa.title'));
+  L.push(tr('book.code')+' : '+d.code);
+  L.push(tr('book.date')+' : '+d.date+', '+d.heure);
+  L.push(tr('book.duration')+' : '+tr(DUREE_CLE[d.duree]));
+  d.velos.forEach(v=>L.push('- '+v.q+' × '+v.nom[lang]));
+  L.push(tr('book.total')+' : '+euros(d.total)+' ('+tr('wa.total')+')');
+  L.push(tr('book.name')+' : '+d.nom);
+  if(d.tel) L.push(tr('book.phone')+' : '+d.tel);
+  return L.join('\n');
+}
 document.getElementById('valider').addEventListener('click',()=>{
   const n=Object.values(panier).reduce((a,b)=>a+b,0);
   const nom=document.getElementById('nom').value.trim(), mail=document.getElementById('mail').value.trim();
@@ -534,8 +551,18 @@ document.getElementById('valider').addEventListener('click',()=>{
   const code=nouveauCode();
   FILS[code]=[{auteur:'systeme',texte:'demo'}];
   document.getElementById('ok-code').textContent=code;
+  demandeWA={
+    code, nom, tel:document.getElementById('tel').value.trim(),
+    date:dateLisible(), heure:document.getElementById('heure').value,
+    duree:document.getElementById('duree').value,
+    velos:VELOS.filter(v=>panier[v.id]>0).map(v=>({q:panier[v.id], nom:v.nom})),
+    total:VELOS.reduce((s,v)=>s+(panier[v.id]||0)*tarif(v),0)
+  };
   document.getElementById('etape-panier').style.display='none';
   document.getElementById('etape-ok').style.display='block';
+});
+document.getElementById('ok-whatsapp').addEventListener('click',()=>{
+  window.open('https://wa.me/33664432803?text='+encodeURIComponent(messageWA()),'_blank');
 });
 document.getElementById('retour').addEventListener('click',()=>{
   Object.keys(panier).forEach(k=>panier[k]=0);

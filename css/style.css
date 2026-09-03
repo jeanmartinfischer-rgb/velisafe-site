@@ -133,6 +133,8 @@ section{padding:clamp(30px,5vh,58px) 0}
 .btn-blanc{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.45)}
 .btn-vert{background:var(--vert);color:#F3EEEA;font-weight:700}
 .btn-vert:hover{background:var(--vert-fonce)}
+.btn-wa{background:#25D366;color:#fff;font-weight:700;width:100%;margin-bottom:8px}
+.btn-wa:hover{background:#1EB955}
 
 .atouts{display:grid;gap:16px;grid-template-columns:1fr;margin-top:38px}
 @media(min-width:640px){.atouts{grid-template-columns:1fr 1fr}}

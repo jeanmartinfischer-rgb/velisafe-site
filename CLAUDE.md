@@ -192,8 +192,14 @@ sécurité, rayon d'assistance, montants de caution définitifs.
 
 ## Chantiers ouverts
 
-1. Interface côté loueur pour répondre dans la messagerie, ou bascule sur un
-   bouton WhatsApp pré-rempli avec le code. Arbitrage non tranché.
+1. ~~Arbitrage messagerie/WhatsApp~~ : **tranché le 03/09/2026 — WhatsApp.**
+   La confirmation de réservation affiche « Envoyer la demande par WhatsApp » :
+   lien wa.me/33664432803 avec message pré-rempli (code, date, durée, vélos,
+   total indicatif, nom, téléphone), reconstruit dans la langue affichée.
+   Le back-office du loueur est WhatsApp Business (étiquettes de suivi).
+   Supabase écarté à ce stade : projets gratuits en pause après 1 semaine
+   d'inactivité, plan Pro à 25 $/mois (vérifié le 03/09/2026 sur
+   supabase.com/pricing). La messagerie par code reste dormante.
 2. Sécurité Supabase si la messagerie passe en réel : filtrage par code côté
    serveur, jamais dans le navigateur.
 3. Signer de vrais partenaires et remplacer les emplacements libres.
