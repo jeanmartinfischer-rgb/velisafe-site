@@ -29,7 +29,7 @@ const LEGAL = {
 Siège social : [adresse complète].<br>
 Immatriculée au RCS de [ville] sous le numéro [numéro].<br>
 Numéro de TVA intracommunautaire : [numéro].<br>
-Téléphone : 06 64 43 28 03 · Courriel : [adresse].</p>
+Téléphone : 06 30 39 95 31 · Courriel : [adresse].</p>
 <p>Directeur de la publication : [nom et prénom].</p>
 <h3>Hébergeur</h3>
 <p>[Dénomination de l'hébergeur], [adresse complète], [téléphone].</p>
@@ -91,7 +91,7 @@ Téléphone : 06 64 43 28 03 · Courriel : [adresse].</p>
 
   privacy:`
 <h3>Qui traite vos données</h3>
-<p>Le responsable du traitement est [raison sociale], [adresse], joignable au 06 64 43 28 03 et à [adresse courriel]. [Coordonnées du délégué à la protection des données, s'il en est désigné un.]</p>
+<p>Le responsable du traitement est [raison sociale], [adresse], joignable au 06 30 39 95 31 et à [adresse courriel]. [Coordonnées du délégué à la protection des données, s'il en est désigné un.]</p>
 <h3>Ce que nous collectons, et pourquoi</h3>
 <ul>
 <li><strong>Réservation</strong> : nom, prénom, adresse électronique, numéro de téléphone, date, heure et durée souhaitées, matériel choisi. Ces données sont nécessaires à l'exécution du contrat que vous demandez et à la préparation du matériel.</li>
@@ -131,7 +131,7 @@ Téléphone : 06 64 43 28 03 · Courriel : [adresse].</p>
 Registered office: [full address].<br>
 Registered with the Trade and Companies Register of [town] under number [number].<br>
 EU VAT number: [number].<br>
-Telephone: +33 6 64 43 28 03 · E-mail: [address].</p>
+Telephone: +33 6 30 39 95 31 · E-mail: [address].</p>
 <p>Publication director: [name].</p>
 <h3>Hosting provider</h3>
 <p>[Host name], [full address], [telephone].</p>
@@ -191,7 +191,7 @@ Telephone: +33 6 64 43 28 03 · E-mail: [address].</p>
 <p>These terms are governed by French law. They are written in French; the translations offered on this site are for information and the French version prevails.</p>`,
   privacy:`
 <h3>Who processes your data</h3>
-<p>The controller is [company name], [address], reachable on +33 6 64 43 28 03 and at [e-mail]. [Contact details of the data protection officer, if one is appointed.]</p>
+<p>The controller is [company name], [address], reachable on +33 6 30 39 95 31 and at [e-mail]. [Contact details of the data protection officer, if one is appointed.]</p>
 <h3>What we collect, and why</h3>
 <ul>
 <li><strong>Booking</strong>: surname, first name, e-mail address, telephone number, requested date, time and duration, equipment chosen. This is needed to perform the contract you are asking for and to prepare the equipment.</li>
@@ -230,7 +230,7 @@ Telephone: +33 6 64 43 28 03 · E-mail: [address].</p>
 Sitz: [vollständige Anschrift].<br>
 Eingetragen im Handelsregister von [Stadt] unter der Nummer [Nummer].<br>
 Umsatzsteuer-Identifikationsnummer: [Nummer].<br>
-Telefon: +33 6 64 43 28 03 · E-Mail: [Adresse].</p>
+Telefon: +33 6 30 39 95 31 · E-Mail: [Adresse].</p>
 <p>Verantwortlich für den Inhalt: [Name].</p>
 <h3>Hosting</h3>
 <p>[Name des Hosters], [vollständige Anschrift], [Telefon].</p>
@@ -290,7 +290,7 @@ Telefon: +33 6 64 43 28 03 · E-Mail: [Adresse].</p>
 <p>Diese Bedingungen unterliegen französischem Recht. Sie sind auf Französisch verfasst; die auf dieser Website angebotenen Übersetzungen dienen der Information, maßgeblich ist die französische Fassung.</p>`,
   privacy:`
 <h3>Wer Ihre Daten verarbeitet</h3>
-<p>Verantwortlich ist [Firmenname], [Anschrift], erreichbar unter +33 6 64 43 28 03 und [E-Mail]. [Kontaktdaten des Datenschutzbeauftragten, falls bestellt.]</p>
+<p>Verantwortlich ist [Firmenname], [Anschrift], erreichbar unter +33 6 30 39 95 31 und [E-Mail]. [Kontaktdaten des Datenschutzbeauftragten, falls bestellt.]</p>
 <h3>Was wir erheben, und wofür</h3>
 <ul>
 <li><strong>Buchung</strong>: Name, Vorname, E-Mail-Adresse, Telefonnummer, gewünschtes Datum, Uhrzeit und Dauer, gewähltes Material. Das ist zur Erfüllung des von Ihnen gewünschten Vertrags und zur Vorbereitung des Materials erforderlich.</li>
@@ -329,7 +329,7 @@ Telefon: +33 6 64 43 28 03 · E-Mail: [Adresse].</p>
 Domicilio social: [dirección completa].<br>
 Inscrita en el Registro Mercantil de [ciudad] con el número [número].<br>
 Número de IVA intracomunitario: [número].<br>
-Teléfono: +33 6 64 43 28 03 · Correo electrónico: [dirección].</p>
+Teléfono: +33 6 30 39 95 31 · Correo electrónico: [dirección].</p>
 <p>Director de la publicación: [nombre y apellidos].</p>
 <h3>Alojamiento web</h3>
 <p>[Nombre del proveedor], [dirección completa], [teléfono].</p>
@@ -389,7 +389,7 @@ Teléfono: +33 6 64 43 28 03 · Correo electrónico: [dirección].</p>
 <p>Estas condiciones se someten al derecho francés. Están redactadas en francés; las traducciones ofrecidas en este sitio son informativas y prevalece la versión francesa.</p>`,
   privacy:`
 <h3>Quién trata sus datos</h3>
-<p>El responsable del tratamiento es [razón social], [dirección], localizable en el +33 6 64 43 28 03 y en [correo electrónico]. [Datos del delegado de protección de datos, si se designa uno.]</p>
+<p>El responsable del tratamiento es [razón social], [dirección], localizable en el +33 6 30 39 95 31 y en [correo electrónico]. [Datos del delegado de protección de datos, si se designa uno.]</p>
 <h3>Qué recogemos y para qué</h3>
 <ul>
 <li><strong>Reserva</strong>: nombre, apellidos, correo electrónico, teléfono, fecha, hora y duración deseadas, material elegido. Es necesario para ejecutar el contrato solicitado y preparar el material.</li>
@@ -428,7 +428,7 @@ Teléfono: +33 6 64 43 28 03 · Correo electrónico: [dirección].</p>
 Sede legale: [indirizzo completo].<br>
 Iscritta al Registro delle imprese di [città] con il numero [numero].<br>
 Partita IVA intracomunitaria: [numero].<br>
-Telefono: +33 6 64 43 28 03 · E-mail: [indirizzo].</p>
+Telefono: +33 6 30 39 95 31 · E-mail: [indirizzo].</p>
 <p>Direttore della pubblicazione: [nome e cognome].</p>
 <h3>Hosting</h3>
 <p>[Nome del fornitore], [indirizzo completo], [telefono].</p>
@@ -488,7 +488,7 @@ Telefono: +33 6 64 43 28 03 · E-mail: [indirizzo].</p>
 <p>Le presenti condizioni sono soggette al diritto francese. Sono redatte in francese; le traduzioni offerte su questo sito sono fornite a titolo informativo e fa fede la versione francese.</p>`,
   privacy:`
 <h3>Chi tratta i vostri dati</h3>
-<p>Il titolare del trattamento è [ragione sociale], [indirizzo], raggiungibile al +33 6 64 43 28 03 e a [e-mail]. [Contatti del responsabile della protezione dei dati, se nominato.]</p>
+<p>Il titolare del trattamento è [ragione sociale], [indirizzo], raggiungibile al +33 6 30 39 95 31 e a [e-mail]. [Contatti del responsabile della protezione dei dati, se nominato.]</p>
 <h3>Cosa raccogliamo e perché</h3>
 <ul>
 <li><strong>Prenotazione</strong>: nome, cognome, indirizzo e-mail, numero di telefono, data, ora e durata richieste, materiale scelto. Serve a eseguire il contratto richiesto e a preparare il materiale.</li>

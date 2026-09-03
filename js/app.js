@@ -562,7 +562,7 @@ document.getElementById('valider').addEventListener('click',()=>{
   document.getElementById('etape-ok').style.display='block';
 });
 document.getElementById('ok-whatsapp').addEventListener('click',()=>{
-  window.open('https://wa.me/33664432803?text='+encodeURIComponent(messageWA()),'_blank');
+  window.open('https://wa.me/33630399531?text='+encodeURIComponent(messageWA()),'_blank');
 });
 
 /* Récapitulatif PDF, généré dans le navigateur (jsPDF servie en local,
@@ -621,7 +621,7 @@ function telechargerPDF(){
   });
   if(y>287){ doc.addPage(); y=15; }
   doc.setFontSize(8.5); doc.setTextColor(92,107,95);
-  doc.text('VÉLI SAFE — Colmar · 06 64 43 28 03', L, y+5);
+  doc.text('VÉLI SAFE — Colmar · 06 30 39 95 31', L, y+5);
   doc.save('velisafe-'+d.code+'.pdf');
 }
 document.getElementById('ok-pdf').addEventListener('click',telechargerPDF);
