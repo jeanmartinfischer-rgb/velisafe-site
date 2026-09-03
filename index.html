@@ -21,13 +21,34 @@
     <img class="logo" src="assets/logo.png" alt="VÉLI SAFE">
     <div class="nav-zone" id="nav-zone">
       <nav class="onglets" id="onglets">
-        <button class="onglet actif" data-page="accueil" data-t="nav.home">Accueil</button>
-        <button class="onglet" data-page="reservation" data-t="nav.book">Réservation</button>
-        <button class="onglet" data-page="balades" data-t="nav.rides">Balades</button>
-        <button class="onglet" data-page="vignoble" data-t="nav.wine">Vignoble</button>
-        <button class="onglet" data-page="alsace" data-t="nav.discover">Découvrir l'Alsace</button>
-        <button class="onglet hidden" data-page="partenaires" data-t="nav.partners">Partenaires</button>
-        <button class="onglet hidden" data-page="messagerie" data-t="nav.msg">Messagerie</button>
+        <button class="onglet actif" data-page="accueil">
+          <svg viewBox="0 0 24 24"><path d="M4 5l6 14 3.5-8.5"/><path d="M15 7h6M16.5 10.5h4"/></svg>
+          <span data-t="nav.home">Accueil</span>
+        </button>
+        <button class="onglet" data-page="reservation">
+          <svg viewBox="0 0 24 24"><circle cx="9.5" cy="14.5" r="5.5"/><path d="M9.5 14.5V9.5M9.5 14.5l3.5 2.8M9.5 14.5L6 17.3"/><rect x="14.5" y="3.5" width="7" height="7" rx="1.5"/><path d="M16.5 3.5V2M19.5 3.5V2"/></svg>
+          <span data-t="nav.book">Réservation</span>
+        </button>
+        <button class="onglet" data-page="balades">
+          <svg viewBox="0 0 24 24"><path d="M4 20c5 0 4-7 8-7s3-7 8-7"/><circle cx="4" cy="20" r="1.7" fill="currentColor" stroke="none"/><circle cx="20" cy="6" r="1.7" fill="currentColor" stroke="none"/></svg>
+          <span data-t="nav.rides">Balades</span>
+        </button>
+        <button class="onglet" data-page="vignoble">
+          <svg viewBox="0 0 24 24"><path d="M12 3v4M12 7c2 0 3.5-1 4.5-3"/><circle cx="9" cy="11" r="2.3"/><circle cx="15" cy="11" r="2.3"/><circle cx="12" cy="15.5" r="2.3"/><circle cx="12" cy="20" r="1.6"/></svg>
+          <span data-t="nav.wine">Vignoble</span>
+        </button>
+        <button class="onglet" data-page="alsace">
+          <svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4z"/><path d="M4 15.5h16M12 11v9"/></svg>
+          <span data-t="nav.discover">Découvrir l'Alsace</span>
+        </button>
+        <button class="onglet hidden" data-page="partenaires">
+          <svg viewBox="0 0 24 24"><path d="M9 15l6-6"/><path d="M10.5 6.5l2-2a4 4 0 015.7 5.7l-2 2"/><path d="M13.5 17.5l-2 2a4 4 0 01-5.7-5.7l2-2"/></svg>
+          <span data-t="nav.partners">Partenaires</span>
+        </button>
+        <button class="onglet hidden" data-page="messagerie">
+          <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-8 8H4l2.2-3A8 8 0 1121 12z"/><path d="M9.5 10l2.5 4 2.5-4"/></svg>
+          <span data-t="nav.msg">Messagerie</span>
+        </button>
       </nav>
       <button class="nav-fleche" id="nav-fleche" aria-label="Onglets suivants">›</button>
     </div>

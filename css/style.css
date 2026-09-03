@@ -50,7 +50,10 @@ nav.onglets::-webkit-scrollbar{display:none}
 .onglet{
   border:0;background:transparent;color:var(--gris);padding:9px 13px;border-radius:999px;
   font-size:14px;font-weight:600;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:7px;
 }
+.onglet svg{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .onglet:hover{color:var(--texte)}
 .onglet.actif{background:var(--vert);color:#F3EEEA}
 .onglet.hidden{display:none}
