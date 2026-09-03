@@ -66,7 +66,7 @@ function rendreVelos(){
     else if(libre<=2) st=`<span class="stock bas">${tr('book.left')} ${libre}</span>`;
     else st=`<span class="stock">${libre} ${tr('book.avail')}</span>`;
     return `<div class="velo">
-      <div class="ico">${v.ico}</div>
+      <div class="ico">${v.photo?`<img src="${v.photo}" alt="">`:v.ico}</div>
       <div>
         <h3>${esc(v.nom[lang])}</h3>
         <div class="meta">${esc(v.det[lang])}</div>
@@ -754,6 +754,10 @@ document.getElementById('ok-vers-msg').addEventListener('click',()=>{
   aller('messagerie');
   ouvrirFil(document.getElementById('ok-code').textContent);
 });
+/* la messagerie est dormante (onglet masqué) : ne pas proposer de l'ouvrir
+   après la réservation. Retirer la classe hidden de l'onglet la réactive. */
+if(document.querySelector('.onglet.hidden[data-page="messagerie"]'))
+  document.getElementById('ok-vers-msg').style.display='none';
 
 /* ===================== DÉMARRAGE ===================== */
 const dd=new Date(); dd.setDate(dd.getDate()+1);

@@ -62,6 +62,14 @@ sur `index.html`, sans serveur local. Ordre de chargement :
   halo clair (drop-shadow).
 - **Pas de compte utilisateur.** La messagerie s'ouvre avec le code de réservation.
 - **Durées de location** : demi-journée, journée, 2, 3 et 7 jours, tarif dégressif.
+- **Vignettes de vélos en SVG maison (03/09/2026)** : `assets/velos/*.svg`
+  (ville, vae, enfant, remorque), dessinées dans la charte — aucune photo de
+  banque d'images n'a pu être vérifiée côté licence depuis l'environnement.
+  Champ `photo` dans `VELOS` (data.js) ; remplacer un SVG par un vrai fichier
+  `.jpg` du loueur et adapter le champ suffit. `build/gen-demo.js` inline
+  aussi ces chemins trouvés dans le JavaScript. Le bouton « Ouvrir la
+  messagerie » après réservation se masque tant que l'onglet messagerie est
+  dormant. Logo d'accueil agrandi (jusqu'à 280 px).
 - **Fiche détaillée en surcouche (03/09/2026)** : cliquer un élément des
   listes balades, vignoble ou Alsace ouvre une fiche plein écran
   (`#sur-detail`) — carte Leaflet dédiée réutilisée, zoom 15 sur les villages
