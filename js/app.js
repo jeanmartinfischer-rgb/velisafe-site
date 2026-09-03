@@ -219,8 +219,8 @@ const STYLE_SOMBRE = [
  {featureType:"water",elementType:"geometry",stylers:[{color:"#101c22"}]}
 ];
 
-const TUILES = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-const ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+const TUILES = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+const ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 
 let gPret=false, gFile=[], gLance=false;
 function chargerGoogle(cb){
@@ -614,7 +614,7 @@ function ouvrirDetail(type,id){
       const src = type==='vin' ? VIGNOBLE : ALSACE;
       const d = src.find(x=>x.id===id), i = src.indexOf(d);
       coucheDetail.addLayer(L.marker(d.pos,{icon:pastilleL(type==='vin'?'#9E4455':'#3E9FB0',String(i+1))}));
-      m.setView(d.pos,15);
+      m.setView(d.pos,16);
     }
   },90);
 }

@@ -78,9 +78,14 @@ sur `index.html`, sans serveur local. Ordre de chargement :
   le code et les traductions restent en place ; retirer la classe suffit à les
   réafficher. La messagerie reste accessible depuis la confirmation de
   réservation.
-- **Fond de carte CARTO Voyager depuis le 03/09/2026** (remplace dark_all) :
-  fond clair, noms de rues lisibles. L'attribution Leaflet est passée en clair
-  dans le CSS pour rester lisible sur ce fond.
+- **Fond de carte OpenStreetMap standard depuis le 03/09/2026, décision
+  finale** (après dark_all puis Voyager, jugés illisibles par Jean-Martin) :
+  `tile.openstreetmap.org`, le rendu OSM classique où rues et lieux sont
+  nommés. Les fiches détaillées ouvrent au zoom 16. Les pages légales
+  (mentions, données personnelles, cookies) citent la Fondation OpenStreetMap
+  au lieu de CARTO dans les cinq langues — les garder synchrones si le fond
+  change encore. Usage léger avec attribution : conforme à la politique des
+  tuiles OSM pour un site de cette taille.
 - **Encadré des domaines bio** : déplacé sous la carte du vignoble, restylé en
   teal discret, titre recentré sur les domaines (« Les domaines bio sur votre
   parcours ») — le bio n'est plus présenté comme une « spécialité alsacienne ».
@@ -203,9 +208,11 @@ par le proxy de test.
 **03/09/2026, fin de journée.** Fiche détaillée en surcouche testée en 390 × 844
 (mobile) : ouverture depuis les trois listes, six chiffres des balades,
 changement de langue fiche ouverte, fermeture par Échap, pages légales
-intactes, zéro erreur JS. Commit local a4174fb créé sur main ; le dépôt n'a
-pas de remote — publication à faire par Jean-Martin dans GitHub Desktop
-(« Publish repository »). Les commandes git dans la VM locale laissent des
+intactes, zéro erreur JS. Commits locaux a4174fb puis 808b192 (fond sauge). **Dépôt publié le
+03/09/2026 sur https://github.com/jeanmartinfischer-rgb/velisafe-site (privé)**
+via GitHub Desktop. Le nom `velisafe` était pris : un ancien dépôt
+jeanmartinfischer-rgb/velisafe existe sur le compte (source du vieux clone
+parasite) ; il est inutilisé — à supprimer sur github.com à l'occasion. Les commandes git dans la VM locale laissent des
 fichiers de verrou impossibles à supprimer (montage sans droit d'unlink) :
 ils sont déplacés dans `_to_delete/` ; préférer GitHub Desktop pour les
 opérations Git courantes.
