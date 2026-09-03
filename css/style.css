@@ -13,16 +13,16 @@
   --vert-fonce:#2C3F31;
   --sauge:#82947C;
   --sauge-clair:#C7CFC0;
-  --beige:#D9D3C6;
-  --creme:#F3EEEA;
+  --beige:#B7C1AF;
+  --creme:#C7CFC0;
   --teal:#024F5F;
   --teal-clair:#02697E;
   --lime:#8FDD1A;
   --texte:#25322A;
   --texte2:#48574D;
-  --gris:#6C7A6E;
+  --gris:#5C6B5F;
   --blanc:#FFFFFF;
-  --surface2:#EDE8E0;
+  --surface2:#E7EBE1;
   --r:16px;
   --ombre:0 14px 34px rgba(58,70,60,.14);
 }
@@ -41,7 +41,7 @@ button{cursor:pointer}
 img{max-width:100%}
 
 /* ---------- en-tête ---------- */
-header{position:sticky;top:0;z-index:900;background:rgba(243,238,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--beige)}
+header{position:sticky;top:0;z-index:900;background:rgba(199,207,192,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--beige)}
 .head{display:flex;align-items:center;gap:14px;height:64px}
 .logo{height:48px;width:auto;flex:none}
 .nav-zone{margin-left:auto;position:relative;min-width:0;flex:1;display:flex;justify-content:flex-end}
@@ -61,7 +61,7 @@ nav.onglets::-webkit-scrollbar{display:none}
 /* indice de défilement des onglets, visible seulement s'il reste des onglets à droite */
 .nav-zone::after{
   content:'';position:absolute;right:0;top:0;bottom:0;width:46px;pointer-events:none;
-  background:linear-gradient(90deg,rgba(243,238,234,0),rgba(243,238,234,.96));opacity:0;transition:opacity .2s
+  background:linear-gradient(90deg,rgba(199,207,192,0),rgba(199,207,192,.96));opacity:0;transition:opacity .2s
 }
 .nav-zone.deborde::after{opacity:1}
 .nav-fleche{

@@ -55,12 +55,20 @@ sur `index.html`, sans serveur local. Ordre de chargement :
   Google Fonts ni un CDN sans mettre la page à jour.
 - **Thème clair depuis le 03/09/2026**, sur la carte de charte « Naturel &
   Apaisant » fournie par Jean-Martin : #445D47 (vert foncé), #82947C (sauge),
-  #C7CFC0 (sauge clair), #F3EEEA (crème, fond de page) et un beige chaud,
+  #C7CFC0 (sauge clair), #C7CFC0 (sauge clair, fond de page), #F3EEEA (crème, textes sur fonds
+  foncés) et un beige chaud,
   plus le teal #024F5F et le vert lime du logo en accents. L'ancien thème
   sombre est abandonné. Logo intégré en grand sur la photo d'accueil avec un
   halo clair (drop-shadow).
 - **Pas de compte utilisateur.** La messagerie s'ouvre avec le code de réservation.
 - **Durées de location** : demi-journée, journée, 2, 3 et 7 jours, tarif dégressif.
+- **Fiche détaillée en surcouche (03/09/2026)** : cliquer un élément des
+  listes balades, vignoble ou Alsace ouvre une fiche plein écran
+  (`#sur-detail`) — carte Leaflet dédiée réutilisée, zoom 15 sur les villages
+  et sites (noms de rues visibles sur Voyager), tracé complet pour les
+  balades, chiffres et description. Conçue pour le mobile, où la carte de la
+  page est loin sous la liste. L'ancienne fiche `#fiche-balade` sous la carte
+  est supprimée. Échap, clic hors du cadre ou « Fermer » referment.
 - **Étiquettes sur les cartes (03/09/2026)** : noms des villages et des sites
   affichés en permanence à côté des marqueurs (tooltips Leaflet, classe
   `.etiq`), nom + distance au survol des tracés de balades. Les étiquettes
@@ -191,3 +199,13 @@ verts, accents teal à côté du lime), onglets Partenaires et Messagerie
 masqués, encadré bio déplacé, tuiles Voyager. Testé en Chromium : cinq
 onglets visibles, titres clairs, zéro erreur console hors tuiles bloquées
 par le proxy de test.
+
+**03/09/2026, fin de journée.** Fiche détaillée en surcouche testée en 390 × 844
+(mobile) : ouverture depuis les trois listes, six chiffres des balades,
+changement de langue fiche ouverte, fermeture par Échap, pages légales
+intactes, zéro erreur JS. Commit local a4174fb créé sur main ; le dépôt n'a
+pas de remote — publication à faire par Jean-Martin dans GitHub Desktop
+(« Publish repository »). Les commandes git dans la VM locale laissent des
+fichiers de verrou impossibles à supprimer (montage sans droit d'unlink) :
+ils sont déplacés dans `_to_delete/` ; préférer GitHub Desktop pour les
+opérations Git courantes.
