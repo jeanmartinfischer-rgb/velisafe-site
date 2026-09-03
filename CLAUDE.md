@@ -251,3 +251,15 @@ traduites, tarifs croissants, ids uniques, alt partout, seul hôte réseau
 actif tile.openstreetmap.org. Restent non testables d'ici : l'arrivée réelle
 du message WhatsApp sur le téléphone, et le rendu des tuiles (à valider dans
 Safari — l'aperçu intégré de l'app Claude bloque internet).
+
+## Mise en ligne
+
+**Le site est en ligne depuis le 03/09/2026 :**
+https://jeanmartinfischer-rgb.github.io/velisafe-site/
+Dépôt passé en public par Jean-Martin, GitHub Pages activé (Deploy from a
+branch, main, / root, HTTPS forcé). Chaque « Push origin » depuis GitHub
+Desktop met le site à jour en une à deux minutes. Vérifié en ligne :
+index.html, style.css (palette sauge) et app.js (tuiles OSM, lien WhatsApp)
+servis correctement. Le bandeau « maquette de démonstration » reste affiché
+tant que tarifs et pages légales ne sont pas validés. Prochaine étape
+possible : un nom de domaine personnalisé (champ Custom domain de Pages).
