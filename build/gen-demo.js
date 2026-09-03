@@ -20,8 +20,8 @@ html = html.replace(/<link rel="stylesheet" href="(vendor\/leaflet\.css|css\/sty
 html = html.replace(/<script src="(vendor\/leaflet\.js|js\/[a-z0-9]+\.js)"><\/script>/g,
   (m,f)=>`<script>\n/* ===== ${f} ===== */\n${lire(f)}\n</script>`);
 // 3 bis. chemins d'images dans le JavaScript (vignettes des vélos) -> data URI
-html = html.replace(/assets\/velos\/([a-z]+)\.svg/g,
-  m=>`data:image/svg+xml;base64,${b64(m)}`);
+html = html.replace(/assets\/velos\/([a-z]+)\.(?:svg|jpg)/g,
+  m=>`data:${m.endsWith('jpg')?'image/jpeg':'image/svg+xml'};base64,${b64(m)}`);
 // 4. marque le fichier
 html = html.replace('<title>', '<!-- Fichier unique, généré le ' + new Date().toISOString().slice(0,10) +
   ' par build/gen-demo.js. Ne pas modifier à la main : régénérer depuis les sources. -->\n<title>');

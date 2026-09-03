@@ -182,7 +182,8 @@ section{padding:clamp(30px,5vh,58px) 0}
 .velo{display:grid;grid-template-columns:112px 1fr auto;gap:14px;align-items:start;padding:16px 0;border-top:1px solid var(--beige)}
 .velo:first-of-type{border-top:0}
 .velo .ico{width:112px;height:76px;border-radius:12px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:24px;overflow:hidden}
-.velo .ico img{width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box}
+.velo .ico img{width:100%;height:100%;object-fit:cover}
+.flotte{display:block;width:100%;margin-top:26px;border-radius:20px;border:1px solid var(--beige)}
 @media(max-width:520px){
   .velo{grid-template-columns:84px 1fr auto;gap:10px}
   .velo .ico{width:84px;height:58px}

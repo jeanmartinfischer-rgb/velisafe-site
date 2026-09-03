@@ -16,7 +16,7 @@ const BASE = [48.0794, 7.3585]; // dépôt, centre de Colmar
 const DUREES = ['demi','jour','j2','j3','j7'];
 
 const VELOS = [
- {id:'ville', ico:'🚲', photo:'assets/velos/ville.svg', stock:14, caution:300,
+ {id:'ville', ico:'🚲', photo:'assets/velos/ville.jpg', stock:14, caution:300,
   prix:{demi:12, jour:18, j2:32, j3:45, j7:90},
   nom:{fr:"Vélo de ville",en:"City bike",de:"Cityrad",es:"Bicicleta urbana",it:"City bike"},
   det:{fr:"7 vitesses, panier, cadre homme ou femme au choix",en:"7 speeds, basket, men's or step-through frame",de:"7 Gänge, Korb, Herren- oder Tiefeinsteiger-Rahmen",es:"7 marchas, cesta, cuadro de hombre o bajo",it:"7 rapporti, cesto, telaio da uomo o basso"},
@@ -25,7 +25,7 @@ const VELOS = [
         de:"Colmar, die Ebene und Touren bis 25 km. Bequem im Flachen, ehrlich an kurzen Steigungen.",
         es:"Colmar, la llanura y rutas de hasta 25 km. Cómoda en llano, correcta en cuestas cortas.",
         it:"Colmar, la pianura e giri fino a 25 km. Comoda in piano, onesta sulle salite brevi."}},
- {id:'vae', ico:'⚡', photo:'assets/velos/vae.svg', stock:10, caution:600,
+ {id:'vae', ico:'⚡', photo:'assets/velos/vae.jpg', stock:10, caution:600,
   prix:{demi:25, jour:38, j2:68, j3:96, j7:190},
   nom:{fr:"Vélo électrique",en:"Electric bike",de:"E-Bike",es:"Bicicleta eléctrica",it:"Bici elettrica"},
   det:{fr:"Assistance jusqu'à 25 km/h, 90 km d'autonomie, porte-bagages",en:"Assistance up to 25 kph, 90 km range, rear rack",de:"Unterstützung bis 25 km/h, 90 km Reichweite, Gepäckträger",es:"Asistencia hasta 25 km/h, 90 km de autonomía, portaequipajes",it:"Assistenza fino a 25 km/h, 90 km di autonomia, portapacchi"},
@@ -34,7 +34,7 @@ const VELOS = [
         de:"Die Weinberge, das Münstertal, die Hohkönigsburg. Die richtige Wahl, sobald es bergauf geht.",
         es:"El viñedo y sus cuestas, el valle de Munster, el Haut-Kœnigsbourg. La opción correcta en cuanto sube.",
         it:"Il vigneto e le sue salite, la valle di Munster, l'Haut-Kœnigsbourg. La scelta giusta appena si sale."}},
- {id:'enfant', ico:'🧒', photo:'assets/velos/enfant.svg', stock:6, caution:150,
+ {id:'enfant', ico:'🧒', photo:'assets/velos/enfant.jpg', stock:6, caution:150,
   prix:{demi:8, jour:12, j2:21, j3:30, j7:60},
   nom:{fr:"Vélo enfant",en:"Child's bike",de:"Kinderrad",es:"Bicicleta infantil",it:"Bici per bambini"},
   det:{fr:"20 ou 24 pouces, 6 à 11 ans, casque fourni",en:"20 or 24 inch, ages 6 to 11, helmet supplied",de:"20 oder 24 Zoll, 6 bis 11 Jahre, Helm inklusive",es:"20 o 24 pulgadas, de 6 a 11 años, casco incluido",it:"20 o 24 pollici, da 6 a 11 anni, casco incluso"},
@@ -43,7 +43,7 @@ const VELOS = [
         de:"Für Kinder unter 12 Jahren ist ein Helm Pflicht, für Fahrer wie Mitfahrer. Er wird gestellt und angepasst.",
         es:"El casco es obligatorio para los menores de 12 años, tanto si conducen como si van de pasajeros. Se facilita y se ajusta al recoger.",
         it:"Il casco è obbligatorio sotto i 12 anni, sia alla guida sia come passeggero. È fornito e regolato al ritiro."}},
- {id:'remorque', ico:'🛺', photo:'assets/velos/remorque.svg', stock:4, caution:150,
+ {id:'remorque', ico:'🛺', photo:'assets/velos/remorque.jpg', stock:4, caution:150,
   prix:{demi:10, jour:16, j2:28, j3:40, j7:80},
   nom:{fr:"Remorque enfant",en:"Child trailer",de:"Kinderanhänger",es:"Remolque infantil",it:"Rimorchio per bambini"},
   det:{fr:"2 places, s'adapte à tous nos vélos",en:"2 seats, fits all our bikes",de:"2 Plätze, passt an alle Räder",es:"2 plazas, compatible con todas",it:"2 posti, adattabile a tutte"},
