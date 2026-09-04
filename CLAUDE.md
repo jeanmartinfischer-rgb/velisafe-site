@@ -320,3 +320,13 @@ vers https://velisafe.fr (action Jean-Martin, guidée), et re-signaler le
 sitemap dans Google Search Console une fois la fiche Google Business créée.
 Le PDF marche-a-suivre-antoine.pdf contient encore l'ancienne URL github.io
 (mineur, à régénérer à l'occasion).
+
+**04/09/2026, pictos d'onglets définitifs.** Jean-Martin a fourni sa planche
+d'icônes VÉLI SAFE (PNG 1536×1024, fond sombre, style linéaire arrondi,
+états normal/survol/actif/erreur). Les 7 pictos d'onglets provisoires sont
+remplacés par des redessins SVG fidèles à la planche (trait currentColor,
+donc adaptés au thème clair) : maison (accueil), calendrier (réservation),
+vélo (balades), grappe (vignoble), carte pliée (découvrir), deux personnes
+(partenaires, dormant), bulle (messagerie, dormant). À sa demande, les
+bulles de texte des cartes (étiquettes .etiq et popups Leaflet) sont
+passées d'arrondies à RECTANGULAIRES (border-radius:0). Démo régénérée.
