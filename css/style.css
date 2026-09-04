@@ -85,14 +85,27 @@ nav.onglets::-webkit-scrollbar{display:none}
    des raccourcis vers chaque section ---------- */
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.page{display:block;scroll-margin-top:72px}
+.page{display:block;scroll-margin-top:72px;position:relative;isolation:isolate}
+/* fond photographique de chaque section : pleine largeur, photo à 80 %
+   (voile crème de 20 %) — les photos sont assignées par id de page ci-dessous */
+.page::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;z-index:-1;
+  background-image:linear-gradient(rgba(243,238,234,.20),rgba(243,238,234,.20)),var(--fond,linear-gradient(var(--creme),var(--creme)));
+  background-size:cover;background-position:var(--fond-pos,center);background-repeat:no-repeat}
+#page-accueil{--fond:url(../assets/fonds/montagnes.jpg)}
+#page-reservation{--fond:url(../assets/fonds/montagnes.jpg)}
+#page-balades{--fond:url(../assets/fonds/vosges.jpg)}
+#page-vignoble{--fond:url(../assets/fonds/vignes.jpg)}
+#page-alsace{--fond:url(../assets/fonds/vosges.jpg);--fond-pos:center bottom}
+#page-partenaires{--fond:url(../assets/fonds/vignes.jpg)}
+#page-messagerie{--fond:url(../assets/fonds/montagnes.jpg)}
 .page + .page{border-top:1px solid var(--beige)}
 .page.dormant{display:none}
 @media(max-width:820px){.page{scroll-margin-top:128px}}
 section{padding:clamp(30px,5vh,58px) 0}
 .entete h2{font-size:clamp(24px,3.6vw,34px);color:var(--vert-fonce)}
 .entete p{margin:6px 0 0;color:var(--gris);max-width:70ch;font-size:15px}
-.entete{margin-bottom:20px}
+.entete{margin-bottom:20px;background:rgba(251,249,246,.86);backdrop-filter:blur(3px);
+  border:1px solid rgba(183,193,175,.55);border-radius:14px;padding:14px 18px}
 
 /* ---------- accueil ----------
    La photo est au format paysage (1536 × 1024, rapport 3:2). Elle est

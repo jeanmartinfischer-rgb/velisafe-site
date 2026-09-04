@@ -330,3 +330,11 @@ vélo (balades), grappe (vignoble), carte pliée (découvrir), deux personnes
 (partenaires, dormant), bulle (messagerie, dormant). À sa demande, les
 bulles de texte des cartes (étiquettes .etiq et popups Leaflet) sont
 passées d'arrondies à RECTANGULAIRES (border-radius:0). Démo régénérée.
+
+**04/09/2026, fonds photographiques.** Trois photos fournies par Jean-Martin
+(montagnes/vélos, Route des Vins, Vosges) converties en JPEG ≤1920px dans
+`assets/fonds/`. Chaque `.page` a un fond photo pleine largeur en `::before`
+(photo à 80 %, voile crème 20 %, variables `--fond`/`--fond-pos` par id de
+page) ; `.entete` est passé en panneau translucide flouté pour la
+lisibilité. gen-demo.js inline désormais aussi les `url(../assets/…)` du CSS.
+Attribution des photos à préciser pour les mentions légales (origine IA ?).

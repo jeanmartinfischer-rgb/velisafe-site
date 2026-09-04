@@ -22,6 +22,9 @@ html = html.replace(/<script src="(vendor\/leaflet\.js|vendor\/jspdf\.js|js\/[a-
 // 3 bis. chemins d'images dans le JavaScript (vignettes des vélos) -> data URI
 html = html.replace(/assets\/velos\/([a-z]+)\.(?:svg|jpg)/g,
   m=>`data:${m.endsWith('jpg')?'image/jpeg':'image/svg+xml'};base64,${b64(m)}`);
+// 3 ter. images référencées dans le CSS en ligne (fonds de sections) -> data URI
+html = html.replace(/url\(['"]?\.\.\/(assets\/[a-zA-Z0-9_.\/-]+)['"]?\)/g,
+  (m,f)=>`url(data:${mime[path.extname(f).toLowerCase()]||'application/octet-stream'};base64,${b64(f)})`);
 // 4. marque le fichier
 html = html.replace('<title>', '<!-- Fichier unique, généré le ' + new Date().toISOString().slice(0,10) +
   ' par build/gen-demo.js. Ne pas modifier à la main : régénérer depuis les sources. -->\n<title>');
