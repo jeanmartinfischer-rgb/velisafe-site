@@ -84,6 +84,7 @@ function rendreVelos(){
     </div>`;
   }).join('');
   majRecap();
+  if(typeof rendreCal==='function') rendreCal();
 }
 
 function majRecap(){
@@ -519,7 +520,7 @@ document.getElementById('liste-velos').addEventListener('click',e=>{
   const id=p||m, v=VELOS.find(x=>x.id===id), libre=dispo(v,document.getElementById('date').value);
   panier[id]=Math.max(0,Math.min(libre,(panier[id]||0)+(p?1:-1)));
   document.getElementById('q-'+id).textContent=panier[id];
-  majRecap();
+  majRecap(); rendreCal();
 });
 
 document.getElementById('date').addEventListener('change',rendreVelos);
@@ -878,8 +879,64 @@ document.getElementById('ok-vers-msg').addEventListener('click',()=>{
 if(document.querySelector('.onglet.hidden[data-page="messagerie"]'))
   document.getElementById('ok-vers-msg').style.display='none';
 
+/* ===================== CALENDRIER DE RÉSERVATION =====================
+   Remplace le sélecteur de date du navigateur : grand, multilingue,
+   jours passés bloqués, dimanche fermé (horaires lun–sam), et sous chaque
+   jour le nombre de vélos disponibles — la sélection du client si elle
+   existe, sinon l'ensemble de la flotte. Les disponibilités viennent de
+   dispo(), la simulation stable déjà utilisée par la liste des vélos. */
+let calMois=null;
+function rendreCal(){
+  const el=document.getElementById('cal'); if(!el) return;
+  const sel=document.getElementById('date').value;
+  if(!calMois){ const d=new Date(sel+'T12:00:00'); calMois=new Date(d.getFullYear(),d.getMonth(),1); }
+  const loc={fr:'fr-FR',en:'en-GB',de:'de-DE',es:'es-ES',it:'it-IT'}[lang];
+  const auj=new Date(); auj.setHours(0,0,0,0);
+  const y=calMois.getFullYear(), m=calMois.getMonth();
+  const nbj=new Date(y,m+1,0).getDate();
+  const decal=(new Date(y,m,1).getDay()+6)%7;           /* lundi en tête */
+  const pad=n=>String(n).padStart(2,'0');
+  const choisis=VELOS.filter(v=>panier[v.id]>0);
+  const precOK = new Date(y,m,1) > new Date(auj.getFullYear(),auj.getMonth(),1);
+  let h='<div class="cal-haut">'+
+    `<button type="button" class="cal-fl" data-cal="-1" aria-label="&#8592;" ${precOK?'':'disabled'}>&#8249;</button>`+
+    `<b>${new Date(y,m,1).toLocaleDateString(loc,{month:'long',year:'numeric'})}</b>`+
+    '<button type="button" class="cal-fl" data-cal="1" aria-label="&#8594;">&#8250;</button></div>'+
+    '<div class="cal-grille">';
+  for(let i=0;i<7;i++)
+    h+=`<div class="cal-j">${new Date(2026,0,5+i).toLocaleDateString(loc,{weekday:'narrow'})}</div>`;
+  for(let i=0;i<decal;i++) h+='<div class="cal-c vide"></div>';
+  for(let j=1;j<=nbj;j++){
+    const d=new Date(y,m,j), ds=`${y}-${pad(m+1)}-${pad(j)}`;
+    const cls=['cal-c'], aujd=d.getTime()===auj.getTime();
+    let bas='';
+    if(d<auj) cls.push('passe');
+    else if(d.getDay()===0){ cls.push('ferme'); bas=`<span class="n">${tr('book.closedDay')}</span>`; }
+    else{
+      cls.push('ouvrable');
+      const n=choisis.length?Math.min(...choisis.map(v=>dispo(v,ds))):VELOS.reduce((s,v)=>s+dispo(v,ds),0);
+      const seuil=choisis.length?2:5;
+      bas=`<span class="n ${n===0?'dnul':n<=seuil?'dbas':'dok'}">${n===0?'0':n+' &#128690;'}</span>`;
+      if(n===0){ cls.splice(cls.indexOf('ouvrable'),1); cls.push('complet'); }
+    }
+    if(ds===sel) cls.push('choisi');
+    if(aujd) cls.push('aujd');
+    h+=`<div class="${cls.join(' ')}" ${cls.includes('ouvrable')?`data-jour="${ds}"`:''}>${j}${bas}</div>`;
+  }
+  el.innerHTML=h+'</div>';
+}
+document.getElementById('cal').addEventListener('click',e=>{
+  const fl=e.target.closest('[data-cal]');
+  if(fl){ calMois=new Date(calMois.getFullYear(),calMois.getMonth()+ +fl.dataset.cal,1); rendreCal(); return; }
+  const c=e.target.closest('[data-jour]'); if(!c) return;
+  const inp=document.getElementById('date');
+  inp.value=c.dataset.jour;
+  inp.dispatchEvent(new Event('change'));
+});
+
 /* ===================== DÉMARRAGE ===================== */
 const dd=new Date(); dd.setDate(dd.getDate()+1);
+if(dd.getDay()===0) dd.setDate(dd.getDate()+1);        /* jamais un dimanche */
 document.getElementById('date').value=dd.toISOString().slice(0,10);
 document.getElementById('date').min=new Date().toISOString().slice(0,10);
 /* langue : le paramètre ?lang= de l'URL (liens hreflang, partages) prime

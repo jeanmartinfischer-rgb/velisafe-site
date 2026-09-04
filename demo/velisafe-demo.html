@@ -1101,6 +1101,34 @@ footer a{color:#F3EEEA;text-decoration:none;border-bottom:1px solid rgba(243,238
 .encadre{background:rgba(226,238,240,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .map{background:rgba(231,235,225,.6)}
 
+/* calendrier de réservation */
+.cal{background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.6);padding:10px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.cal-haut{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.cal-haut b{font-size:15px;text-transform:capitalize}
+.cal-fl{border:1px solid var(--beige);background:rgba(255,255,255,.7);color:var(--texte);
+  width:30px;height:30px;font-size:16px;line-height:1;padding:0}
+.cal-fl:disabled{opacity:.35;cursor:default}
+.cal-grille{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-j{text-align:center;font-size:10.5px;font-weight:700;color:var(--gris);text-transform:uppercase;padding:2px 0}
+.cal-c{min-height:52px;border:1px solid var(--beige);background:rgba(255,255,255,.55);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  font-size:14px;font-weight:600;cursor:pointer;padding:3px 2px;text-align:center}
+.cal-c .n{font-size:10.5px;font-weight:700;line-height:1.15}
+.cal-c .n.dok{color:#33520D}
+.cal-c .n.dbas{color:#B4530A}
+.cal-c .n.dnul{color:#A33333}
+.cal-c.vide{border:0;background:none;cursor:default}
+.cal-c.passe{opacity:.35;cursor:default}
+.cal-c.ferme,.cal-c.complet{background:rgba(231,235,225,.5);color:var(--gris);cursor:default}
+.cal-c.ferme .n{font-size:8.5px;text-transform:uppercase;letter-spacing:.03em}
+.cal-c.ouvrable:hover{border-color:var(--vert)}
+.cal-c.choisi{background:var(--vert);border-color:var(--vert);color:#F3EEEA}
+.cal-c.choisi .n,.cal-c.choisi .n.dok,.cal-c.choisi .n.dbas{color:#CFE3B8}
+.cal-c.aujd{outline:2px solid var(--teal);outline-offset:-2px}
+.cal-note{font-size:12px;color:var(--gris);margin:8px 0 0}
+@media(max-width:520px){.cal-c{min-height:44px}}
+
 </style>
 </head>
 <body>
@@ -1246,7 +1274,9 @@ footer a{color:#F3EEEA;text-decoration:none;border-bottom:1px solid rgba(243,238
         <div class="champs">
           <div class="champ">
             <label for="date" data-t="book.date">Date de retrait</label>
-            <input type="date" id="date">
+            <input type="hidden" id="date">
+            <div class="cal" id="cal"></div>
+            <p class="cal-note" data-t="book.calNote">Le chiffre sous chaque jour indique les vélos disponibles — votre sélection si vous en avez une. Boutique fermée le dimanche.</p>
           </div>
           <div class="champ">
             <label for="duree" data-t="book.duration">Durée</label>
@@ -1885,7 +1915,7 @@ const T = {
   "home.step2t":"Vous envoyez la demande par WhatsApp","home.step2d":"Un appui suffit : le message est déjà écrit, avec votre code de demande.",
   "home.step3t":"Vous réglez au retrait","home.step3d":"Pièce d'identité, caution, contrat signé devant vous. Puis vous partez.",
   "book.title":"Réserver vos vélos","book.sub":"Date, durée, vélos. Ce qui s'affiche est disponible tout de suite.",
-  "book.date":"Date de retrait","book.duration":"Durée",
+  "book.closedDay":"Fermé","book.calNote":"Le chiffre sous chaque jour indique les vélos disponibles — votre sélection si vous en avez une. Boutique fermée le dimanche.","book.date":"Date de retrait","book.duration":"Durée",
   "book.half":"Demi-journée","book.full":"Journée","book.d2":"2 jours","book.d3":"3 jours","book.d7":"7 jours",
   "book.recap":"Votre réservation","book.name":"Nom et prénom","book.email":"E-mail","book.phone":"Téléphone","book.hour":"Heure de retrait",
   "book.cta":"Confirmer la réservation","book.empty":"Aucun vélo sélectionné.","book.total":"Total à régler sur place",
@@ -1969,7 +1999,7 @@ const T = {
   "home.step2t":"You send it via WhatsApp","home.step2d":"One tap: the message is pre-written, with your request code.",
   "home.step3t":"You pay at collection","home.step3d":"ID, deposit, contract signed in front of you. Then you ride off.",
   "book.title":"Book your bikes","book.sub":"Date, duration, bikes. What you see is available right away.",
-  "book.date":"Collection date","book.duration":"Duration",
+  "book.closedDay":"Closed","book.calNote":"The number under each day shows available bikes — your selection if you have one. Closed on Sundays.","book.date":"Collection date","book.duration":"Duration",
   "book.half":"Half-day","book.full":"Full day","book.d2":"2 days","book.d3":"3 days","book.d7":"7 days",
   "book.recap":"Your booking","book.name":"Full name","book.email":"E-mail","book.phone":"Phone","book.hour":"Collection time",
   "book.cta":"Confirm booking","book.empty":"No bike selected.","book.total":"Total, payable on site",
@@ -2053,7 +2083,7 @@ const T = {
   "home.step2t":"Sie senden die Anfrage per WhatsApp","home.step2d":"Ein Tipp genügt: Die Nachricht ist vorgeschrieben, mit Ihrem Anfragecode.",
   "home.step3t":"Sie zahlen bei der Abholung","home.step3d":"Ausweis, Kaution, Vertrag vor Ihren Augen unterschrieben. Dann geht es los.",
   "book.title":"Räder buchen","book.sub":"Datum, Dauer, Räder. Was angezeigt wird, ist sofort verfügbar.",
-  "book.date":"Abholdatum","book.duration":"Dauer",
+  "book.closedDay":"Geschlossen","book.calNote":"Die Zahl unter jedem Tag zeigt die verfügbaren Räder — Ihre Auswahl, falls getroffen. Sonntags geschlossen.","book.date":"Abholdatum","book.duration":"Dauer",
   "book.half":"Halber Tag","book.full":"Ganzer Tag","book.d2":"2 Tage","book.d3":"3 Tage","book.d7":"7 Tage",
   "book.recap":"Ihre Buchung","book.name":"Vor- und Nachname","book.email":"E-Mail","book.phone":"Telefon","book.hour":"Abholzeit",
   "book.cta":"Buchung bestätigen","book.empty":"Kein Rad ausgewählt.","book.total":"Gesamt, vor Ort zu zahlen",
@@ -2137,7 +2167,7 @@ const T = {
   "home.step2t":"Envía la solicitud por WhatsApp","home.step2d":"Un toque basta: el mensaje ya está escrito, con su código de solicitud.",
   "home.step3t":"Paga al recoger","home.step3d":"Documento, fianza, contrato firmado delante de usted. Y a rodar.",
   "book.title":"Reserve sus bicicletas","book.sub":"Fecha, duración, bicis. Lo que se muestra está disponible ya.",
-  "book.date":"Fecha de recogida","book.duration":"Duración",
+  "book.closedDay":"Cerrado","book.calNote":"La cifra bajo cada día indica las bicis disponibles — su selección si la tiene. Cerrado los domingos.","book.date":"Fecha de recogida","book.duration":"Duración",
   "book.half":"Media jornada","book.full":"Jornada","book.d2":"2 días","book.d3":"3 días","book.d7":"7 días",
   "book.recap":"Su reserva","book.name":"Nombre y apellidos","book.email":"Correo electrónico","book.phone":"Teléfono","book.hour":"Hora de recogida",
   "book.cta":"Confirmar la reserva","book.empty":"Ninguna bicicleta seleccionada.","book.total":"Total a pagar en el local",
@@ -2221,7 +2251,7 @@ const T = {
   "home.step2t":"Inviate la richiesta su WhatsApp","home.step2d":"Basta un tocco: il messaggio è già scritto, con il vostro codice di richiesta.",
   "home.step3t":"Pagate al ritiro","home.step3d":"Documento, cauzione, contratto firmato davanti a voi. Poi si parte.",
   "book.title":"Prenotate le vostre bici","book.sub":"Data, durata, bici. Ciò che appare è disponibile subito.",
-  "book.date":"Data di ritiro","book.duration":"Durata",
+  "book.closedDay":"Chiuso","book.calNote":"Il numero sotto ogni giorno indica le bici disponibili — la vostra selezione se presente. Chiuso la domenica.","book.date":"Data di ritiro","book.duration":"Durata",
   "book.half":"Mezza giornata","book.full":"Giornata","book.d2":"2 giorni","book.d3":"3 giorni","book.d7":"7 giorni",
   "book.recap":"La vostra prenotazione","book.name":"Nome e cognome","book.email":"E-mail","book.phone":"Telefono","book.hour":"Ora di ritiro",
   "book.cta":"Conferma la prenotazione","book.empty":"Nessuna bici selezionata.","book.total":"Totale da pagare in sede",
@@ -3579,6 +3609,7 @@ function rendreVelos(){
     </div>`;
   }).join('');
   majRecap();
+  if(typeof rendreCal==='function') rendreCal();
 }
 
 function majRecap(){
@@ -4014,7 +4045,7 @@ document.getElementById('liste-velos').addEventListener('click',e=>{
   const id=p||m, v=VELOS.find(x=>x.id===id), libre=dispo(v,document.getElementById('date').value);
   panier[id]=Math.max(0,Math.min(libre,(panier[id]||0)+(p?1:-1)));
   document.getElementById('q-'+id).textContent=panier[id];
-  majRecap();
+  majRecap(); rendreCal();
 });
 
 document.getElementById('date').addEventListener('change',rendreVelos);
@@ -4373,8 +4404,64 @@ document.getElementById('ok-vers-msg').addEventListener('click',()=>{
 if(document.querySelector('.onglet.hidden[data-page="messagerie"]'))
   document.getElementById('ok-vers-msg').style.display='none';
 
+/* ===================== CALENDRIER DE RÉSERVATION =====================
+   Remplace le sélecteur de date du navigateur : grand, multilingue,
+   jours passés bloqués, dimanche fermé (horaires lun–sam), et sous chaque
+   jour le nombre de vélos disponibles — la sélection du client si elle
+   existe, sinon l'ensemble de la flotte. Les disponibilités viennent de
+   dispo(), la simulation stable déjà utilisée par la liste des vélos. */
+let calMois=null;
+function rendreCal(){
+  const el=document.getElementById('cal'); if(!el) return;
+  const sel=document.getElementById('date').value;
+  if(!calMois){ const d=new Date(sel+'T12:00:00'); calMois=new Date(d.getFullYear(),d.getMonth(),1); }
+  const loc={fr:'fr-FR',en:'en-GB',de:'de-DE',es:'es-ES',it:'it-IT'}[lang];
+  const auj=new Date(); auj.setHours(0,0,0,0);
+  const y=calMois.getFullYear(), m=calMois.getMonth();
+  const nbj=new Date(y,m+1,0).getDate();
+  const decal=(new Date(y,m,1).getDay()+6)%7;           /* lundi en tête */
+  const pad=n=>String(n).padStart(2,'0');
+  const choisis=VELOS.filter(v=>panier[v.id]>0);
+  const precOK = new Date(y,m,1) > new Date(auj.getFullYear(),auj.getMonth(),1);
+  let h='<div class="cal-haut">'+
+    `<button type="button" class="cal-fl" data-cal="-1" aria-label="&#8592;" ${precOK?'':'disabled'}>&#8249;</button>`+
+    `<b>${new Date(y,m,1).toLocaleDateString(loc,{month:'long',year:'numeric'})}</b>`+
+    '<button type="button" class="cal-fl" data-cal="1" aria-label="&#8594;">&#8250;</button></div>'+
+    '<div class="cal-grille">';
+  for(let i=0;i<7;i++)
+    h+=`<div class="cal-j">${new Date(2026,0,5+i).toLocaleDateString(loc,{weekday:'narrow'})}</div>`;
+  for(let i=0;i<decal;i++) h+='<div class="cal-c vide"></div>';
+  for(let j=1;j<=nbj;j++){
+    const d=new Date(y,m,j), ds=`${y}-${pad(m+1)}-${pad(j)}`;
+    const cls=['cal-c'], aujd=d.getTime()===auj.getTime();
+    let bas='';
+    if(d<auj) cls.push('passe');
+    else if(d.getDay()===0){ cls.push('ferme'); bas=`<span class="n">${tr('book.closedDay')}</span>`; }
+    else{
+      cls.push('ouvrable');
+      const n=choisis.length?Math.min(...choisis.map(v=>dispo(v,ds))):VELOS.reduce((s,v)=>s+dispo(v,ds),0);
+      const seuil=choisis.length?2:5;
+      bas=`<span class="n ${n===0?'dnul':n<=seuil?'dbas':'dok'}">${n===0?'0':n+' &#128690;'}</span>`;
+      if(n===0){ cls.splice(cls.indexOf('ouvrable'),1); cls.push('complet'); }
+    }
+    if(ds===sel) cls.push('choisi');
+    if(aujd) cls.push('aujd');
+    h+=`<div class="${cls.join(' ')}" ${cls.includes('ouvrable')?`data-jour="${ds}"`:''}>${j}${bas}</div>`;
+  }
+  el.innerHTML=h+'</div>';
+}
+document.getElementById('cal').addEventListener('click',e=>{
+  const fl=e.target.closest('[data-cal]');
+  if(fl){ calMois=new Date(calMois.getFullYear(),calMois.getMonth()+ +fl.dataset.cal,1); rendreCal(); return; }
+  const c=e.target.closest('[data-jour]'); if(!c) return;
+  const inp=document.getElementById('date');
+  inp.value=c.dataset.jour;
+  inp.dispatchEvent(new Event('change'));
+});
+
 /* ===================== DÉMARRAGE ===================== */
 const dd=new Date(); dd.setDate(dd.getDate()+1);
+if(dd.getDay()===0) dd.setDate(dd.getDate()+1);        /* jamais un dimanche */
 document.getElementById('date').value=dd.toISOString().slice(0,10);
 document.getElementById('date').min=new Date().toISOString().slice(0,10);
 /* langue : le paramètre ?lang= de l'URL (liens hreflang, partages) prime

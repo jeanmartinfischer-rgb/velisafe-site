@@ -198,7 +198,9 @@
         <div class="champs">
           <div class="champ">
             <label for="date" data-t="book.date">Date de retrait</label>
-            <input type="date" id="date">
+            <input type="hidden" id="date">
+            <div class="cal" id="cal"></div>
+            <p class="cal-note" data-t="book.calNote">Le chiffre sous chaque jour indique les vélos disponibles — votre sélection si vous en avez une. Boutique fermée le dimanche.</p>
           </div>
           <div class="champ">
             <label for="duree" data-t="book.duration">Durée</label>

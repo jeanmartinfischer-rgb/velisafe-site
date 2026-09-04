@@ -359,3 +359,18 @@ réduit de 20 % à 10 %, onglets verre passés de .38 à .20 d'opacité (actif
 rgba(255,255,255,.58) + backdrop-filter blur(13px) — la photo de fond se
 devine, le texte reste net. Si un mobile ancien rame au défilement,
 réduire le blur de ces cartes en premier.
+
+**04/09/2026, calendrier de réservation.** Le sélecteur de date natif du
+navigateur (minuscule) est remplacé par un grand calendrier maison :
+input#date passé en type=hidden (tout le code existant continue de lire
+sa value), div#cal rendu par rendreCal() dans app.js. Jours passés
+bloqués, dimanche fermé (horaires lun–sam du JSON-LD, la date par défaut
+saute le dimanche), sous chaque jour le nombre de vélos disponibles —
+la sélection du client si elle existe (min des types choisis), sinon la
+somme de la flotte — calculé par la simulation dispo() existante, donc
+INDICATIF : de vraies disponibilités exigeraient une base en ligne
+(écartée). Deux clés i18n ajoutées ×5 (book.closedDay, book.calNote) →
+165 clés. PIÈGE : ne jamais nommer une classe « ok » ou « nul » dans le
+calendrier — .ok{display:none} et .stock.nul existent déjà (bug corrigé
+en dok/dbas/dnul). rendreCal() est rappelé par rendreVelos() et par le
+clic +/- ; le format du message WhatsApp est INCHANGÉ (atelier intact).
