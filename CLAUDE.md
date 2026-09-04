@@ -380,3 +380,33 @@ mois, compteurs liés à la sélection, dimanches fermés), WhatsApp, fiches
 détail, pages légales, mobile — zéro erreur JS. Correctif : sur mobile le
 calendrier était comprimé (colonne de .champs) → .champs passe en une
 colonne sous 640 px, calendrier pleine largeur.
+
+**04/09/2026, atelier v2 : mini-application de gestion.** L'atelier hors
+ligne (documents-internes/atelier-velisafe.html, 1,1 Mo, toujours
+gitignoré) devient une petite app de gestion, habillée comme le site
+(verre, angles droits, fond vignes) : coller un message WhatsApp télécharge
+le contrat ET range la demande dans un REGISTRE local (localStorage de ce
+navigateur, rien en ligne) avec statuts (Nouvelle/Confirmée/Vélos
+sortis/Terminée/Annulée), recherche, filtres, re-génération du contrat
+depuis une fiche, suppression, export CSV (point-virgule + BOM, ouvre
+proprement dans Excel/Numbers). Même code = mise à jour de la fiche, pas
+de doublon. Le fil WhatsApp reste la référence (dit dans la page).
+Testé bout en bout : contrat, persistance après rechargement, statut,
+export, recherche — zéro erreur JS. Sources et build-atelier.js dans le
+scratchpad de la session cloud (éphémère) ; le fichier autonome reste la
+référence. Le parseur dépend TOUJOURS de messageWA (app.js) : les faire
+évoluer ensemble.
+
+**04/09/2026, DÉCISION : plus aucun stock affiché.** Le site montrait des
+disponibilités SIMULÉES (dispo() par hachage) : trompeur puisque rien ne
+les relie à la réalité. Retiré partout — liste des vélos sans « X
+disponibles », quantités bornées à la flotte (v.stock, silencieux),
+calendrier sans compteurs (dates + dimanche fermé seulement), book.sub et
+book.calNote réécrits ×5 (« le loueur confirme par WhatsApp »). dispo()
+reste dans le code mais n'alimente plus aucun affichage. L'atelier perd
+ses statuts (Antoine gère son suivi lui-même dans WhatsApp, réévaluer
+dans un mois) : registre simple — fiches, recherche, contrat, suppression,
+export CSV sans colonne statut. Champ statut disparu des nouvelles
+fiches ; d'anciennes fiches localStorage peuvent en porter un, ignoré.
+Retour possible : les statuts sont dans l'historique git du scratchpad
+cloud (éphémère) et dans CE journal — les recréer est trivial.

@@ -59,27 +59,23 @@ function rendreTarifs(){
 function rendreVelos(){
   const dateStr = document.getElementById('date').value;
   document.getElementById('liste-velos').innerHTML = VELOS.map(v=>{
-    const libre = dispo(v,dateStr);
-    if(panier[v.id]>libre) panier[v.id]=libre;
-    let st;
-    if(libre===0) st=`<span class="stock nul">${tr('book.none')}</span>`;
-    else if(libre<=2) st=`<span class="stock bas">${tr('book.left')} ${libre}</span>`;
-    else st=`<span class="stock">${libre} ${tr('book.avail')}</span>`;
+    /* décision 04/09 : aucun stock affiché — le site n'en sait rien, le
+       loueur confirme par WhatsApp. La quantité reste bornée à la flotte. */
+    if(panier[v.id]>v.stock) panier[v.id]=v.stock;
     return `<div class="velo">
       <div class="ico">${v.photo?`<img src="${v.photo}" alt="">`:v.ico}</div>
       <div>
         <h3>${esc(v.nom[lang])}</h3>
         <div class="meta">${esc(v.det[lang])}</div>
         <div class="pour">${esc(v.pour[lang])}</div>
-        ${st}
       </div>
       <div>
         <span class="prix">${euros(tarif(v))}</span>
-        ${libre===0?'':`<div class="pas">
+        <div class="pas">
           <button type="button" data-m="${v.id}" aria-label="−">−</button>
           <output id="q-${v.id}">${panier[v.id]||0}</output>
           <button type="button" data-p="${v.id}" aria-label="+">+</button>
-        </div>`}
+        </div>
       </div>
     </div>`;
   }).join('');
@@ -517,8 +513,8 @@ document.getElementById('liste-alsace').addEventListener('click',e=>{
 document.getElementById('liste-velos').addEventListener('click',e=>{
   const p=e.target.dataset.p, m=e.target.dataset.m;
   if(!p&&!m) return;
-  const id=p||m, v=VELOS.find(x=>x.id===id), libre=dispo(v,document.getElementById('date').value);
-  panier[id]=Math.max(0,Math.min(libre,(panier[id]||0)+(p?1:-1)));
+  const id=p||m, v=VELOS.find(x=>x.id===id);
+  panier[id]=Math.max(0,Math.min(v.stock,(panier[id]||0)+(p?1:-1)));
   document.getElementById('q-'+id).textContent=panier[id];
   majRecap(); rendreCal();
 });
@@ -896,7 +892,6 @@ function rendreCal(){
   const nbj=new Date(y,m+1,0).getDate();
   const decal=(new Date(y,m,1).getDay()+6)%7;           /* lundi en tête */
   const pad=n=>String(n).padStart(2,'0');
-  const choisis=VELOS.filter(v=>panier[v.id]>0);
   const precOK = new Date(y,m,1) > new Date(auj.getFullYear(),auj.getMonth(),1);
   let h='<div class="cal-haut">'+
     `<button type="button" class="cal-fl" data-cal="-1" aria-label="&#8592;" ${precOK?'':'disabled'}>&#8249;</button>`+
@@ -912,13 +907,8 @@ function rendreCal(){
     let bas='';
     if(d<auj) cls.push('passe');
     else if(d.getDay()===0){ cls.push('ferme'); bas=`<span class="n">${tr('book.closedDay')}</span>`; }
-    else{
-      cls.push('ouvrable');
-      const n=choisis.length?Math.min(...choisis.map(v=>dispo(v,ds))):VELOS.reduce((s,v)=>s+dispo(v,ds),0);
-      const seuil=choisis.length?2:5;
-      bas=`<span class="n ${n===0?'dnul':n<=seuil?'dbas':'dok'}">${n===0?'0':n+' &#128690;'}</span>`;
-      if(n===0){ cls.splice(cls.indexOf('ouvrable'),1); cls.push('complet'); }
-    }
+    else cls.push('ouvrable');   /* décision 04/09 : pas de compteur de
+      disponibilité — le site n'en sait rien, le loueur confirme par WhatsApp */
     if(ds===sel) cls.push('choisi');
     if(aujd) cls.push('aujd');
     h+=`<div class="${cls.join(' ')}" ${cls.includes('ouvrable')?`data-jour="${ds}"`:''}>${j}${bas}</div>`;
