@@ -368,3 +368,13 @@ footer a{color:#F3EEEA;text-decoration:none;border-bottom:1px solid rgba(243,238
   backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
 .entete p{color:var(--texte2)}
 .bulle.eux{background:rgba(255,255,255,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+
+/* cartes de contenu en verre : l'image se devine, le texte reste net */
+.bloc,.carte-info,.etape,.atout,.item,.part,.part-cta,.fil,.code-cadre,.doc-avert{
+  background:rgba(255,255,255,.58);
+  backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);
+  border-color:rgba(255,255,255,.6)}
+.item.actif{background:rgba(239,243,236,.78)}
+.chiffre{background:rgba(255,255,255,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.encadre{background:rgba(226,238,240,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.map{background:rgba(231,235,225,.6)}

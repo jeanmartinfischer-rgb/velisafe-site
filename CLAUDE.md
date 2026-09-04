@@ -352,3 +352,10 @@ doit se faire dans CE bloc final, qui prime sur les règles d'origine.
 Balades (les Vosges restent sur Découvrir l'Alsace). Voile crème des fonds
 réduit de 20 % à 10 %, onglets verre passés de .38 à .20 d'opacité (actif
 .68), panneau .entete à .28 avec texte foncé, bandeau d'en-tête à .55.
+
+**04/09/2026, cartes de contenu en verre.** Tous les blocs blancs (.bloc,
+.carte-info, .etape, .atout, .item, .part, .part-cta, .fil, .code-cadre,
+.doc-avert, .chiffre, .encadre) passent en verre dépoli :
+rgba(255,255,255,.58) + backdrop-filter blur(13px) — la photo de fond se
+devine, le texte reste net. Si un mobile ancien rame au défilement,
+réduire le blur de ces cartes en premier.
