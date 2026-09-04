@@ -410,3 +410,28 @@ export CSV sans colonne statut. Champ statut disparu des nouvelles
 fiches ; d'anciennes fiches localStorage peuvent en porter un, ignoré.
 Retour possible : les statuts sont dans l'historique git du scratchpad
 cloud (éphémère) et dans CE journal — les recréer est trivial.
+
+**04/09/2026, l'atelier devient une application Mac.** Bundle fabriqué à la
+main dans `documents-internes/Atelier VÉLI SAFE.app` (gitignoré, jamais
+publié) : Info.plist + Contents/MacOS/atelier (script sh, chmod 755) +
+Resources/{atelier.html, icone.icns}. L'icône .icns est assemblée par script
+Python (chunks ic11/ic12/ic07/ic08/ic09/ic10, PNG du logo centré sur dégradé
+crème→sauge). Au lancement le script copie atelier.html vers
+`~/.atelier-velisafe/atelier.html` (chemin SANS espace : indispensable pour
+l'URL file://) et ouvre Chrome/Edge/Brave/Chromium en mode `--app` avec
+`--user-data-dir=~/.atelier-velisafe/profil` — donc un COFFRE DE DONNÉES
+PROPRE À L'ATELIER, qu'un nettoyage du navigateur habituel n'efface pas et
+qui se sauvegarde en copiant ce dossier. À défaut de navigateur Chromium :
+`open` dans le navigateur par défaut. Pas de signature Apple : sur un autre
+Mac (Antoine), premier lancement bloqué → Réglages Système > Confidentialité
+et sécurité > « Ouvrir quand même » (vérifié sur support.apple.com le
+04/09/2026). Une vraie app signée coûterait 99 $/an de compte développeur
+pour zéro gain fonctionnel — écarté.
+L'atelier détecte désormais un stockage indisponible (Safari sur fichier
+local, navigation privée) et affiche un bandeau ambre au lieu de perdre les
+demandes en silence ; repli en mémoire le temps de la session.
+Mise à jour de l'app = remplacer Contents/Resources/atelier.html (la copie
+vers ~/.atelier-velisafe se refait à chaque lancement). Les sources de
+l'atelier vivent dans le scratchpad cloud (éphémère) ; le fichier autonome
+`documents-internes/atelier-velisafe.html` fait foi et contient tout le code
+en clair, de quoi repartir.
