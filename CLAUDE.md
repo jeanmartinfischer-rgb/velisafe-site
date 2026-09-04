@@ -374,3 +374,9 @@ INDICATIF : de vraies disponibilités exigeraient une base en ligne
 calendrier — .ok{display:none} et .stock.nul existent déjà (bug corrigé
 en dok/dbas/dnul). rendreCal() est rappelé par rendreVelos() et par le
 clic +/- ; le format du message WhatsApp est INCHANGÉ (atelier intact).
+
+**04/09/2026, retest complet : 14/14.** Cinq langues, calendrier (clic,
+mois, compteurs liés à la sélection, dimanches fermés), WhatsApp, fiches
+détail, pages légales, mobile — zéro erreur JS. Correctif : sur mobile le
+calendrier était comprimé (colonne de .champs) → .champs passe en une
+colonne sous 640 px, calendrier pleine largeur.
