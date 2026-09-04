@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jeanmartinfischer-rgb.github.io/velisafe-site/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/?lang=it"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jeanmartinfischer-rgb.github.io/velisafe-site/"/>
+    <loc>https://velisafe.fr/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://velisafe.fr/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velisafe.fr/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velisafe.fr/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://velisafe.fr/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://velisafe.fr/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velisafe.fr/"/>
   </url>
 </urlset>

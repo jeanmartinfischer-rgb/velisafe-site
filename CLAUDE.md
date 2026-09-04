@@ -301,3 +301,22 @@ depuis assets/) à imprimer en deux exemplaires. Testé : message italien →
 contrat français complet, zéro erreur JS. Le format du message WhatsApp
 (messageWA dans app.js) et le parseur (analyser dans atelier.js) doivent
 évoluer ENSEMBLE.
+
+**04/09/2026, domaine personnalisé EN LIGNE.** Le site est servi sur
+https://velisafe.fr (HTTPS forcé). Jean-Martin a acheté velisafe.fr, .eu et
+.com (sans accent) sur son compte Gandi « terrachef », sans hébergement
+(GitHub Pages héberge déjà). Claude a câblé le DNS via le navigateur
+intégré : zone Gandi de velisafe.fr = 4 enregistrements A sur @
+(185.199.108.153, .109., .110., .111.) remplaçant l'ancien A Gandi, et
+CNAME www → jeanmartinfischer-rgb.github.io. (remplaçant webredir). Côté
+GitHub Pages : custom domain « velisafe.fr » enregistré, DNS check
+successful, Enforce HTTPS coché. ATTENTION : GitHub a créé un commit
+« CNAME » directement sur origin → toujours PULL avant PUSH dans GitHub
+Desktop. Toutes les URL absolues (canonical, hreflang ×6, OG, JSON-LD,
+sitemap.xml, robots.txt) basculées de github.io vers https://velisafe.fr/
+— 19 remplacements, plus aucun github.io dans les sources ; démo
+régénérée. Reste : redirections web Gandi de velisafe.com et velisafe.eu
+vers https://velisafe.fr (action Jean-Martin, guidée), et re-signaler le
+sitemap dans Google Search Console une fois la fiche Google Business créée.
+Le PDF marche-a-suivre-antoine.pdf contient encore l'ancienne URL github.io
+(mineur, à régénérer à l'occasion).
