@@ -346,3 +346,9 @@ style.css : --r passé à 0 et border-radius:0 sur tous les composants
 l'onglet actif, le panneau .entete, les étiquettes .etiq, les popups
 Leaflet et les bulles de messagerie. Toute évolution de rayon ou de fond
 doit se faire dans CE bloc final, qui prime sur les règles d'origine.
+
+**04/09/2026, transparence accrue + photo du Rhin.** Nouvelle photo fournie
+(piste cyclable du Rhin) → assets/fonds/rhin.jpg, affectée à la section
+Balades (les Vosges restent sur Découvrir l'Alsace). Voile crème des fonds
+réduit de 20 % à 10 %, onglets verre passés de .38 à .20 d'opacité (actif
+.68), panneau .entete à .28 avec texte foncé, bandeau d'en-tête à .55.
