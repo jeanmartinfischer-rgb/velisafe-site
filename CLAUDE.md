@@ -338,3 +338,11 @@ passées d'arrondies à RECTANGULAIRES (border-radius:0). Démo régénérée.
 page) ; `.entete` est passé en panneau translucide flouté pour la
 lisibilité. gen-demo.js inline désormais aussi les `url(../assets/…)` du CSS.
 Attribution des photos à préciser pour les mentions légales (origine IA ?).
+
+**04/09/2026, verre dépoli + angles droits.** Bloc d'overrides en fin de
+style.css : --r passé à 0 et border-radius:0 sur tous les composants
+(cercles pleins conservés : numéros, flèche de nav). Effet verre
+(fond translucide + backdrop-filter blur) sur les onglets de navigation,
+l'onglet actif, le panneau .entete, les étiquettes .etiq, les popups
+Leaflet et les bulles de messagerie. Toute évolution de rayon ou de fond
+doit se faire dans CE bloc final, qui prime sur les règles d'origine.

@@ -344,3 +344,26 @@ footer a{color:#F3EEEA;text-decoration:none;border-bottom:1px solid rgba(243,238
 .doc-corps strong{color:var(--texte)}
 .doc-pied{border-top:1px solid var(--beige);margin-top:20px;padding-top:14px;font-size:12.5px;color:var(--gris)}
 .doc-avert{background:#F7EAD1;border:1px solid #DDC08A;color:#7A5A12;border-radius:12px;padding:12px 14px;font-size:13px;margin:16px 0 4px}
+
+/* ---------- 04/09 : angles droits partout + effet verre dépoli ---------- */
+:root{--r:0px}
+.onglet,.langue,.btn,.btn-wa,.entete,.atout,.atout .pic,.tarifs-rapide,.etape,.bloc,
+.champ input,.champ select,.velo .ico,.flotte,.pas,.filtre,.item,.tag,.map,
+.chiffre,.encadre,.part,.part .pic,.place-libre,.part-cta,.fil,.bulle,
+.fil-bas input,.fil-bas button,.code-cadre,.doc,.doc-haut,.doc-fermer,.doc-avert{border-radius:0}
+
+/* onglets en verre */
+.onglet{background:rgba(255,255,255,.38);border:1px solid rgba(255,255,255,.55);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.onglet:hover{background:rgba(255,255,255,.62)}
+.onglet.actif{background:rgba(68,93,71,.85);border-color:rgba(255,255,255,.35);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+/* bulles en verre : étiquettes et popups de carte, panneau d'entête, messagerie */
+.leaflet-tooltip.etiq{background:rgba(255,255,255,.55);border-color:rgba(255,255,255,.65);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.leaflet-popup-content-wrapper{background:rgba(255,255,255,.78);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.entete{background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.55);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.bulle.eux{background:rgba(255,255,255,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
