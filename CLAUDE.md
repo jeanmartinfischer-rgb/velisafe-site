@@ -642,3 +642,10 @@ build/gen-demo.js réécrit l'estampille à CHAQUE build (étape 0) puis
 génère la démo. Donc : toujours lancer gen-demo avant de livrer index.html,
 et livrer index.html à chaque changement de css/js. Plus jamais de
 Cmd+Maj+R nécessaire côté visiteur après un push.
+
+**10/09/2026, 16 h 30.** Capture de Jean-Martin montrant encore 3 boutons :
+sa page était chargée AVANT le déploiement de 16 h 29 (index.html lui-même
+reste en cache ≤ 10 min, limite GitHub Pages ; les css/js sont désormais
+versionnés). Simple rechargement. Au passage : étiquettes velo.ville /
+velo.vae (« vélo conseillé » des fiches balades) alignées sur la gamme
+2026 ×5 (« Vélo classique (VTC) », « Vélo électrique (VAE) »).
