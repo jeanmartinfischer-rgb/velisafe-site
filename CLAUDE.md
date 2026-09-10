@@ -525,3 +525,32 @@ dit du dimanche). Caution : plus de montants affichés, « peut être demandée 
 options 128 €, message WA, atelier FR et IT → contrat, mobile, 5 langues.
 Reste côté Antoine : autonomies VAE, montants de caution, dimanche, Google
 Drive/QR des balades (idée à lui — le site fait déjà « tout numérique »).
+
+**10/09/2026, retours de Jean-Martin sur l'offre 2026.** Le site en ligne
+était à jour (vérifié : data.js servi à 13 h 04 UTC avec OPTIONS) ; les
+options étaient simplement trop discrètes. Correctifs :
+- OPTIONS visibles à trois endroits : deux lignes surlignées lime dans le
+  tableau des tarifs (rendreTarifs, colspan sur les 9 durées, « facturé une
+  fois »), cartes .velo.option avec picto dans la réservation (même poids
+  visuel que les vélos), note sous le tableau.
+- PICTOS AU TRAIT (style de la planche d'icônes, currentColor, angles
+  droits) : casque, antivol, panier, kit, pompe, éclairage, sonnette,
+  béquille, support téléphone, gilet, vélo, horloge, carte, bouclier.
+  Dans « Compris dans chaque location » (li = svg + span data-t : NE JAMAIS
+  mettre data-t sur le li, appliquerLangue écrase les enfants), dans les 4
+  atouts (remplacent les emojis), dans les options (PICTO_OPT dans app.js).
+- FLOTTE : assets/flotte-3velos.jpg = panoramique recadrée à 80,8 % de
+  largeur, remorque hors champ ; flotte.jpg conservée en réserve.
+- LIEN PAR BALADE au lieu du Google Drive proposé par Antoine :
+  `?balade=<id>` (ids : ville egui colmar kayser riqu rouffach canal munster
+  rhin hautkoe ecomusee) ouvre la fiche directement, dans la langue de
+  `&lang=`. Dans la fiche : bouton « Copier le lien » (navigator.share sur
+  mobile, presse-papiers sinon) et « Télécharger le tracé (GPX) » généré à
+  la volée depuis b.pts (tracé simplifié, 20–111 points, identique à la
+  carte). Clés i18n det.link / det.linkOk / det.gpx / book.once ×5 →
+  178 clés. Planche documents-internes/qr-balades-antoine.pdf (12 QR :
+  section + 11 balades, reportlab + qrcode, script dans le scratchpad).
+  Position tenue : un Drive = 11 documents à entretenir, une dépendance
+  Google, pas de multilingue ; le site fait déjà tout cela.
+Testé 10/10 : pictos, lignes d'options, cartes d'options, GPX, copie du
+lien, lien direct ?balade=egui en allemand, 5 langues.

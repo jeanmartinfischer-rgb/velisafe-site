@@ -6,7 +6,8 @@
 /* ===================== ÉTAT ===================== */
 let lang = 'fr';
 const panier = {};
-const panierOpt = {};           /* options facturées une fois : {support:1, gilet:2} */
+const panierOpt = {};
+const PICTO_OPT={support:'<svg class="picto" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="8" height="14"/><path d="M12 14h.01M5.5 8v6M18.5 8v6M12 17v4M9 21h6"/></svg>',gilet:'<svg class="picto" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4l4 3 4-3 3 3v13H5V7z"/><path d="M5 12h14M5 15.5h14"/></svg>'};           /* options facturées une fois : {support:1, gilet:2} */
 function totalOptions(){ return OPTIONS.reduce((t,o)=>t+(panierOpt[o.id]||0)*o.prix,0); }
 const maps = {};
 let filtreBalade = 'all';
@@ -55,6 +56,8 @@ function appliquerLangue(){
 function rendreTarifs(){
   document.getElementById('tbody-tarifs').innerHTML = VELOS.map(v=>
     `<tr><td>${esc(v.nom[lang])}</td>` + DUREES.map(d=>`<td>${euros(v.prix[d])}</td>`).join('') + `</tr>`
+  ).join('') + OPTIONS.map(o=>
+    `<tr class="ligne-option"><td>${PICTO_OPT[o.id]||''} ${esc(o.nom[lang])}</td><td colspan="${DUREES.length}">${euros(o.prix)} — ${tr('book.once')}</td></tr>`
   ).join('');
 }
 
@@ -88,12 +91,19 @@ function rendreVelos(){
 
 function rendreOptions(){
   const el=document.getElementById('liste-options'); if(!el) return;
-  el.innerHTML = OPTIONS.map(o=>`<div class="option">
-      <div><b>${esc(o.nom[lang])}</b> <span class="prix-opt">${euros(o.prix)}</span></div>
-      <div class="pas">
-        <button type="button" data-mo="${o.id}" aria-label="−">−</button>
-        <output id="qo-${o.id}">${panierOpt[o.id]||0}</output>
-        <button type="button" data-po="${o.id}" aria-label="+">+</button>
+  el.innerHTML = OPTIONS.map(o=>`<div class="velo option">
+      <div class="ico ico-picto">${PICTO_OPT[o.id]||''}</div>
+      <div>
+        <h3>${esc(o.nom[lang])}</h3>
+        <div class="meta">${tr('book.once')}</div>
+      </div>
+      <div>
+        <span class="prix">${euros(o.prix)}</span>
+        <div class="pas">
+          <button type="button" data-mo="${o.id}" aria-label="−">−</button>
+          <output id="qo-${o.id}">${panierOpt[o.id]||0}</output>
+          <button type="button" data-po="${o.id}" aria-label="+">+</button>
+        </div>
       </div></div>`).join('');
 }
 function majRecap(){
@@ -153,8 +163,36 @@ function htmlBalade(b){
       <div class="fiche-bloc"><h4>${tr('rides.conseil')}</h4><p>${esc(b.conseil[lang])}</p></div>
     </div>
     ${b.ref?`<p class="source"><strong>${tr('rides.ref')} :</strong> ${esc(b.ref[lang])}</p>`:''}
-    <p class="source">${tr('rides.duree')} : ${heures(b.minutes)}, ${tr('rides.pedal')}.</p>`;
+    <p class="source">${tr('rides.duree')} : ${heures(b.minutes)}, ${tr('rides.pedal')}.</p>
+    <div class="det-actions">
+      <button type="button" class="btn btn-vert" data-lien="${b.id}">${tr('det.link')}</button>
+      <button type="button" class="btn btn-gpx" data-gpx="${b.id}">${tr('det.gpx')}</button>
+    </div>`;
 }
+/* lien direct vers une balade (QR code, partage) et tracé GPX pour les
+   applications de navigation : deux façons de « donner la balade » au client
+   sans document externe à entretenir. */
+function lienBalade(id){ return location.origin+location.pathname.replace(/[^/]*$/,'')+'?balade='+id+'&lang='+lang; }
+function gpxBalade(b){
+  const pts=b.pts.map(p=>`<trkpt lat="${p[0]}" lon="${p[1]}"></trkpt>`).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="VÉLI SAFE — velisafe.fr" xmlns="http://www.topografix.com/GPX/1/1">\n<metadata><name>${esc(b.nom[lang])}</name></metadata>\n<trk><name>${esc(b.nom[lang])}</name><trkseg>\n${pts}\n</trkseg></trk>\n</gpx>`;
+}
+document.getElementById('det-corps').addEventListener('click',e=>{
+  const l=e.target.closest('[data-lien]'), g=e.target.closest('[data-gpx]');
+  if(l){
+    const url=lienBalade(l.dataset.lien);
+    const fait=()=>{ l.textContent=tr('det.linkOk'); setTimeout(()=>l.textContent=tr('det.link'),2200); };
+    if(navigator.share){ navigator.share({title:'VÉLI SAFE',url}).catch(()=>{}); fait(); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(url).then(fait).catch(()=>prompt('',url)); }
+    else prompt('',url);
+  }
+  if(g){
+    const b=BALADES.find(x=>x.id===g.dataset.gpx); if(!b) return;
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([gpxBalade(b)],{type:'application/gpx+xml'}));
+    a.download='velisafe-'+b.id+'.gpx'; a.click(); URL.revokeObjectURL(a.href);
+  }
+});
 function htmlVin(v){
   return `
     <div class="tags" style="margin:0 0 12px">
@@ -972,6 +1010,11 @@ if(langURL && T[langURL]){ lang=langURL; document.getElementById('langue').value
 appliquerLangue();
 majHeure();
 majOngletActif();
+/* ?balade=identifiant : ouvre directement la fiche (QR codes, liens partagés) */
+const baladeURL=new URLSearchParams(location.search).get('balade');
+if(baladeURL && BALADES.some(b=>b.id===baladeURL)){
+  setTimeout(()=>{ aller('balades'); ouvrirDetail('balade',baladeURL); },400);
+}
 
 /* ===================== VIE AU DÉFILEMENT (10/09/2026, v2) =====================
    1. Apparition des blocs. Les navigateurs récents s'en chargent seuls, en CSS
