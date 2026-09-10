@@ -435,3 +435,20 @@ vers ~/.atelier-velisafe se refait à chaque lancement). Les sources de
 l'atelier vivent dans le scratchpad cloud (éphémère) ; le fichier autonome
 `documents-internes/atelier-velisafe.html` fait foi et contient tout le code
 en clair, de quoi repartir.
+
+**10/09/2026, fausse alerte « les compteurs sont revenus ».** Jean-Martin
+voyait encore les disponibilités sur velisafe.fr. Le code était bon depuis
+le 04/09 (commit 1c03907) : ce sont les DEUX DERNIERS COMMITS DU 04/09 QUI
+N'ÉTAIENT JAMAIS PARTIS EN LIGNE. Le site est resté figé six jours sur la
+version de 23 h 07 (build Pages nº 10, commit e3df22e). Build nº 11 lancé
+le 10/09 à 11 h 10 UTC sur 6d53fb6 : succès en 6 min 46 s, velisafe.fr sert
+désormais app.js sans book.avail, la note du calendrier et book.sub
+réécrits. MÉTHODE À RETENIR : après chaque « Push origin », vérifier que le
+site a réellement changé (onglet Actions du dépôt = build « pages build and
+deployment » en succès, puis Cmd+Maj+R sur le site). Les fichiers du site
+sont servis avec max-age=600 : jusqu'à 10 minutes de cache après un
+déploiement. Diagnostic express : comparer `last-modified` de
+https://velisafe.fr/js/app.js avec la date du dernier commit.
+NOTE : `git push` depuis la VM du pont échoue (identifiants GitHub dans le
+trousseau macOS, invisibles depuis Linux) — la publication passe forcément
+par GitHub Desktop.
