@@ -628,3 +628,17 @@ navigator.share({files}) sur téléphone (feuille de partage → Komoot,
 Strava, Fichiers) et reste un téléchargement sur ordinateur ; relabellé
 « Fichier GPX (appli GPS) ». Clés det.maps / det.mapsNote ×5 → 180 clés.
 Apple Plans : pas d'URL multi-étapes, écarté.
+
+**10/09/2026, fiche balade simplifiée + ANTI-CACHE.** Boutons « copier le
+lien » et « GPX » retirés (décision Jean-Martin : le client roule avec son
+téléphone). Reste un seul bouton, « Ouvrir dans Google Maps », désormais un
+vrai lien <a target=_blank> (window.open pouvait être bloqué par les
+bloqueurs de fenêtres) ; ?balade= et gestionnaires GPX/lien restent en
+réserve dans le code. DIAGNOSTIC du « ça ne s'ouvre pas sur mon ordi » :
+la page servait app.js en cache (max-age 600) → ancienne version sans le
+bouton pendant jusqu'à 10 min après chaque déploiement. CORRECTIF
+STRUCTUREL : index.html référence css/js/vendor avec ?v=AAAAMMJJHHMM ;
+build/gen-demo.js réécrit l'estampille à CHAQUE build (étape 0) puis
+génère la démo. Donc : toujours lancer gen-demo avant de livrer index.html,
+et livrer index.html à chaque changement de css/js. Plus jamais de
+Cmd+Maj+R nécessaire côté visiteur après un push.

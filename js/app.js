@@ -165,9 +165,7 @@ function htmlBalade(b){
     ${b.ref?`<p class="source"><strong>${tr('rides.ref')} :</strong> ${esc(b.ref[lang])}</p>`:''}
     <p class="source">${tr('rides.duree')} : ${heures(b.minutes)}, ${tr('rides.pedal')}.</p>
     <div class="det-actions">
-      <button type="button" class="btn btn-vert" data-maps="${b.id}">${tr('det.maps')}</button>
-      <button type="button" class="btn btn-gpx" data-lien="${b.id}">${tr('det.link')}</button>
-      <button type="button" class="btn btn-gpx" data-gpx="${b.id}">${tr('det.gpx')}</button>
+      <a class="btn btn-vert" href="${lienMaps(b)}" target="_blank" rel="noopener">${tr('det.maps')}</a>
     </div>
     <p class="source">${tr('det.mapsNote')}</p>`;
 }
@@ -189,8 +187,11 @@ function lienMaps(b){
   return 'https://www.google.com/maps/dir/?api=1&origin='+o+'&destination='+d+'&travelmode=bicycling&waypoints='+encodeURIComponent(wp.join('|'));
 }
 document.getElementById('det-corps').addEventListener('click',e=>{
-  const l=e.target.closest('[data-lien]'), g=e.target.closest('[data-gpx]'), mp=e.target.closest('[data-maps]');
-  if(mp){ const b=BALADES.find(x=>x.id===mp.dataset.maps); if(b) window.open(lienMaps(b),'_blank'); return; }
+  /* boutons « copier le lien » et « GPX » retirés le 10/09 à la demande de
+     Jean-Martin (le client utilise son téléphone, pas une appli GPS) ; le lien
+     direct ?balade= reste actif pour les QR codes. Les gestionnaires ci-dessous
+     restent en réserve. */
+  const l=e.target.closest('[data-lien]'), g=e.target.closest('[data-gpx]');
   if(l){
     const url=lienBalade(l.dataset.lien);
     const fait=()=>{ l.textContent=tr('det.linkOk'); setTimeout(()=>l.textContent=tr('det.link'),2200); };

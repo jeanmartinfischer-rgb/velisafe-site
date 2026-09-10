@@ -5,7 +5,13 @@ const R='/home/claude/velisafe';
 const lire=f=>fs.readFileSync(path.join(R,f),'utf8');
 const b64=f=>fs.readFileSync(path.join(R,f)).toString('base64');
 
-let html = lire('index.html');
+/* 0. anti-cache : chaque build estampille css/js d'une version (AAAAMMJJHHMM)
+   dans index.html — les navigateurs rechargent les fichiers dès la publication
+   au lieu de garder l'ancienne version jusqu'à 10 minutes. */
+const V=new Date().toISOString().replace(/[-:T]/g,'').slice(0,12);
+let src=lire('index.html').replace(/(href|src)="((?:css|js|vendor)\/[a-z0-9]+\.(?:css|js))\?v=\d+"/g,(m,a,f)=>`${a}="${f}?v=${V}"`);
+fs.writeFileSync(path.join(R,'index.html'),src);
+let html = src;
 
 const mime = {'.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'};
 // 1. images -> data URI
@@ -14,10 +20,10 @@ html = html.replace(/(src|href)="(assets\/[^"]+)"/g, (m,attr,f)=>{
   return `${attr}="data:${mime[ext]||'application/octet-stream'};base64,${b64(f)}"`;
 });
 // 2. feuilles de style -> <style>
-html = html.replace(/<link rel="stylesheet" href="(vendor\/leaflet\.css|css\/style\.css)">/g,
+html = html.replace(/<link rel="stylesheet" href="(vendor\/leaflet\.css|css\/style\.css)(?:\?v=\d+)?">/g,
   (m,f)=>`<style>\n/* ===== ${f} ===== */\n${lire(f)}\n</style>`);
 // 3. scripts -> <script> en ligne
-html = html.replace(/<script src="(vendor\/leaflet\.js|vendor\/jspdf\.js|js\/[a-z0-9]+\.js)"><\/script>/g,
+html = html.replace(/<script src="(vendor\/leaflet\.js|vendor\/jspdf\.js|js\/[a-z0-9]+\.js)(?:\?v=\d+)?"><\/script>/g,
   (m,f)=>`<script>\n/* ===== ${f} ===== */\n${lire(f)}\n</script>`);
 // 3 bis. chemins d'images dans le JavaScript (vignettes des vélos) -> data URI
 html = html.replace(/assets\/velos\/([a-z]+)\.(?:svg|jpg)/g,
