@@ -605,3 +605,13 @@ sociale et forme juridique toujours à compléter. Dossier « Pour Antoine »
 resynchronisé (app, html, docx, 4 PDF). Scripts conservés dans le
 scratchpad : gen-qr.py, gen-dossier.py + gen-dossier-docs.py, contrat.js,
 marche.py — tous portent le nouveau numéro.
+
+**10/09/2026, RANGEMENT DÉFINITIF de documents-internes (gitignoré).**
+Trois entrées seulement : `0-LISEZ-MOI-Jean-Martin.pdf` (récap « où est
+quoi », script scratchpad/gen-recap-jm.py), `Pour Antoine/` (7 éléments, à
+transmettre entier), `Jean-Martin/` (copies de réserve des mêmes outils :
+app, html, docx, marche, QR). RÈGLE : toute régénération (atelier, contrat,
+PDF) se commite dans LES DEUX dossiers ; les chemins « documents-internes/
+<fichier> » à la racine n'existent plus. Jean-Martin ne modifie rien à la
+main : Claude met à jour le Mac, lui fait Push origin et transmet le
+dossier Antoine.
