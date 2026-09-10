@@ -32,7 +32,7 @@ Numéro de TVA intracommunautaire : [numéro].<br>
 Téléphone : 06 30 39 95 31 · Courriel : [adresse].</p>
 <p>Directeur de la publication : [nom et prénom].</p>
 <h3>Hébergeur</h3>
-<p>[Dénomination de l'hébergeur], [adresse complète], [téléphone].</p>
+<p>GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, États-Unis — service GitHub Pages.</p>
 <h3>Assurance</h3>
 <p>Responsabilité civile professionnelle souscrite auprès de [compagnie], police n° [numéro], couvrant l'activité de location de cycles sur le territoire [étendue géographique].</p>
 <h3>Médiation de la consommation</h3>
@@ -42,7 +42,7 @@ Téléphone : 06 30 39 95 31 · Courriel : [adresse].</p>
 <h3>Cartographie et données</h3>
 <p>Les fonds de carte proviennent d'OpenStreetMap, sous licence ODbL, affichés avec le rendu standard d'OpenStreetMap. Les tracés des balades sont calculés à partir des données OpenStreetMap au moyen du moteur BRouter, profil « trekking ». La bibliothèque d'affichage Leaflet est distribuée sous licence BSD à deux clauses. Les distances, dénivelés et durées affichés sont mesurés sur ces tracés : ils constituent une indication et non un engagement contractuel.</p>
 <h3>Crédits photographiques</h3>
-<p>[Auteur et origine de chaque photographie].</p>
+<p>Visuels d'illustration générés par intelligence artificielle, non contractuels : les vélos et paysages représentés ne sont pas des photographies du matériel loué. Logo VÉLI SAFE : [auteur]. [À compléter si des photographies réelles sont ajoutées.]</p>
 <h3>Signaler une erreur</h3>
 <p>Une inexactitude sur un parcours, un horaire ou un village ? Écrivez-nous : nous corrigeons et nous indiquons la date de mise à jour.</p>`,
 
@@ -77,7 +77,7 @@ Téléphone : 06 30 39 95 31 · Courriel : [adresse].</p>
 <h3>10. Vol, perte et dommages</h3>
 <p>Le locataire est responsable du matériel pendant toute la durée de la location. En cas de vol, il doit déposer plainte sans délai et remettre le récépissé au loueur, accompagné de la clé de l'antivol. À défaut de dépôt de plainte ou de restitution de la clé, la valeur de remplacement du matériel reste due. Les dégradations constatées au retour sont facturées sur la base d'un devis de réparation communiqué au locataire.</p>
 <h3>11. Annulation</h3>
-<p>La réservation en ligne n'entraînant aucun paiement, elle peut être annulée à tout moment, sans frais ni justification, par la messagerie du site ou par téléphone. Le loueur demande seulement d'être prévenu afin de remettre le vélo à disposition. Le loueur peut de son côté annuler une réservation en cas d'indisponibilité du matériel ou de conditions météorologiques rendant la sortie dangereuse ; aucune somme n'ayant été versée, l'annulation ne donne lieu à aucun remboursement ni à aucune indemnité.</p>
+<p>La réservation en ligne n'entraînant aucun paiement, elle peut être annulée à tout moment, sans frais ni justification, par WhatsApp ou par téléphone. Le loueur demande seulement d'être prévenu afin de remettre le vélo à disposition. Le loueur peut de son côté annuler une réservation en cas d'indisponibilité du matériel ou de conditions météorologiques rendant la sortie dangereuse ; aucune somme n'ayant été versée, l'annulation ne donne lieu à aucun remboursement ni à aucune indemnité.</p>
 <h3>12. Droit de rétractation</h3>
 <p>L'article L221-28 du code de la consommation écarte le droit de rétractation pour les prestations de services d'hébergement, de transport, de restauration et d'activités de loisirs fournies à une date ou selon une périodicité déterminée. La location de cycles pour une date de retrait convenue relève de cette catégorie. En tout état de cause, la réservation en ligne ne donnant lieu à aucun paiement, elle peut être annulée librement dans les conditions de l'article 11.</p>
 <h3>13. Assurance et responsabilité</h3>
@@ -85,7 +85,7 @@ Téléphone : 06 30 39 95 31 · Courriel : [adresse].</p>
 <h3>14. Données personnelles</h3>
 <p>Les données transmises lors de la réservation sont traitées dans les conditions décrites à la page « Données personnelles » du présent site.</p>
 <h3>15. Réclamations et médiation</h3>
-<p>Toute réclamation peut être adressée au loueur par la messagerie du site, par téléphone ou par courrier. À défaut de solution amiable dans un délai de deux mois, le consommateur peut saisir gratuitement le médiateur de la consommation désigné dans les mentions légales, conformément aux articles L612-1 et suivants du code de la consommation.</p>
+<p>Toute réclamation peut être adressée au loueur par WhatsApp, par téléphone ou par courrier. À défaut de solution amiable dans un délai de deux mois, le consommateur peut saisir gratuitement le médiateur de la consommation désigné dans les mentions légales, conformément aux articles L612-1 et suivants du code de la consommation.</p>
 <h3>16. Droit applicable</h3>
 <p>Les présentes conditions sont soumises au droit français. Elles sont rédigées en français ; les traductions proposées sur ce site sont fournies pour information et la version française fait foi.</p>`,
 
@@ -94,17 +94,17 @@ Téléphone : 06 30 39 95 31 · Courriel : [adresse].</p>
 <p>Le responsable du traitement est [raison sociale], [adresse], joignable au 06 30 39 95 31 et à [adresse courriel]. [Coordonnées du délégué à la protection des données, s'il en est désigné un.]</p>
 <h3>Ce que nous collectons, et pourquoi</h3>
 <ul>
-<li><strong>Réservation</strong> : nom, prénom, adresse électronique, numéro de téléphone, date, heure et durée souhaitées, matériel choisi. Ces données sont nécessaires à l'exécution du contrat que vous demandez et à la préparation du matériel.</li>
-<li><strong>Messagerie</strong> : votre code de réservation et le contenu de vos messages, pour répondre à vos questions et suivre votre location.</li>
+<li><strong>Réservation</strong> : nom, prénom, numéro de téléphone, date, heure et durée souhaitées, matériel choisi. Ces données sont nécessaires à l'exécution du contrat que vous demandez et à la préparation du matériel.</li>
+<li><strong>Demande par WhatsApp</strong> : le message de demande part de votre propre téléphone vers le numéro du loueur, via WhatsApp (Meta Platforms Ireland Ltd). Le site n'envoie rien lui-même ; la conversation se poursuit dans WhatsApp, selon la politique de confidentialité de ce service.</li>
 <li><strong>Contrat de location</strong> : les informations figurant sur le contrat signé au point de location, y compris la référence d'une pièce d'identité présentée, dans le cadre de l'exécution du contrat et de la conservation des pièces comptables.</li>
 </ul>
 <p>Nous ne collectons aucune donnée bancaire sur ce site. Nous n'établissons aucun profil, nous n'affichons aucune publicité et nous ne vendons ni ne louons vos données.</p>
 <h3>Sur quelle base légale</h3>
 <p>L'exécution du contrat ou des mesures précontractuelles prises à votre demande, au sens de l'article 6.1.b du règlement général sur la protection des données, pour la réservation et la location. Le respect d'obligations légales, au sens de l'article 6.1.c, pour la conservation des pièces comptables.</p>
 <h3>Combien de temps</h3>
-<p>Les données de réservation sont conservées [durée à fixer, par exemple trois ans] à compter du dernier contact. Les conversations de la messagerie sont supprimées [durée à fixer] après la fin de la location. Les pièces comptables sont conservées pendant la durée légale qui s'impose à l'entreprise.</p>
+<p>Les données de réservation sont conservées [durée à fixer, par exemple trois ans] à compter du dernier contact. Les échanges WhatsApp restent sur le téléphone du loueur et sont supprimés [durée à fixer] après la fin de la location. Les pièces comptables sont conservées pendant la durée légale qui s'impose à l'entreprise.</p>
 <h3>Qui y a accès</h3>
-<p>Le personnel du loueur, dans la limite de ce que son travail exige. [Le cas échéant, l'hébergeur du site et le prestataire de messagerie, en qualité de sous-traitants, dont l'identité et la localisation des serveurs sont à préciser ici.] Aucun transfert hors de l'Union européenne n'est effectué [à confirmer selon l'hébergeur retenu].</p>
+<p>Le personnel du loueur, dans la limite de ce que son travail exige. Le site est hébergé par GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, États-Unis) : l'hébergeur traite l'adresse IP des visiteurs pour servir les pages, ce qui peut constituer un transfert hors de l'Union européenne [encadrement à préciser par le juriste]. Les demandes de réservation transitent par WhatsApp, envoyées depuis le téléphone du client.</p>
 <h3>Ce que le site charge depuis l'extérieur</h3>
 <p>Les pages du site n'appellent aucun service tiers, à une exception près : lorsqu'une carte apparaît à l'écran, son fond est téléchargé depuis les serveurs de la Fondation OpenStreetMap. Cette requête transmet votre adresse IP à ce fournisseur. Tant qu'aucune carte n'apparaît à l'écran, aucune donnée ne quitte votre navigateur vers un tiers.</p>
 <h3>Vos droits</h3>
@@ -118,7 +118,7 @@ Téléphone : 06 30 39 95 31 · Courriel : [adresse].</p>
 <h3>Ce que dit la règle</h3>
 <p>L'article 82 de la loi Informatique et Libertés soumet au consentement préalable de l'internaute toute lecture ou écriture d'informations dans son terminal, à l'exception de ce qui est strictement nécessaire au service demandé. La Commission nationale de l'informatique et des libertés admet en outre une exemption étroite pour certaines mesures d'audience anonymes. Ce site n'utilise ni les unes ni les autres.</p>
 <h3>Ce que le site conserve dans votre navigateur</h3>
-<p>Rien. Le code de réservation affiché après une demande et les messages échangés en mode démonstration vivent dans la page et disparaissent dès que vous la rechargez ou la fermez.</p>
+<p>Rien. Le code de réservation affiché après une demande vit dans la page et disparaît dès que vous la rechargez ou la fermez.</p>
 <h3>Les cartes, seule exception</h3>
 <p>Les cartes des sections « Balades », « Vignoble » et « Découvrir l'Alsace » affichent des fonds téléchargés depuis les serveurs de la Fondation OpenStreetMap. Ces requêtes ne partent que lorsque vous faites défiler la page jusqu'à l'une de ces cartes. Elles transmettent votre adresse IP au fournisseur, qui applique sa propre politique. Si vous ne souhaitez pas que cette requête ait lieu, il suffit de ne pas faire défiler la page jusqu'à ces cartes : le reste du site fonctionne sans.</p>
 <h3>Si cela change</h3>
@@ -134,7 +134,7 @@ EU VAT number: [number].<br>
 Telephone: +33 6 30 39 95 31 · E-mail: [address].</p>
 <p>Publication director: [name].</p>
 <h3>Hosting provider</h3>
-<p>[Host name], [full address], [telephone].</p>
+<p>GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, United States — GitHub Pages service.</p>
 <h3>Insurance</h3>
 <p>Professional liability insurance with [insurer], policy no. [number], covering cycle hire in [geographical scope].</p>
 <h3>Consumer mediation</h3>
@@ -144,7 +144,7 @@ Telephone: +33 6 30 39 95 31 · E-mail: [address].</p>
 <h3>Mapping and data</h3>
 <p>Map backgrounds come from OpenStreetMap under the ODbL licence, with the standard OpenStreetMap rendering. Ride tracks are computed from OpenStreetMap data using the BRouter engine, "trekking" profile. The Leaflet display library is distributed under the two-clause BSD licence. Distances, elevation gains and times shown are measured on those tracks: they are an indication, not a contractual commitment.</p>
 <h3>Photo credits</h3>
-<p>[Author and source of each photograph].</p>
+<p>Illustrative visuals generated by artificial intelligence, not contractual: the bikes and landscapes shown are not photographs of the rented equipment. VÉLI SAFE logo: [author]. [To be completed if real photographs are added.]</p>
 <h3>Reporting an error</h3>
 <p>Found something wrong about a route, an opening time or a village? Write to us: we correct it and show the update date.</p>`,
   terms:`
@@ -178,7 +178,7 @@ Telephone: +33 6 30 39 95 31 · E-mail: [address].</p>
 <h3>10. Theft, loss and damage</h3>
 <p>The customer is responsible for the equipment throughout the hire. In the event of theft, the customer must report it to the police without delay and give the hirer the report together with the lock key. Without a police report or the key, the replacement value remains due. Damage found on return is charged on the basis of a repair quotation given to the customer.</p>
 <h3>11. Cancellation</h3>
-<p>As the online booking involves no payment, it may be cancelled at any time, free of charge and without justification, through the site's message thread or by telephone. The hirer simply asks to be told, so the bike can be released. The hirer may likewise cancel a booking if the equipment is unavailable or if weather makes the outing dangerous; as no money has been paid, no refund or compensation arises.</p>
+<p>As the online booking involves no payment, it may be cancelled at any time, free of charge and without justification, by WhatsApp or by telephone. The hirer simply asks to be told, so the bike can be released. The hirer may likewise cancel a booking if the equipment is unavailable or if weather makes the outing dangerous; as no money has been paid, no refund or compensation arises.</p>
 <h3>12. Right of withdrawal</h3>
 <p>Article L221-28 of the French Consumer Code sets aside the right of withdrawal for accommodation, transport, catering and leisure services supplied on a specific date or during a specific period. Cycle hire for an agreed collection date falls within that category. In any event, since the online booking involves no payment, it may be cancelled freely under article 11.</p>
 <h3>13. Insurance and liability</h3>
@@ -186,7 +186,7 @@ Telephone: +33 6 30 39 95 31 · E-mail: [address].</p>
 <h3>14. Personal data</h3>
 <p>Data provided when booking is processed as described on the "Personal data" page of this site.</p>
 <h3>15. Complaints and mediation</h3>
-<p>Complaints may be sent to the hirer through the site's message thread, by telephone or by post. Failing an amicable settlement within two months, the consumer may refer the matter free of charge to the consumer mediator named in the legal notice, under articles L612-1 et seq. of the Consumer Code.</p>
+<p>Complaints may be sent to the hirer by WhatsApp, by telephone or by post. Failing an amicable settlement within two months, the consumer may refer the matter free of charge to the consumer mediator named in the legal notice, under articles L612-1 et seq. of the Consumer Code.</p>
 <h3>16. Governing law</h3>
 <p>These terms are governed by French law. They are written in French; the translations offered on this site are for information and the French version prevails.</p>`,
   privacy:`
@@ -194,17 +194,17 @@ Telephone: +33 6 30 39 95 31 · E-mail: [address].</p>
 <p>The controller is [company name], [address], reachable on +33 6 30 39 95 31 and at [e-mail]. [Contact details of the data protection officer, if one is appointed.]</p>
 <h3>What we collect, and why</h3>
 <ul>
-<li><strong>Booking</strong>: surname, first name, e-mail address, telephone number, requested date, time and duration, equipment chosen. This is needed to perform the contract you are asking for and to prepare the equipment.</li>
-<li><strong>Messages</strong>: your booking code and the content of your messages, to answer your questions and follow your hire.</li>
+<li><strong>Booking</strong>: surname, first name, telephone number, requested date, time and duration, equipment chosen. This is needed to perform the contract you are asking for and to prepare the equipment.</li>
+<li><strong>WhatsApp request</strong>: the request message is sent from your own phone to the hirer's number, via WhatsApp (Meta Platforms Ireland Ltd). The site itself sends nothing; the conversation continues in WhatsApp, under that service's privacy policy.</li>
 <li><strong>Hire contract</strong>: the information on the contract signed at the shop, including the reference of identification presented, for the performance of the contract and the keeping of accounting records.</li>
 </ul>
 <p>We collect no bank details on this site. We build no profiles, we display no advertising, and we neither sell nor rent your data.</p>
 <h3>Legal basis</h3>
 <p>Performance of the contract or of pre-contractual steps taken at your request, within the meaning of article 6.1.b of the General Data Protection Regulation, for booking and hire. Compliance with legal obligations, within the meaning of article 6.1.c, for the keeping of accounting records.</p>
 <h3>How long</h3>
-<p>Booking data is kept for [period to be set, for example three years] from the last contact. Message threads are deleted [period to be set] after the hire ends. Accounting records are kept for the statutory period applicable to the business.</p>
+<p>Booking data is kept for [period to be set, for example three years] from the last contact. WhatsApp exchanges stay on the hirer's phone and are deleted [period to be set] after the hire ends. Accounting records are kept for the statutory period applicable to the business.</p>
 <h3>Who has access</h3>
-<p>The hirer's staff, only as far as their work requires. [Where applicable, the site host and the messaging provider, as processors, whose identity and server locations are to be stated here.] No transfer outside the European Union takes place [to be confirmed once the host is chosen].</p>
+<p>The hirer's staff, only as far as their work requires. The site is hosted on GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, United States): the host processes visitors' IP addresses to serve the pages, which may constitute a transfer outside the European Union [safeguard to be specified by counsel]. Booking requests travel through WhatsApp, sent from the customer's phone.</p>
 <h3>What the site loads from outside</h3>
 <p>The pages call no third-party service, with one exception: when a map comes into view, its background is downloaded from the OpenStreetMap Foundation's servers. That request passes your IP address to that provider. As long as no map comes into view, no data leaves your browser to a third party.</p>
 <h3>Your rights</h3>
@@ -217,7 +217,7 @@ Telephone: +33 6 30 39 95 31 · E-mail: [address].</p>
 <h3>What the rule says</h3>
 <p>Article 82 of the French Data Protection Act makes any reading or writing of information on a user's device subject to prior consent, except what is strictly necessary for the service requested. The French data protection authority also allows a narrow exemption for certain anonymous audience measurements. This site uses neither.</p>
 <h3>What the site keeps in your browser</h3>
-<p>Nothing. The booking code shown after a request, and the messages exchanged in demonstration mode, live in the page and disappear as soon as you reload or close it.</p>
+<p>Nothing. The booking code shown after a request lives in the page and disappears as soon as you reload or close it.</p>
 <h3>Maps, the only exception</h3>
 <p>The maps in the "Rides", "Vineyards" and "Discover Alsace" sections display backgrounds downloaded from the OpenStreetMap Foundation's servers. Those requests are only sent when you scroll to one of those maps. They pass your IP address to the provider, which applies its own policy. If you would rather that did not happen, simply do not scroll down to those maps: the rest of the site works without them.</p>
 <h3>If this changes</h3>
@@ -233,7 +233,7 @@ Umsatzsteuer-Identifikationsnummer: [Nummer].<br>
 Telefon: +33 6 30 39 95 31 · E-Mail: [Adresse].</p>
 <p>Verantwortlich für den Inhalt: [Name].</p>
 <h3>Hosting</h3>
-<p>[Name des Hosters], [vollständige Anschrift], [Telefon].</p>
+<p>GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA — Dienst GitHub Pages.</p>
 <h3>Versicherung</h3>
 <p>Betriebshaftpflicht bei [Versicherer], Police Nr. [Nummer], für die Fahrradvermietung im Gebiet [geografischer Geltungsbereich].</p>
 <h3>Verbrauchermediation</h3>
@@ -243,7 +243,7 @@ Telefon: +33 6 30 39 95 31 · E-Mail: [Adresse].</p>
 <h3>Kartografie und Daten</h3>
 <p>Die Kartenhintergründe stammen von OpenStreetMap unter der ODbL-Lizenz, im Standard-Rendering von OpenStreetMap. Die Tourenverläufe werden aus OpenStreetMap-Daten mit der BRouter-Engine, Profil „trekking", berechnet. Die Anzeigebibliothek Leaflet steht unter der BSD-Lizenz mit zwei Klauseln. Angezeigte Distanzen, Höhenmeter und Zeiten sind auf diesen Verläufen gemessen: Sie sind ein Anhaltspunkt, keine vertragliche Zusage.</p>
 <h3>Bildnachweise</h3>
-<p>[Urheber und Herkunft jeder Aufnahme].</p>
+<p>Illustrationen, mit künstlicher Intelligenz erzeugt, nicht vertraglich bindend: die gezeigten Räder und Landschaften sind keine Fotografien des vermieteten Materials. Logo VÉLI SAFE: [Urheber]. [Zu ergänzen, falls echte Fotografien hinzukommen.]</p>
 <h3>Fehler melden</h3>
 <p>Etwas stimmt nicht bei einer Tour, einer Öffnungszeit oder einem Dorf? Schreiben Sie uns: Wir korrigieren es und nennen das Datum der Aktualisierung.</p>`,
   terms:`
@@ -277,7 +277,7 @@ Telefon: +33 6 30 39 95 31 · E-Mail: [Adresse].</p>
 <h3>10. Diebstahl, Verlust und Schäden</h3>
 <p>Der Mieter haftet für das Material während der gesamten Mietzeit. Bei Diebstahl ist unverzüglich Anzeige zu erstatten und dem Vermieter die Bestätigung samt Schlossschlüssel zu übergeben. Ohne Anzeige oder Schlüssel bleibt der Wiederbeschaffungswert geschuldet. Bei Rückgabe festgestellte Schäden werden auf Grundlage eines dem Mieter mitgeteilten Kostenvoranschlags berechnet.</p>
 <h3>11. Stornierung</h3>
-<p>Da die Online-Buchung keine Zahlung auslöst, kann sie jederzeit kostenfrei und ohne Begründung über die Nachrichtenfunktion oder telefonisch storniert werden. Der Vermieter bittet lediglich um Bescheid, um das Rad wieder freizugeben. Der Vermieter kann eine Buchung ebenfalls stornieren, wenn das Material nicht verfügbar ist oder das Wetter die Ausfahrt gefährlich macht; da nichts gezahlt wurde, entstehen weder Erstattung noch Entschädigung.</p>
+<p>Da die Online-Buchung keine Zahlung auslöst, kann sie jederzeit kostenfrei und ohne Begründung per WhatsApp oder telefonisch storniert werden. Der Vermieter bittet lediglich um Bescheid, um das Rad wieder freizugeben. Der Vermieter kann eine Buchung ebenfalls stornieren, wenn das Material nicht verfügbar ist oder das Wetter die Ausfahrt gefährlich macht; da nichts gezahlt wurde, entstehen weder Erstattung noch Entschädigung.</p>
 <h3>12. Widerrufsrecht</h3>
 <p>Artikel L221-28 des französischen Verbrauchergesetzbuchs schließt das Widerrufsrecht für Beherbergung, Beförderung, Bewirtung und Freizeitleistungen aus, die zu einem bestimmten Zeitpunkt oder in einem bestimmten Zeitraum erbracht werden. Die Fahrradmiete zu einem vereinbarten Abholdatum fällt in diese Kategorie. Da die Online-Buchung ohnehin keine Zahlung auslöst, kann sie nach Artikel 11 frei storniert werden.</p>
 <h3>13. Versicherung und Haftung</h3>
@@ -285,7 +285,7 @@ Telefon: +33 6 30 39 95 31 · E-Mail: [Adresse].</p>
 <h3>14. Personenbezogene Daten</h3>
 <p>Die bei der Buchung übermittelten Daten werden nach den Angaben auf der Seite „Datenschutz" dieser Website verarbeitet.</p>
 <h3>15. Beschwerden und Mediation</h3>
-<p>Beschwerden können über die Nachrichtenfunktion, telefonisch oder schriftlich an den Vermieter gerichtet werden. Kommt binnen zwei Monaten keine gütliche Einigung zustande, kann der Verbraucher den in den Impressumsangaben genannten Verbrauchermediator kostenlos anrufen, nach Artikel L612-1 ff. des Verbrauchergesetzbuchs.</p>
+<p>Beschwerden können per WhatsApp, telefonisch oder schriftlich an den Vermieter gerichtet werden. Kommt binnen zwei Monaten keine gütliche Einigung zustande, kann der Verbraucher den in den Impressumsangaben genannten Verbrauchermediator kostenlos anrufen, nach Artikel L612-1 ff. des Verbrauchergesetzbuchs.</p>
 <h3>16. Anwendbares Recht</h3>
 <p>Diese Bedingungen unterliegen französischem Recht. Sie sind auf Französisch verfasst; die auf dieser Website angebotenen Übersetzungen dienen der Information, maßgeblich ist die französische Fassung.</p>`,
   privacy:`
@@ -293,17 +293,17 @@ Telefon: +33 6 30 39 95 31 · E-Mail: [Adresse].</p>
 <p>Verantwortlich ist [Firmenname], [Anschrift], erreichbar unter +33 6 30 39 95 31 und [E-Mail]. [Kontaktdaten des Datenschutzbeauftragten, falls bestellt.]</p>
 <h3>Was wir erheben, und wofür</h3>
 <ul>
-<li><strong>Buchung</strong>: Name, Vorname, E-Mail-Adresse, Telefonnummer, gewünschtes Datum, Uhrzeit und Dauer, gewähltes Material. Das ist zur Erfüllung des von Ihnen gewünschten Vertrags und zur Vorbereitung des Materials erforderlich.</li>
-<li><strong>Nachrichten</strong>: Ihr Buchungscode und der Inhalt Ihrer Nachrichten, um Ihre Fragen zu beantworten und die Miete zu begleiten.</li>
+<li><strong>Buchung</strong>: Name, Vorname, Telefonnummer, gewünschtes Datum, Uhrzeit und Dauer, gewähltes Material. Das ist zur Erfüllung des von Ihnen gewünschten Vertrags und zur Vorbereitung des Materials erforderlich.</li>
+<li><strong>Anfrage per WhatsApp</strong>: die Anfrage wird von Ihrem eigenen Telefon an die Nummer des Vermieters gesendet, über WhatsApp (Meta Platforms Ireland Ltd). Die Website selbst sendet nichts; das Gespräch wird in WhatsApp nach dessen Datenschutzrichtlinie fortgeführt.</li>
 <li><strong>Mietvertrag</strong>: die Angaben im im Laden unterschriebenen Vertrag, einschließlich der Referenz eines vorgelegten Ausweises, zur Vertragserfüllung und zur Aufbewahrung der Buchhaltungsunterlagen.</li>
 </ul>
 <p>Auf dieser Website werden keine Bankdaten erhoben. Wir erstellen keine Profile, zeigen keine Werbung und verkaufen oder vermieten Ihre Daten nicht.</p>
 <h3>Rechtsgrundlage</h3>
 <p>Erfüllung des Vertrags oder vorvertraglicher Maßnahmen auf Ihre Anfrage im Sinne von Artikel 6.1.b der Datenschutz-Grundverordnung für Buchung und Miete. Erfüllung rechtlicher Pflichten im Sinne von Artikel 6.1.c für die Aufbewahrung der Buchhaltungsunterlagen.</p>
 <h3>Wie lange</h3>
-<p>Buchungsdaten werden [Frist festzulegen, etwa drei Jahre] ab dem letzten Kontakt aufbewahrt. Nachrichtenverläufe werden [Frist festzulegen] nach Ende der Miete gelöscht. Buchhaltungsunterlagen werden für die gesetzlich vorgeschriebene Dauer aufbewahrt.</p>
+<p>Buchungsdaten werden [Frist festzulegen, etwa drei Jahre] ab dem letzten Kontakt aufbewahrt. WhatsApp-Verläufe bleiben auf dem Telefon des Vermieters und werden [Frist festzulegen] nach Ende der Miete gelöscht. Buchhaltungsunterlagen werden für die gesetzlich vorgeschriebene Dauer aufbewahrt.</p>
 <h3>Wer Zugriff hat</h3>
-<p>Das Personal des Vermieters, nur soweit die Arbeit es erfordert. [Gegebenenfalls der Hoster und der Nachrichtendienstleister als Auftragsverarbeiter, deren Identität und Serverstandorte hier zu nennen sind.] Eine Übermittlung außerhalb der Europäischen Union findet nicht statt [nach Wahl des Hosters zu bestätigen].</p>
+<p>Das Personal des Vermieters, nur soweit die Arbeit es erfordert. Die Website wird auf GitHub Pages gehostet (GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA): der Hoster verarbeitet die IP-Adressen der Besucher zur Auslieferung der Seiten, was eine Übermittlung außerhalb der Europäischen Union darstellen kann [Absicherung durch den Juristen zu präzisieren]. Buchungsanfragen laufen über WhatsApp, gesendet vom Telefon des Kunden.</p>
 <h3>Was die Website von außen lädt</h3>
 <p>Die Seiten rufen keinen Drittdienst auf, mit einer Ausnahme: Sobald eine Karte sichtbar wird, werden die Kartenhintergründe von den Servern der OpenStreetMap Foundation geladen. Diese Anfrage übermittelt Ihre IP-Adresse an diesen Anbieter. Solange keine Karte sichtbar wird, verlassen keine Daten Ihren Browser Richtung Dritte.</p>
 <h3>Ihre Rechte</h3>
@@ -332,7 +332,7 @@ Número de IVA intracomunitario: [número].<br>
 Teléfono: +33 6 30 39 95 31 · Correo electrónico: [dirección].</p>
 <p>Director de la publicación: [nombre y apellidos].</p>
 <h3>Alojamiento web</h3>
-<p>[Nombre del proveedor], [dirección completa], [teléfono].</p>
+<p>GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, Estados Unidos — servicio GitHub Pages.</p>
 <h3>Seguro</h3>
 <p>Responsabilidad civil profesional suscrita con [compañía], póliza n.º [número], que cubre la actividad de alquiler de bicicletas en [ámbito geográfico].</p>
 <h3>Mediación de consumo</h3>
@@ -342,7 +342,7 @@ Teléfono: +33 6 30 39 95 31 · Correo electrónico: [dirección].</p>
 <h3>Cartografía y datos</h3>
 <p>Los fondos de mapa proceden de OpenStreetMap, bajo licencia ODbL, con la representación estándar de OpenStreetMap. Los trazados de las rutas se calculan a partir de datos de OpenStreetMap mediante el motor BRouter, perfil «trekking». La biblioteca de visualización Leaflet se distribuye bajo licencia BSD de dos cláusulas. Las distancias, desniveles y duraciones mostrados se miden sobre esos trazados: son una indicación, no un compromiso contractual.</p>
 <h3>Créditos fotográficos</h3>
-<p>[Autor y origen de cada fotografía].</p>
+<p>Imágenes ilustrativas generadas por inteligencia artificial, sin valor contractual: las bicicletas y paisajes mostrados no son fotografías del material alquilado. Logotipo VÉLI SAFE: [autor]. [Por completar si se añaden fotografías reales.]</p>
 <h3>Señalar un error</h3>
 <p>¿Algo incorrecto en una ruta, un horario o un pueblo? Escríbanos: lo corregimos e indicamos la fecha de actualización.</p>`,
   terms:`
@@ -376,7 +376,7 @@ Teléfono: +33 6 30 39 95 31 · Correo electrónico: [dirección].</p>
 <h3>10. Robo, pérdida y daños</h3>
 <p>El arrendatario es responsable del material durante todo el alquiler. En caso de robo debe denunciarlo sin demora y entregar el justificante al arrendador junto con la llave del candado. Sin denuncia o sin llave, se adeuda el valor de reposición. Los desperfectos constatados a la vuelta se facturan según un presupuesto de reparación comunicado al arrendatario.</p>
 <h3>11. Anulación</h3>
-<p>Como la reserva en línea no implica pago alguno, puede anularse en cualquier momento, sin gastos ni justificación, por los mensajes del sitio o por teléfono. El arrendador solo pide que se le avise para liberar la bicicleta. El arrendador puede a su vez anular una reserva si el material no está disponible o si la meteorología hace peligrosa la salida; al no haberse abonado nada, no procede reembolso ni indemnización.</p>
+<p>Como la reserva en línea no implica pago alguno, puede anularse en cualquier momento, sin gastos ni justificación, por WhatsApp o por teléfono. El arrendador solo pide que se le avise para liberar la bicicleta. El arrendador puede a su vez anular una reserva si el material no está disponible o si la meteorología hace peligrosa la salida; al no haberse abonado nada, no procede reembolso ni indemnización.</p>
 <h3>12. Derecho de desistimiento</h3>
 <p>El artículo L221-28 del Código de Consumo francés excluye el derecho de desistimiento para los servicios de alojamiento, transporte, restauración y actividades de ocio prestados en una fecha o durante un periodo determinado. El alquiler de bicicletas para una fecha de recogida acordada entra en esa categoría. En todo caso, al no implicar pago, la reserva en línea puede anularse libremente conforme al artículo 11.</p>
 <h3>13. Seguro y responsabilidad</h3>
@@ -384,7 +384,7 @@ Teléfono: +33 6 30 39 95 31 · Correo electrónico: [dirección].</p>
 <h3>14. Datos personales</h3>
 <p>Los datos facilitados al reservar se tratan según lo descrito en la página «Datos personales» de este sitio.</p>
 <h3>15. Reclamaciones y mediación</h3>
-<p>Toda reclamación puede dirigirse al arrendador por los mensajes del sitio, por teléfono o por correo. A falta de solución amistosa en dos meses, el consumidor puede acudir gratuitamente al mediador de consumo designado en el aviso legal, conforme a los artículos L612-1 y siguientes del Código de Consumo.</p>
+<p>Toda reclamación puede dirigirse al arrendador por WhatsApp, por teléfono o por correo. A falta de solución amistosa en dos meses, el consumidor puede acudir gratuitamente al mediador de consumo designado en el aviso legal, conforme a los artículos L612-1 y siguientes del Código de Consumo.</p>
 <h3>16. Ley aplicable</h3>
 <p>Estas condiciones se someten al derecho francés. Están redactadas en francés; las traducciones ofrecidas en este sitio son informativas y prevalece la versión francesa.</p>`,
   privacy:`
@@ -392,17 +392,17 @@ Teléfono: +33 6 30 39 95 31 · Correo electrónico: [dirección].</p>
 <p>El responsable del tratamiento es [razón social], [dirección], localizable en el +33 6 30 39 95 31 y en [correo electrónico]. [Datos del delegado de protección de datos, si se designa uno.]</p>
 <h3>Qué recogemos y para qué</h3>
 <ul>
-<li><strong>Reserva</strong>: nombre, apellidos, correo electrónico, teléfono, fecha, hora y duración deseadas, material elegido. Es necesario para ejecutar el contrato solicitado y preparar el material.</li>
-<li><strong>Mensajes</strong>: su código de reserva y el contenido de sus mensajes, para responder a sus preguntas y seguir el alquiler.</li>
+<li><strong>Reserva</strong>: nombre, apellidos, teléfono, fecha, hora y duración deseadas, material elegido. Es necesario para ejecutar el contrato solicitado y preparar el material.</li>
+<li><strong>Solicitud por WhatsApp</strong>: el mensaje de solicitud sale de su propio teléfono hacia el número del arrendador, a través de WhatsApp (Meta Platforms Ireland Ltd). El sitio no envía nada por sí mismo; la conversación continúa en WhatsApp, según la política de privacidad de ese servicio.</li>
 <li><strong>Contrato de alquiler</strong>: la información del contrato firmado en el local, incluida la referencia de un documento de identidad presentado, para la ejecución del contrato y la conservación de los documentos contables.</li>
 </ul>
 <p>No recogemos ningún dato bancario en este sitio. No elaboramos perfiles, no mostramos publicidad y no vendemos ni alquilamos sus datos.</p>
 <h3>Base jurídica</h3>
 <p>La ejecución del contrato o de las medidas precontractuales adoptadas a petición suya, en el sentido del artículo 6.1.b del Reglamento General de Protección de Datos, para la reserva y el alquiler. El cumplimiento de obligaciones legales, en el sentido del artículo 6.1.c, para la conservación de los documentos contables.</p>
 <h3>Cuánto tiempo</h3>
-<p>Los datos de reserva se conservan [plazo por fijar, por ejemplo tres años] desde el último contacto. Las conversaciones se suprimen [plazo por fijar] tras el fin del alquiler. Los documentos contables se conservan durante el plazo legal aplicable a la empresa.</p>
+<p>Los datos de reserva se conservan [plazo por fijar, por ejemplo tres años] desde el último contacto. Los intercambios por WhatsApp permanecen en el teléfono del arrendador y se suprimen [plazo por fijar] tras el fin del alquiler. Los documentos contables se conservan durante el plazo legal aplicable a la empresa.</p>
 <h3>Quién accede</h3>
-<p>El personal del arrendador, en la medida en que su trabajo lo exija. [En su caso, el proveedor de alojamiento y el de mensajería, como encargados del tratamiento, cuya identidad y ubicación de servidores debe indicarse aquí.] No se realiza ninguna transferencia fuera de la Unión Europea [por confirmar según el proveedor elegido].</p>
+<p>El personal del arrendador, en la medida en que su trabajo lo exija. El sitio está alojado en GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, Estados Unidos): el proveedor trata la dirección IP de los visitantes para servir las páginas, lo que puede constituir una transferencia fuera de la Unión Europea [garantía por precisar por el asesor jurídico]. Las solicitudes de reserva transitan por WhatsApp, enviadas desde el teléfono del cliente.</p>
 <h3>Qué carga el sitio desde fuera</h3>
 <p>Las páginas no llaman a ningún servicio de terceros, con una excepción: cuando un mapa aparece en pantalla, su fondo se descarga de los servidores de la Fundación OpenStreetMap. Esa petición transmite su dirección IP a dicho proveedor. Mientras ningún mapa aparezca en pantalla, ningún dato sale de su navegador hacia un tercero.</p>
 <h3>Sus derechos</h3>
@@ -415,7 +415,7 @@ Teléfono: +33 6 30 39 95 31 · Correo electrónico: [dirección].</p>
 <h3>Lo que dice la norma</h3>
 <p>El artículo 82 de la ley francesa de protección de datos somete al consentimiento previo toda lectura o escritura de información en el terminal del usuario, salvo lo estrictamente necesario para el servicio solicitado. La autoridad francesa admite además una exención estrecha para ciertas mediciones de audiencia anónimas. Este sitio no usa ni lo uno ni lo otro.</p>
 <h3>Qué guarda el sitio en su navegador</h3>
-<p>Nada. El código de reserva mostrado tras una solicitud y los mensajes intercambiados en modo demostración viven en la página y desaparecen al recargarla o cerrarla.</p>
+<p>Nada. El código de reserva mostrado tras una solicitud vive en la página y desaparece al recargarla o cerrarla.</p>
 <h3>Los mapas, única excepción</h3>
 <p>Los mapas de las secciones «Rutas», «Viñedos» y «Descubrir Alsacia» muestran fondos descargados de los servidores de la Fundación OpenStreetMap. Esas peticiones solo se envían cuando se desplaza hasta uno de esos mapas. Transmiten su dirección IP al proveedor, que aplica su propia política. Si prefiere evitarlo, basta con no desplazarse hasta esos mapas: el resto del sitio funciona igual.</p>
 <h3>Si esto cambia</h3>
@@ -431,7 +431,7 @@ Partita IVA intracomunitaria: [numero].<br>
 Telefono: +33 6 30 39 95 31 · E-mail: [indirizzo].</p>
 <p>Direttore della pubblicazione: [nome e cognome].</p>
 <h3>Hosting</h3>
-<p>[Nome del fornitore], [indirizzo completo], [telefono].</p>
+<p>GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, Stati Uniti — servizio GitHub Pages.</p>
 <h3>Assicurazione</h3>
 <p>Responsabilità civile professionale sottoscritta presso [compagnia], polizza n. [numero], a copertura dell'attività di noleggio di cicli sul territorio [ambito geografico].</p>
 <h3>Mediazione del consumo</h3>
@@ -441,7 +441,7 @@ Telefono: +33 6 30 39 95 31 · E-mail: [indirizzo].</p>
 <h3>Cartografia e dati</h3>
 <p>Le basi cartografiche provengono da OpenStreetMap, con licenza ODbL, con la resa standard di OpenStreetMap. I tracciati dei percorsi sono calcolati a partire dai dati OpenStreetMap con il motore BRouter, profilo «trekking». La libreria di visualizzazione Leaflet è distribuita con licenza BSD a due clausole. Distanze, dislivelli e durate indicati sono misurati su tali tracciati: costituiscono un'indicazione, non un impegno contrattuale.</p>
 <h3>Crediti fotografici</h3>
-<p>[Autore e origine di ogni fotografia].</p>
+<p>Immagini illustrative generate da intelligenza artificiale, senza valore contrattuale: le bici e i paesaggi mostrati non sono fotografie del materiale noleggiato. Logo VÉLI SAFE: [autore]. [Da completare se si aggiungono fotografie reali.]</p>
 <h3>Segnalare un errore</h3>
 <p>Un'inesattezza su un percorso, un orario o un villaggio? Scriveteci: correggiamo e indichiamo la data di aggiornamento.</p>`,
   terms:`
@@ -475,7 +475,7 @@ Telefono: +33 6 30 39 95 31 · E-mail: [indirizzo].</p>
 <h3>10. Furto, perdita e danni</h3>
 <p>Il cliente è responsabile del materiale per tutta la durata del noleggio. In caso di furto deve sporgere denuncia senza indugio e consegnare la ricevuta al noleggiatore insieme alla chiave del lucchetto. In mancanza di denuncia o della chiave, resta dovuto il valore di sostituzione. I danni riscontrati al rientro sono fatturati sulla base di un preventivo di riparazione comunicato al cliente.</p>
 <h3>11. Annullamento</h3>
-<p>Poiché la prenotazione online non comporta alcun pagamento, può essere annullata in qualsiasi momento, senza costi né giustificazione, tramite i messaggi del sito o per telefono. Il noleggiatore chiede solo di essere avvisato per rimettere la bici a disposizione. Anche il noleggiatore può annullare una prenotazione in caso di indisponibilità del materiale o di condizioni meteo che rendano pericolosa l'uscita; non essendo stato versato nulla, non spettano rimborsi né indennizzi.</p>
+<p>Poiché la prenotazione online non comporta alcun pagamento, può essere annullata in qualsiasi momento, senza costi né giustificazione, via WhatsApp o per telefono. Il noleggiatore chiede solo di essere avvisato per rimettere la bici a disposizione. Anche il noleggiatore può annullare una prenotazione in caso di indisponibilità del materiale o di condizioni meteo che rendano pericolosa l'uscita; non essendo stato versato nulla, non spettano rimborsi né indennizzi.</p>
 <h3>12. Diritto di recesso</h3>
 <p>L'articolo L221-28 del Codice del consumo francese esclude il diritto di recesso per i servizi di alloggio, trasporto, ristorazione e attività di svago forniti a una data o in un periodo determinato. Il noleggio di cicli per una data di ritiro concordata rientra in tale categoria. In ogni caso, non comportando pagamento, la prenotazione online può essere annullata liberamente ai sensi dell'articolo 11.</p>
 <h3>13. Assicurazione e responsabilità</h3>
@@ -483,7 +483,7 @@ Telefono: +33 6 30 39 95 31 · E-mail: [indirizzo].</p>
 <h3>14. Dati personali</h3>
 <p>I dati trasmessi al momento della prenotazione sono trattati come descritto nella pagina «Dati personali» di questo sito.</p>
 <h3>15. Reclami e mediazione</h3>
-<p>Ogni reclamo può essere rivolto al noleggiatore tramite i messaggi del sito, per telefono o per posta. In mancanza di soluzione amichevole entro due mesi, il consumatore può rivolgersi gratuitamente al mediatore del consumo indicato nelle note legali, ai sensi degli articoli L612-1 e seguenti del Codice del consumo.</p>
+<p>Ogni reclamo può essere rivolto al noleggiatore via WhatsApp, per telefono o per posta. In mancanza di soluzione amichevole entro due mesi, il consumatore può rivolgersi gratuitamente al mediatore del consumo indicato nelle note legali, ai sensi degli articoli L612-1 e seguenti del Codice del consumo.</p>
 <h3>16. Legge applicabile</h3>
 <p>Le presenti condizioni sono soggette al diritto francese. Sono redatte in francese; le traduzioni offerte su questo sito sono fornite a titolo informativo e fa fede la versione francese.</p>`,
   privacy:`
@@ -491,17 +491,17 @@ Telefono: +33 6 30 39 95 31 · E-mail: [indirizzo].</p>
 <p>Il titolare del trattamento è [ragione sociale], [indirizzo], raggiungibile al +33 6 30 39 95 31 e a [e-mail]. [Contatti del responsabile della protezione dei dati, se nominato.]</p>
 <h3>Cosa raccogliamo e perché</h3>
 <ul>
-<li><strong>Prenotazione</strong>: nome, cognome, indirizzo e-mail, numero di telefono, data, ora e durata richieste, materiale scelto. Serve a eseguire il contratto richiesto e a preparare il materiale.</li>
-<li><strong>Messaggi</strong>: il vostro codice di prenotazione e il contenuto dei messaggi, per rispondere alle domande e seguire il noleggio.</li>
+<li><strong>Prenotazione</strong>: nome, cognome, numero di telefono, data, ora e durata richieste, materiale scelto. Serve a eseguire il contratto richiesto e a preparare il materiale.</li>
+<li><strong>Richiesta via WhatsApp</strong>: il messaggio di richiesta parte dal vostro telefono verso il numero del noleggiatore, tramite WhatsApp (Meta Platforms Ireland Ltd). Il sito non invia nulla da sé; la conversazione prosegue in WhatsApp, secondo l'informativa privacy di quel servizio.</li>
 <li><strong>Contratto di noleggio</strong>: le informazioni riportate nel contratto firmato al punto di noleggio, compreso il riferimento di un documento presentato, per l'esecuzione del contratto e la conservazione dei documenti contabili.</li>
 </ul>
 <p>Su questo sito non raccogliamo alcun dato bancario. Non creiamo profili, non mostriamo pubblicità e non vendiamo né affittiamo i vostri dati.</p>
 <h3>Base giuridica</h3>
 <p>L'esecuzione del contratto o di misure precontrattuali adottate su vostra richiesta, ai sensi dell'articolo 6.1.b del Regolamento generale sulla protezione dei dati, per prenotazione e noleggio. L'adempimento di obblighi di legge, ai sensi dell'articolo 6.1.c, per la conservazione dei documenti contabili.</p>
 <h3>Per quanto tempo</h3>
-<p>I dati di prenotazione sono conservati [periodo da stabilire, per esempio tre anni] dall'ultimo contatto. Le conversazioni sono cancellate [periodo da stabilire] dopo la fine del noleggio. I documenti contabili sono conservati per la durata di legge applicabile all'impresa.</p>
+<p>I dati di prenotazione sono conservati [periodo da stabilire, per esempio tre anni] dall'ultimo contatto. Gli scambi WhatsApp restano sul telefono del noleggiatore e sono cancellati [periodo da stabilire] dopo la fine del noleggio. I documenti contabili sono conservati per la durata di legge applicabile all'impresa.</p>
 <h3>Chi vi accede</h3>
-<p>Il personale del noleggiatore, nei limiti di quanto richiesto dal lavoro. [Se del caso, il fornitore di hosting e quello di messaggistica, quali responsabili del trattamento, la cui identità e ubicazione dei server vanno indicate qui.] Non è effettuato alcun trasferimento fuori dall'Unione europea [da confermare in base al fornitore scelto].</p>
+<p>Il personale del noleggiatore, nei limiti di quanto richiesto dal lavoro. Il sito è ospitato su GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, Stati Uniti): il fornitore tratta l'indirizzo IP dei visitatori per servire le pagine, il che può costituire un trasferimento fuori dall'Unione europea [garanzia da precisare con il giurista]. Le richieste di prenotazione transitano via WhatsApp, inviate dal telefono del cliente.</p>
 <h3>Cosa carica il sito dall'esterno</h3>
 <p>Le pagine non richiamano alcun servizio di terzi, con un'eccezione: quando una mappa appare sullo schermo, il suo sfondo è scaricato dai server della OpenStreetMap Foundation. Questa richiesta trasmette il vostro indirizzo IP a tale fornitore. Finché nessuna mappa appare sullo schermo, nessun dato lascia il vostro browser verso terzi.</p>
 <h3>I vostri diritti</h3>
@@ -514,7 +514,7 @@ Telefono: +33 6 30 39 95 31 · E-mail: [indirizzo].</p>
 <h3>Cosa dice la regola</h3>
 <p>L'articolo 82 della legge francese sulla protezione dei dati subordina al consenso preventivo ogni lettura o scrittura di informazioni sul terminale dell'utente, salvo quanto strettamente necessario al servizio richiesto. L'autorità francese ammette inoltre un'esenzione ristretta per alcune misurazioni anonime del pubblico. Questo sito non usa né le une né le altre.</p>
 <h3>Cosa conserva il sito nel vostro browser</h3>
-<p>Nulla. Il codice di prenotazione mostrato dopo una richiesta e i messaggi scambiati in modalità dimostrativa vivono nella pagina e spariscono appena la ricaricate o la chiudete.</p>
+<p>Nulla. Il codice di prenotazione mostrato dopo una richiesta vive nella pagina e sparisce appena la ricaricate o la chiudete.</p>
 <h3>Le mappe, unica eccezione</h3>
 <p>Le mappe delle sezioni «Itinerari», «Vigneti» e «Scoprire l'Alsazia» mostrano basi scaricate dai server della OpenStreetMap Foundation. Queste richieste partono solo quando scorrete fino a una di quelle mappe. Trasmettono il vostro indirizzo IP al fornitore, che applica la propria politica. Se preferite evitarlo, basta non scorrere fino a quelle mappe: il resto del sito funziona lo stesso.</p>
 <h3>Se qualcosa cambia</h3>

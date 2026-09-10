@@ -554,3 +554,22 @@ options étaient simplement trop discrètes. Correctifs :
   Google, pas de multilingue ; le site fait déjà tout cela.
 Testé 10/10 : pictos, lignes d'options, cartes d'options, GPX, copie du
 lien, lien direct ?balade=egui en allemand, 5 langues.
+
+**10/09/2026, AUDIT COMPLET — voir AUDIT-2026-09-10.md.** Neuf incohérences
+corrigées : champ e-mail supprimé (collecté sans usage : absent du message
+WhatsApp, aucun courriel envoyé — validation et book.alert ×5 réécrits,
+book.okTxt sans {m}) ; « messagerie du site » → WhatsApp/téléphone dans
+CGV art. 11 et 15 ×5 et book.cond5 ×5 ; page Données personnelles :
+paragraphe « Demande par WhatsApp (Meta Platforms Ireland) », plus
+d'adresse électronique, hébergeur GitHub Pages — GitHub, Inc., 88 Colin P.
+Kelly Jr. St., San Francisco, CA 94107 (vérifié sur docs.github.com) —
+avec transfert hors UE déclaré [encadrement juriste] ; mentions : hébergeur
+rempli, crédits = « visuels générés par IA, non contractuels » ×5 ; contrat
+atelier art. 6 sans remorque ni 300/600/150 ; marche-à-suivre PDF régénéré
+sur velisafe.fr. RAPPEL FACTUEL : 300/600/150 € étaient des repères
+INVENTÉS pour la maquette, jamais validés par Antoine — ne pas les
+réintroduire sans son chiffre. Décisions Antoine et points juriste listés
+dans le rapport (§3, §4). Compteur d'audience : bloqué sur la création du
+compte GoatCounter par Jean-Martin. Contrôles : 178 clés ×5, 125 data-t et
+49 tr() existants, ids uniques, alt partout, JSON-LD valide, 0 résidu,
+7/7 tests dynamiques.

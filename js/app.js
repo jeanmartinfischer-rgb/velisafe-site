@@ -612,10 +612,10 @@ function messageWA(){
 }
 document.getElementById('valider').addEventListener('click',()=>{
   const n=Object.values(panier).reduce((a,b)=>a+b,0);
-  const nom=document.getElementById('nom').value.trim(), mail=document.getElementById('mail').value.trim();
-  if(!n||!nom||!mail){ alert(tr('book.alert')); return; }
+  const nom=document.getElementById('nom').value.trim();
+  if(!n||!nom){ alert(tr('book.alert')); return; }
   document.getElementById('ok-texte').textContent =
-    tr('book.okTxt').replace('{d}',dateLisible()).replace('{h}',document.getElementById('heure').value).replace('{m}',mail);
+    tr('book.okTxt').replace('{d}',dateLisible()).replace('{h}',document.getElementById('heure').value);
   const code=nouveauCode();
   FILS[code]=[{auteur:'systeme',texte:'demo'}];
   document.getElementById('ok-code').textContent=code;
