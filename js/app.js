@@ -165,9 +165,11 @@ function htmlBalade(b){
     ${b.ref?`<p class="source"><strong>${tr('rides.ref')} :</strong> ${esc(b.ref[lang])}</p>`:''}
     <p class="source">${tr('rides.duree')} : ${heures(b.minutes)}, ${tr('rides.pedal')}.</p>
     <div class="det-actions">
-      <button type="button" class="btn btn-vert" data-lien="${b.id}">${tr('det.link')}</button>
+      <button type="button" class="btn btn-vert" data-maps="${b.id}">${tr('det.maps')}</button>
+      <button type="button" class="btn btn-gpx" data-lien="${b.id}">${tr('det.link')}</button>
       <button type="button" class="btn btn-gpx" data-gpx="${b.id}">${tr('det.gpx')}</button>
-    </div>`;
+    </div>
+    <p class="source">${tr('det.mapsNote')}</p>`;
 }
 /* lien direct vers une balade (QR code, partage) et tracé GPX pour les
    applications de navigation : deux façons de « donner la balade » au client
@@ -177,8 +179,18 @@ function gpxBalade(b){
   const pts=b.pts.map(p=>`<trkpt lat="${p[0]}" lon="${p[1]}"></trkpt>`).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="VÉLI SAFE — velisafe.fr" xmlns="http://www.topografix.com/GPX/1/1">\n<metadata><name>${esc(b.nom[lang])}</name></metadata>\n<trk><name>${esc(b.nom[lang])}</name><trkseg>\n${pts}\n</trkseg></trk>\n</gpx>`;
 }
+/* Google Maps : itinéraire vélo passant par une dizaine de points du tracé.
+   Google recalcule entre les points, le résultat colle au parcours à quelques
+   rues près ; c'est ce qui marche sur tous les téléphones sans application. */
+function lienMaps(b){
+  const P=b.pts, n=P.length, pas=Math.max(1,Math.floor(n/9));
+  const wp=[]; for(let i=pas;i<n-1 && wp.length<8;i+=pas) wp.push(P[i][0].toFixed(5)+','+P[i][1].toFixed(5));
+  const o=P[0][0].toFixed(5)+','+P[0][1].toFixed(5), d=P[n-1][0].toFixed(5)+','+P[n-1][1].toFixed(5);
+  return 'https://www.google.com/maps/dir/?api=1&origin='+o+'&destination='+d+'&travelmode=bicycling&waypoints='+encodeURIComponent(wp.join('|'));
+}
 document.getElementById('det-corps').addEventListener('click',e=>{
-  const l=e.target.closest('[data-lien]'), g=e.target.closest('[data-gpx]');
+  const l=e.target.closest('[data-lien]'), g=e.target.closest('[data-gpx]'), mp=e.target.closest('[data-maps]');
+  if(mp){ const b=BALADES.find(x=>x.id===mp.dataset.maps); if(b) window.open(lienMaps(b),'_blank'); return; }
   if(l){
     const url=lienBalade(l.dataset.lien);
     const fait=()=>{ l.textContent=tr('det.linkOk'); setTimeout(()=>l.textContent=tr('det.link'),2200); };
@@ -188,9 +200,14 @@ document.getElementById('det-corps').addEventListener('click',e=>{
   }
   if(g){
     const b=BALADES.find(x=>x.id===g.dataset.gpx); if(!b) return;
+    const nom='velisafe-'+b.id+'.gpx', blob=new Blob([gpxBalade(b)],{type:'application/gpx+xml'});
+    /* téléphone : feuille de partage (Komoot, Strava, Fichiers…) ; ordinateur : téléchargement */
+    try{
+      const f=new File([blob],nom,{type:'application/gpx+xml'});
+      if(navigator.canShare && navigator.canShare({files:[f]})){ navigator.share({files:[f],title:b.nom[lang]}).catch(()=>{}); return; }
+    }catch(err){}
     const a=document.createElement('a');
-    a.href=URL.createObjectURL(new Blob([gpxBalade(b)],{type:'application/gpx+xml'}));
-    a.download='velisafe-'+b.id+'.gpx'; a.click(); URL.revokeObjectURL(a.href);
+    a.href=URL.createObjectURL(blob); a.download=nom; a.click(); URL.revokeObjectURL(a.href);
   }
 });
 function htmlVin(v){

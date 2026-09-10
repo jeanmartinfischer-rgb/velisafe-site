@@ -615,3 +615,16 @@ PDF) se commite dans LES DEUX dossiers ; les chemins « documents-internes/
 <fichier> » à la racine n'existent plus. Jean-Martin ne modifie rien à la
 main : Claude met à jour le Mac, lui fait Push origin et transmet le
 dossier Antoine.
+
+**10/09/2026, « le tracé GPS ne marche pas ».** Le site en ligne était à
+jour (push de 14 h 07 UTC) ; le vrai problème : sur iPhone un fichier GPX
+ne s'ouvre dans rien (Apple Plans ne le lit pas). Solution : bouton
+« Ouvrir dans Google Maps » (lienMaps : itinéraire vélo, origine =
+destination = départ Colmar, 8 points intermédiaires pris régulièrement
+sur b.pts, api=1&travelmode=bicycling — Google recalcule entre les points,
+fidèle à quelques rues près ; VÉRIFIÉ dans Google Maps : Eguisheim = 1 h 21
+par Wettolsheim / Trois Châteaux / Herrlisheim). Le GPX passe désormais par
+navigator.share({files}) sur téléphone (feuille de partage → Komoot,
+Strava, Fichiers) et reste un téléchargement sur ordinateur ; relabellé
+« Fichier GPX (appli GPS) ». Clés det.maps / det.mapsNote ×5 → 180 clés.
+Apple Plans : pas d'URL multi-étapes, écarté.
