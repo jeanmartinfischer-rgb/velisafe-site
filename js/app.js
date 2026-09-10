@@ -938,33 +938,42 @@ if(langURL && T[langURL]){ lang=langURL; document.getElementById('langue').value
 appliquerLangue();
 majOngletActif();
 
-/* ===================== VIE AU DÉFILEMENT (10/09/2026) =====================
-   1. Apparition des blocs. Les navigateurs récents s'en chargent seuls, en
-      CSS (animation-timeline:view()) : rien à faire ici. Pour les autres, on
-      pose la classe .anim puis .vu au passage devant l'écran.
+/* ===================== VIE AU DÉFILEMENT (10/09/2026, v2) =====================
+   1. Apparition des blocs. Les navigateurs récents s'en chargent seuls, en CSS
+      (animation-timeline:view()) : rien à faire ici. Pour les autres, repli
+      IntersectionObserver : classe .anim (ou .anim-fondu pour les cartes, sans
+      déplacement) puis .vu au passage devant l'écran. Le filet de sécurité ne
+      révèle que ce qui est DÉJÀ à l'écran, jamais tout le site d'un coup
+      (sinon l'effet meurt au-delà du premier écran).
    2. En-tête qui se compacte et jauge de progression.
-   Rien n'est animé si le visiteur a demandé moins d'animations, et les
-   cartes Leaflet ne sont jamais touchées. */
+   Rien n'est animé si le visiteur a demandé moins d'animations. */
 (function(){
   const doux = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const cssFait = window.CSS && CSS.supports && CSS.supports('animation-timeline','view()');
 
   if(!doux && !cssFait && 'IntersectionObserver' in window){
     const CIBLES='.entete,.atout,.carte-info,.etape,.bloc,.tarifs-rapide,.flotte,'+
-                 '.part,.part-cta,.encadre,.filtres,.velo';
-    const blocs=[...document.querySelectorAll(CIBLES)]
-      .filter(el=>!el.closest('.dormant') && !el.querySelector('.map'));
+                 '.part,.part-cta,.encadre,.filtres,.velo,.liste,.reservation>*';
+    const visibles=el=>!el.closest('.dormant');
+    const blocs=[...document.querySelectorAll(CIBLES)].filter(el=>visibles(el) && !el.querySelector('.map'));
+    const cartes=[...document.querySelectorAll('.map')].filter(visibles);
     blocs.forEach(el=>{
       el.classList.add('anim');
       const rang=[...el.parentElement.children].indexOf(el);
       if(rang>0 && rang<4) el.classList.add('d'+rang);
     });
+    cartes.forEach(el=>el.classList.add('anim-fondu'));
+    const tous=[...blocs,...cartes];
     const io=new IntersectionObserver((es,obs)=>es.forEach(e=>{
       if(e.isIntersecting){ e.target.classList.add('vu'); obs.unobserve(e.target); }
     }),{rootMargin:'0px 0px -8% 0px',threshold:.06});
-    blocs.forEach(el=>io.observe(el));
-    /* filet de sécurité : tout devient visible au bout de 4 s, quoi qu'il arrive */
-    setTimeout(()=>blocs.forEach(el=>el.classList.add('vu')),4000);
+    tous.forEach(el=>io.observe(el));
+    /* filet de sécurité : seulement ce qui est déjà dans l'écran */
+    const filet=()=>tous.forEach(el=>{
+      const r=el.getBoundingClientRect();
+      if(r.top<innerHeight && r.bottom>0) el.classList.add('vu');
+    });
+    setTimeout(filet,3000); addEventListener('load',()=>setTimeout(filet,1500));
   }
 
   const entete=document.querySelector('header'), jauge=document.getElementById('jauge');

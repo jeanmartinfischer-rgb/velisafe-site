@@ -89,7 +89,9 @@ html{scroll-behavior:smooth}
 /* fond photographique de chaque section : pleine largeur, photo à 80 %
    (voile crème de 20 %) — les photos sont assignées par id de page ci-dessous */
 .page::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;z-index:-1;
-  background-image:linear-gradient(rgba(243,238,234,.10),rgba(243,238,234,.10)),var(--fond,linear-gradient(var(--creme),var(--creme)));
+  background-image:linear-gradient(rgba(243,238,234,.10),rgba(243,238,234,.10)),
+    linear-gradient(180deg,rgba(199,207,192,.94) 0,rgba(199,207,192,0) 170px),
+    var(--fond,linear-gradient(var(--creme),var(--creme)));
   background-size:cover;background-position:var(--fond-pos,center);background-repeat:no-repeat}
 #page-accueil{--fond:url(../assets/fonds/montagnes.jpg)}
 #page-reservation{--fond:url(../assets/fonds/montagnes.jpg)}
@@ -410,41 +412,50 @@ footer a{color:#F3EEEA;text-decoration:none;border-bottom:1px solid rgba(243,238
   .cal-c{min-height:46px}
 }
 
-/* ============ 10/09/2026 : le site prend vie au défilement ============
-   Trois familles d'effets, toutes neutralisées si le visiteur a demandé
-   moins d'animations (Réglages > Accessibilité > Réduire les animations) :
-   1. apparition au défilement — les blocs montent et se fondent en arrivant ;
-   2. parallaxe — la photo de section reste en place, le contenu glisse
-      dessus, ce qui enchaîne les photos l'une dans l'autre ;
-   3. en-tête vivant et boutons réactifs.
-   Les couleurs restent celles de la charte ; aucun angle arrondi n'est
-   réintroduit. Les cartes Leaflet ne sont JAMAIS animées (une transformation
-   sur un parent déplace les marqueurs). ================================ */
+/* ============ 10/09/2026 : le site prend vie au défilement (v2) ============
+   1. apparition au défilement sur TOUS les blocs, listes et cartes comprises
+      (les cartes en fondu seul : un déplacement casserait Leaflet) ;
+   2. parallaxe : la photo reste en place, le contenu glisse (ordinateur) ;
+   3. fondu entre sections : bande sauge en haut de chaque photo (règle
+      .page::before plus haut) ;
+   4. en-tête vivant, jauge de progression, boutons réactifs.
+   Les images-clés emploient translate/scale (pas transform) pour laisser
+   les survols libres. Tout est coupé sous « Réduire les animations ». */
 
-@keyframes apparition{ from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:none} }
+@keyframes apparition{ from{opacity:0;translate:0 44px;scale:.965} to{opacity:1;translate:0 0;scale:1} }
+@keyframes fondu{ from{opacity:0} to{opacity:1} }
 
-/* — 1a. voie moderne : l'animation suit le défilement, sans JavaScript — */
+/* — 1a. voie moderne : le défilement pilote l'animation, sans JavaScript — */
 @supports (animation-timeline: view()){
   @media (prefers-reduced-motion:no-preference){
     .entete,.atout,.carte-info,.etape,.bloc,.tarifs-rapide,.flotte,
-    .part,.part-cta,.encadre,.filtres,.velo{
+    .part,.part-cta,.encadre,.filtres,.velo,.liste,.item,.reservation>*{
       animation:apparition linear both;
       animation-timeline:view();
-      animation-range:entry 0% entry 42%;
+      animation-range:entry 0% entry 55%;
     }
+    .map{animation:fondu linear both;animation-timeline:view();animation-range:entry 0% entry 22%}
+    /* blocs hauts (listes, formulaire, panoramique) : révélés dès le premier quart */
+    .liste,.bloc,.reservation>*,.flotte,.tarifs-rapide{animation-range:entry 0% entry 25%}
+    /* cascade dans les grilles */
+    .atout:nth-child(2),.etape:nth-child(2),.carte-info:nth-child(2),.reservation>:nth-child(2){animation-range:entry 12% entry 67%}
+    .atout:nth-child(3),.etape:nth-child(3),.carte-info:nth-child(3){animation-range:entry 24% entry 79%}
+    .atout:nth-child(4){animation-range:entry 36% entry 91%}
   }
 }
-/* — 1b. repli pour les navigateurs sans cette nouveauté : même rendu,
-        piloté par JavaScript (classe .anim posée puis .vu au passage) — */
-.anim{opacity:0;transform:translateY(26px);
-  transition:opacity .75s cubic-bezier(.22,.8,.28,1),transform .75s cubic-bezier(.22,.8,.28,1)}
-.anim.vu{opacity:1;transform:none}
-.anim.d1{transition-delay:.09s} .anim.d2{transition-delay:.18s} .anim.d3{transition-delay:.27s}
+/* — 1b. repli JavaScript (navigateurs sans animation-timeline) — */
+.anim{opacity:0;translate:0 44px;scale:.965;
+  transition:opacity .85s cubic-bezier(.22,.8,.28,1),translate .85s cubic-bezier(.22,.8,.28,1),scale .85s cubic-bezier(.22,.8,.28,1)}
+.anim.vu{opacity:1;translate:0 0;scale:1}
+.anim.d1{transition-delay:.1s} .anim.d2{transition-delay:.2s} .anim.d3{transition-delay:.3s}
+.anim-fondu{opacity:0;transition:opacity .9s ease}
+.anim-fondu.vu{opacity:1}
 
-/* — 2. parallaxe : ordinateur seulement (saccadé sur iPhone) — */
+/* — 2. parallaxe : ordinateur seulement (saccadé sur iPhone) ; la bande de
+        fondu défile avec la page, la photo reste fixe — */
 @media (min-width:900px) and (hover:hover){
   @media (prefers-reduced-motion:no-preference){
-    .page::before{background-attachment:fixed}
+    .page::before{background-attachment:scroll,scroll,fixed}
   }
 }
 
@@ -477,7 +488,7 @@ header.compact .head{height:54px}
 
 /* — 5. accueil : la photo se pose, le texte arrive — */
 @media (prefers-reduced-motion:no-preference){
-  @keyframes heroPose{ from{transform:scale(1.07)} to{transform:scale(1)} }
+  @keyframes heroPose{ from{scale:1.07} to{scale:1} }
   .hero-fond{animation:heroPose 1.8s cubic-bezier(.22,.8,.28,1) both}
   .hero .contenu>*{animation:apparition .85s cubic-bezier(.22,.8,.28,1) both}
   .hero-logo{animation-delay:.05s}
@@ -488,7 +499,7 @@ header.compact .head{height:54px}
 
 /* — 6. interrupteur général d'accessibilité — */
 @media (prefers-reduced-motion:reduce){
-  .anim{opacity:1;transform:none;transition:none}
+  .anim,.anim-fondu{opacity:1;translate:0 0;scale:1;transition:none}
   .page::before{background-attachment:scroll}
   .hero-fond,.hero .contenu>*{animation:none}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}

@@ -475,3 +475,21 @@ JS filtre déjà `:has(.map)` et les pages dormantes. Tout est coupé sous
 `prefers-reduced-motion:reduce` (vérifié : blocs visibles, parallaxe en
 scroll). Vérifié aussi : 35 marqueurs et 3 cartes intacts, 5 langues sans
 erreur, mobile sans défilement horizontal.
+
+**10/09/2026, animation v2 — « l'effet s'éteint après le premier écran ».**
+Cause : les sections du bas sont faites de listes + cartes, exclues par
+prudence ; seuls les titres bougeaient. Correctif : .liste, .item (dans le
+défileur de la liste, le view() y est relatif), .reservation>* et les
+cartes (.map en FONDU SEUL, jamais de déplacement) sont animés ; images-clés
+en translate/scale plutôt que transform, pour laisser les survols libres
+(.item:hover translateX conservé, vérifié). Blocs hauts (.liste .bloc
+.flotte .tarifs-rapide) révélés dès 25 % d'entrée, cartes à 22 %, le reste
+à 55 % — un bloc haut réglé à 55 % restait pâle trop longtemps sur mobile.
+Filet de sécurité du repli JS corrigé : il ne révèle que ce qui est déjà à
+l'écran (l'ancien révélait tout le site après 4 s, tuant l'effet en bas).
+Fondu entre sections : 2e couche de fond sur .page::before (bande sauge
+.94→0 sur 170 px) ; en parallaxe, attachement `scroll,scroll,fixed` (voile
+et bande défilent, photo fixe). Safari 26 gère animation-timeline
+(webkit.org, 10/09/2026). Test : défilement pas à pas de 300 px sur
+7 222 px (ordinateur) et 16 130 px (mobile) — aucun bloc pâle dans la moitié
+haute de l'écran, 35 marqueurs intacts, 5 langues sans erreur.
