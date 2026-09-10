@@ -6,6 +6,8 @@
 /* ===================== ÉTAT ===================== */
 let lang = 'fr';
 const panier = {};
+const panierOpt = {};           /* options facturées une fois : {support:1, gilet:2} */
+function totalOptions(){ return OPTIONS.reduce((t,o)=>t+(panierOpt[o.id]||0)*o.prix,0); }
 const maps = {};
 let filtreBalade = 'all';
 let baladeCourante = null;
@@ -79,10 +81,21 @@ function rendreVelos(){
       </div>
     </div>`;
   }).join('');
+  rendreOptions();
   majRecap();
   if(typeof rendreCal==='function') rendreCal();
 }
 
+function rendreOptions(){
+  const el=document.getElementById('liste-options'); if(!el) return;
+  el.innerHTML = OPTIONS.map(o=>`<div class="option">
+      <div><b>${esc(o.nom[lang])}</b> <span class="prix-opt">${euros(o.prix)}</span></div>
+      <div class="pas">
+        <button type="button" data-mo="${o.id}" aria-label="−">−</button>
+        <output id="qo-${o.id}">${panierOpt[o.id]||0}</output>
+        <button type="button" data-po="${o.id}" aria-label="+">+</button>
+      </div></div>`).join('');
+}
 function majRecap(){
   const box = document.getElementById('recap');
   let total=0, html='';
@@ -90,6 +103,11 @@ function majRecap(){
     const q=panier[v.id]||0; if(!q) return;
     const st=q*tarif(v); total+=st;
     html += `<div><span>${q} × ${esc(v.nom[lang])}</span><span>${euros(st)}</span></div>`;
+  });
+  OPTIONS.forEach(o=>{
+    const q=panierOpt[o.id]||0; if(!q) return;
+    total+=q*o.prix;
+    html += `<div><span>${q} × ${esc(o.nom[lang])}</span><span>${euros(q*o.prix)}</span></div>`;
   });
   if(!html) html = `<div style="color:var(--gris)">${tr('book.empty')}</div>`;
   html += `<div class="tot"><span>${tr('book.total')}</span><span>${euros(total)}</span></div>`;
@@ -519,13 +537,28 @@ document.getElementById('liste-velos').addEventListener('click',e=>{
   majRecap(); rendreCal();
 });
 
+document.getElementById('liste-options').addEventListener('click',e=>{
+  const p=e.target.dataset.po, m=e.target.dataset.mo;
+  if(!p&&!m) return;
+  const id=p||m;
+  panierOpt[id]=Math.max(0,Math.min(10,(panierOpt[id]||0)+(p?1:-1)));
+  document.getElementById('qo-'+id).textContent=panierOpt[id];
+  majRecap();
+});
+/* demi-journées : l'heure de retrait est imposée (9 h le matin, 14 h l'après-midi) */
+function majHeure(){
+  const d=dureeChoisie(), h=document.getElementById('heure');
+  if(d==='demiAm'){ h.value='9:00'; h.disabled=true; }
+  else if(d==='demiPm'){ h.value='14:00'; h.disabled=true; }
+  else { h.disabled=false; if(h.value==='14:00') h.value='9:00'; }
+}
 document.getElementById('date').addEventListener('change',rendreVelos);
-document.getElementById('duree').addEventListener('change',()=>{ rendreTarifs(); rendreVelos(); });
+document.getElementById('duree').addEventListener('change',()=>{ rendreTarifs(); rendreVelos(); majHeure(); });
 
 /* la demande en cours, figée à la validation ; le message WhatsApp est
    reconstruit à l'envoi, dans la langue affichée à ce moment-là */
 let demandeWA=null;
-const DUREE_CLE={demi:'book.half',jour:'book.full',j2:'book.d2',j3:'book.d3',j7:'book.d7'};
+const DUREE_CLE={demiAm:'book.halfAm',demiPm:'book.halfPm',jour:'book.full',j2:'book.d2',j3:'book.d3',j4:'book.d4',j5:'book.d5',j6:'book.d6',j7:'book.d7'};
 function messageWA(){
   if(!demandeWA) return '';
   const d=demandeWA, L=[];
@@ -552,8 +585,9 @@ document.getElementById('valider').addEventListener('click',()=>{
     code, nom, tel:document.getElementById('tel').value.trim(),
     date:dateLisible(), heure:document.getElementById('heure').value,
     duree:document.getElementById('duree').value,
-    velos:VELOS.filter(v=>panier[v.id]>0).map(v=>({q:panier[v.id], nom:v.nom})),
-    total:VELOS.reduce((s,v)=>s+(panier[v.id]||0)*tarif(v),0)
+    velos:VELOS.filter(v=>panier[v.id]>0).map(v=>({q:panier[v.id], nom:v.nom}))
+         .concat(OPTIONS.filter(o=>panierOpt[o.id]>0).map(o=>({q:panierOpt[o.id], nom:o.nom}))),
+    total:VELOS.reduce((s,v)=>s+(panier[v.id]||0)*tarif(v),0)+totalOptions()
   };
   document.getElementById('etape-panier').style.display='none';
   document.getElementById('etape-ok').style.display='block';
@@ -936,6 +970,7 @@ if(T[nav]){ lang=nav; document.getElementById('langue').value=nav; }
 const langURL=new URLSearchParams(location.search).get('lang');
 if(langURL && T[langURL]){ lang=langURL; document.getElementById('langue').value=langURL; }
 appliquerLangue();
+majHeure();
 majOngletActif();
 
 /* ===================== VIE AU DÉFILEMENT (10/09/2026, v2) =====================

@@ -44,7 +44,7 @@
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
     "opens": "09:00",
-    "closes": "19:00"
+    "closes": "18:00"
   },
   "priceRange": "€"
 }
@@ -127,51 +127,55 @@
   </div>
 
   <div class="atouts">
-    <div class="atout"><div class="pic">🚲</div><h3 data-t="home.a1t">Classique ou électrique</h3><p data-t="home.a1d">Vélos de ville sept vitesses et VAE avec 90 km d'autonomie, révisés après chaque location.</p></div>
-    <div class="atout"><div class="pic">⏱️</div><h3 data-t="home.a2t">De la demi-journée à la semaine</h3><p data-t="home.a2d">Tarif dégressif dès deux jours. Retrait dès 9 h, retour avant 12 h 30 ou avant 19 h.</p></div>
+    <div class="atout"><div class="pic">🚲</div><h3 data-t="home.a1t">Classique ou électrique</h3><p data-t="home.a1d">VTC tout terrain classiques et à assistance électrique, révisés après chaque location.</p></div>
+    <div class="atout"><div class="pic">⏱️</div><h3 data-t="home.a2t">De la demi-journée à la semaine</h3><p data-t="home.a2d">Tarif dégressif dès deux jours. Le vélo reste à vous, nuits comprises.</p></div>
     <div class="atout"><div class="pic">🗺️</div><h3 data-t="home.a3t">Onze parcours mesurés</h3><p data-t="home.a3d">Distance, dénivelé et durée calculés sur le tracé réel, pas estimés à la louche.</p></div>
-    <div class="atout"><div class="pic">🛡️</div><h3 data-t="home.a4t">Tout est compris</h3><p data-t="home.a4d">Casque, antivol, sacoche, kit crevaison, éclairage et assistance téléphonique.</p></div>
+    <div class="atout"><div class="pic">🛡️</div><h3 data-t="home.a4t">Tout est compris</h3><p data-t="home.a4d">Casque, antivol, kit anti-crevaison, mini-pompe, panier amovible, sonnette, éclairage et béquille.</p></div>
   </div>
 
-  <img class="flotte" src="assets/flotte.jpg" alt="La flotte VÉLI SAFE au bord des canaux de Colmar : vélos de ville femme et homme, vélo électrique, vélo enfant et remorque">
+  <img class="flotte" src="assets/flotte.jpg" alt="La flotte VÉLI SAFE au bord des canaux de Colmar : vélos classiques, vélo électrique et vélo enfant">
 
   <div class="tarifs-rapide">
     <h2 data-t="home.priceT">Tarifs</h2>
     <p class="sous" data-t="home.priceSub">Par vélo, taxes comprises. Le règlement se fait sur place, au retrait.</p>
     <div class="tab-enveloppe">
-      <table class="tab-tarifs">
+      <div class="defile"><table class="tab-tarifs">
         <thead><tr>
           <th data-t="home.thBike">Vélo</th>
-          <th data-t="home.thHalf">Demi-journée</th>
-          <th data-t="home.thDay">Journée</th>
-          <th data-t="home.th2">2 jours</th>
-          <th data-t="home.th3">3 jours</th>
-          <th data-t="home.th7">7 jours</th>
+          <th data-t="home.thHalfAm">½ j. matin</th>
+          <th data-t="home.thHalfPm">½ j. après-midi</th>
+          <th data-t="home.thDay">1 jour</th>
+          <th data-t="home.th2">2 j.</th>
+          <th data-t="home.th3">3 j.</th>
+          <th data-t="home.th4">4 j.</th>
+          <th data-t="home.th5">5 j.</th>
+          <th data-t="home.th6">6 j.</th>
+          <th data-t="home.th7">7 j.</th>
         </tr></thead>
         <tbody id="tbody-tarifs"></tbody>
-      </table>
+      </table></div>
     </div>
-    <p class="note" data-t="home.priceNote">Caution prise sur place au retrait : 300 € par vélo classique, 600 € par vélo électrique, 150 € par vélo enfant ou remorque. Aucun paiement n'est demandé sur ce site.</p>
+    <p class="note" data-t="home.priceNote">Options : support téléphone 5 €, gilet réfléchissant 3 € — facturés une fois, quelle que soit la durée. Une caution peut être demandée au retrait.</p>
   </div>
 
   <div class="infos">
     <div class="carte-info">
       <h3 data-t="home.incT">Compris dans chaque location</h3>
       <ul>
-        <li data-t="home.inc1">Casque à votre taille, obligatoire pour les moins de 12 ans</li>
-        <li data-t="home.inc2">Antivol en U et sa clé</li>
-        <li data-t="home.inc3">Sacoche ou panier, selon le vélo</li>
-        <li data-t="home.inc4">Kit crevaison, pompe et chambre à air de rechange</li>
-        <li data-t="home.inc5">Éclairage avant et arrière conforme</li>
-        <li data-t="home.inc6">Carte papier de la balade choisie et numéro d'assistance</li>
+        <li data-t="home.inc1">Casque à votre taille, réglé sur place</li>
+        <li data-t="home.inc2">Antivol et sa clé</li>
+        <li data-t="home.inc3">Panier amovible</li>
+        <li data-t="home.inc4">Kit anti-crevaison et mini-pompe</li>
+        <li data-t="home.inc5">Éclairage avant et arrière</li>
+        <li data-t="home.inc6">Sonnette et béquille</li>
       </ul>
     </div>
     <div class="carte-info">
       <h3 data-t="home.hoursT">Horaires</h3>
       <ul>
         <li data-t="home.hours1">Retrait à partir de 9 h, du lundi au samedi</li>
-        <li data-t="home.hours2">Retour avant 12 h 30 pour une demi-journée matin, avant 19 h pour une journée</li>
-        <li data-t="home.hours3">Dimanche et jours fériés : retrait sur rendez-vous uniquement</li>
+        <li data-t="home.hours2">Demi-journée : 9 h – 13 h ou 14 h – 18 h. Journée et plusieurs jours : retour avant 18 h.</li>
+        <li data-t="home.hours3">Fermé le dimanche et les jours fériés</li>
       </ul>
     </div>
   </div>
@@ -206,15 +210,21 @@
           <div class="champ">
             <label for="duree" data-t="book.duration">Durée</label>
             <select id="duree">
-              <option value="demi" data-t="book.half">Demi-journée</option>
-              <option value="jour" selected data-t="book.full">Journée</option>
+              <option value="demiAm" data-t="book.halfAm">Demi-journée matin (9 h – 13 h)</option>
+              <option value="demiPm" data-t="book.halfPm">Demi-journée après-midi (14 h – 18 h)</option>
+              <option value="jour" selected data-t="book.full">1 journée (9 h – 18 h)</option>
               <option value="j2" data-t="book.d2">2 jours</option>
               <option value="j3" data-t="book.d3">3 jours</option>
+              <option value="j4" data-t="book.d4">4 jours</option>
+              <option value="j5" data-t="book.d5">5 jours</option>
+              <option value="j6" data-t="book.d6">6 jours</option>
               <option value="j7" data-t="book.d7">7 jours</option>
             </select>
           </div>
         </div>
         <div id="liste-velos"></div>
+        <h4 class="options-titre" data-t="book.optionsT">Options (facturées une fois)</h4>
+        <div id="liste-options"></div>
       </div>
 
       <div class="bloc">
@@ -226,7 +236,7 @@
             <div class="champ"><label for="mail" data-t="book.email">E-mail</label><input id="mail" type="email"></div>
             <div class="champ"><label for="tel" data-t="book.phone">Téléphone</label><input id="tel" type="tel"></div>
             <div class="champ"><label for="heure" data-t="book.hour">Heure de retrait</label>
-              <select id="heure"><option>9:00</option><option>10:00</option><option>11:00</option><option>14:00</option></select>
+              <select id="heure"><option>9:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>14:00</option><option>15:00</option><option>16:00</option></select>
             </div>
           </div>
           <button class="btn btn-vert" style="width:100%" id="valider" data-t="book.cta">Confirmer la réservation</button>
@@ -368,7 +378,7 @@
       <div class="fil" id="fil" style="display:none">
         <div class="fil-haut">
           <b id="fil-code"></b>
-          <span data-t="msg.hours">Réponse pendant les heures d'ouverture, 8 h 30 – 19 h</span>
+          <span data-t="msg.hours">Réponse pendant les heures d'ouverture, 9 h – 18 h</span>
         </div>
         <div class="fil-corps" id="fil-corps"></div>
         <div class="fil-bas">

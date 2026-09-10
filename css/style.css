@@ -504,3 +504,11 @@ header.compact .head{height:54px}
   .hero-fond,.hero .contenu>*{animation:none}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+/* options facturées une fois (10/09/2026) */
+.options-titre{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--teal-clair);margin:18px 0 6px}
+.option{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--beige);font-size:14.5px}
+.option .prix-opt{color:var(--gris);font-weight:600;margin-left:6px}
+/* grille tarifaire 2026 : dix colonnes, défilement horizontal sur petit écran */
+.tarifs-rapide .defile{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tarifs-rapide table{min-width:640px}

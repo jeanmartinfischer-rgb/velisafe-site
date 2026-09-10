@@ -493,3 +493,35 @@ et bande défilent, photo fixe). Safari 26 gère animation-timeline
 (webkit.org, 10/09/2026). Test : défilement pas à pas de 300 px sur
 7 222 px (ordinateur) et 16 130 px (mobile) — aucun bloc pâle dans la moitié
 haute de l'écran, 35 marqueurs intacts, 5 langues sans erreur.
+
+**10/09/2026, OFFRE 2026 D'ANTOINE (source : ses messages WhatsApp du
+10/09, trois PDF de grilles + textes).** Gamme réduite à TROIS matériels :
+VTC classique tout terrain (id `ville` CONSERVÉ — les balades y renvoient ;
+modèle interne Riverside 500, non cité sur le site), VTT électrique VAE
+(autonomie INCONNUE : « précisée au retrait », aucun chiffre), vélo enfant
+(20" 6–9 ans, 24" 9–12 ans ; Riverside 100). Remorque RETIRÉE de VELOS,
+bloc conservé en commentaire REMORQUE_EN_RESERVE dans data.js.
+DURÉES : DUREES = demiAm, demiPm, jour, j2…j7 (9 formules) ; clés i18n
+book.halfAm/halfPm/full/d2–d7 ; DUREE_CLE dans app.js ET liste des clés
+dans analyser() de l'atelier — les deux mis à jour ensemble. Demi-journées :
+heure de retrait imposée (9 h / 14 h, select #heure désactivé, majHeure()).
+Grille (€) : VTC 15/15/25/45/60/75/90/105/120 ; VAE 29/29/45/85/120/150/
+175/200/245 ; enfant 10/10/18/32/45/55/65/75/85. Tableau à 10 colonnes,
+enveloppé dans .defile (défilement horizontal mobile).
+OPTIONS (data.js, facturées UNE fois) : support téléphone 5 €, gilet
+réfléchissant 3 € — panierOpt, rendreOptions(), #liste-options, dans le
+récap, le message WhatsApp (lignes « - N × … »), le PDF et le contrat ;
+l'atelier les reconnaît dans les 5 langues (OPTIONS.nom) et les retraduit.
+INCLUS (home.inc1–6, a4d, legal ×5, contrat) : casque, antivol, kit
+anti-crevaison + mini-pompe, panier amovible, sonnette, éclairage av/ar,
+béquille. Plus de sacoche, plus de carte papier (Antoine : « tout
+numérique »), plus d'assistance téléphonique dans la liste.
+HORAIRES : lun–sam 9 h–18 h (JSON-LD closes 18:00), demi-journées 9–13 /
+14–18, retour avant 18 h ; hours3 → « Fermé le dimanche et les jours
+fériés » (ALIGNÉ SUR LE CALENDRIER, à confirmer avec Antoine — il n'a rien
+dit du dimanche). Caution : plus de montants affichés, « peut être demandée »
+(legal : « peut être constituée », montants restent [à compléter]).
+174 clés i18n alignées ×5. Testé 11/11 : grille, heure imposée, total avec
+options 128 €, message WA, atelier FR et IT → contrat, mobile, 5 langues.
+Reste côté Antoine : autonomies VAE, montants de caution, dimanche, Google
+Drive/QR des balades (idée à lui — le site fait déjà « tout numérique »).

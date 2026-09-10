@@ -58,13 +58,13 @@ Téléphone : 06 30 39 95 31 · Courriel : [adresse].</p>
 <li>Le loueur se réserve le droit de refuser la remise d'un vélo à toute personne manifestement inapte à conduire, notamment sous l'emprise de l'alcool ou de stupéfiants.</li>
 </ul>
 <h3>4. Tarifs, durées et paiement</h3>
-<p>Les tarifs affichés s'entendent par vélo, toutes taxes comprises, pour la durée choisie : demi-journée, journée, deux jours, trois jours ou sept jours. Le règlement s'effectue intégralement sur place, au retrait, par les moyens acceptés au point de location. Une caution est constituée sur place selon le matériel : [montant] euros par vélo classique, [montant] euros par vélo à assistance électrique, [montant] euros par vélo enfant ou remorque. Elle est restituée au retour du matériel en bon état.</p>
+<p>Les tarifs affichés s'entendent par vélo, toutes taxes comprises, pour la durée choisie : demi-journée (matin 9 h – 13 h ou après-midi 14 h – 18 h) ou de un à sept jours (9 h – 18 h). Les options (support téléphone, gilet réfléchissant) sont facturées une seule fois, quelle que soit la durée. Le règlement s'effectue intégralement sur place, au retrait, par les moyens acceptés au point de location. Une caution peut être constituée sur place selon le matériel : [montant] euros par vélo classique, [montant] euros par vélo à assistance électrique, [montant] euros par vélo enfant. Elle est restituée au retour du matériel en bon état.</p>
 <h3>5. Location de plusieurs jours</h3>
 <p>Pour toute location de deux jours ou plus, le matériel reste sous la garde du locataire, nuits comprises. Le locataire s'engage à le remiser dans un local fermé ou, à défaut, à l'attacher par le cadre à un point fixe au moyen de l'antivol fourni. La batterie d'un vélo à assistance électrique se recharge sur une prise domestique standard.</p>
 <h3>6. Remise et restitution</h3>
 <p>Le matériel est vérifié contradictoirement au départ et au retour : freins, pneumatiques, éclairage, transmission et, le cas échéant, niveau de batterie. La restitution intervient au point de location, aux jours et heures d'ouverture indiqués sur le contrat. Tout retard non annoncé peut donner lieu à la facturation d'une période supplémentaire, selon le tarif en vigueur.</p>
 <h3>7. Équipement et règles de circulation</h3>
-<p>Chaque location comprend un casque, un antivol, un kit de réparation et un éclairage conforme. Le locataire s'engage à respecter le code de la route. Il est rappelé que le port du casque est obligatoire pour le conducteur et le passager d'un cycle âgés de moins de douze ans, que le gilet rétro-réfléchissant est obligatoire hors agglomération la nuit ou par visibilité insuffisante, et que le port d'écouteurs est interdit en circulation.</p>
+<p>Chaque location comprend un casque, un antivol, un kit anti-crevaison et une mini-pompe, un panier amovible, une sonnette, un éclairage avant et arrière et une béquille. Le locataire s'engage à respecter le code de la route. Il est rappelé que le port du casque est obligatoire pour le conducteur et le passager d'un cycle âgés de moins de douze ans, que le gilet rétro-réfléchissant est obligatoire hors agglomération la nuit ou par visibilité insuffisante, et que le port d'écouteurs est interdit en circulation.</p>
 <h3>8. Obligations du locataire</h3>
 <ul>
 <li>Utiliser le matériel en bon père de famille, sur les voies ouvertes à la circulation et les chemins carrossables.</li>
@@ -159,13 +159,13 @@ Telephone: +33 6 30 39 95 31 · E-mail: [address].</p>
 <li>The hirer may refuse to hand over a bike to anyone visibly unfit to ride, in particular under the influence of alcohol or drugs.</li>
 </ul>
 <h3>4. Prices, durations and payment</h3>
-<p>Prices are per bike, all taxes included, for the chosen duration: half-day, full day, two days, three days or seven days. Payment is made in full on site, at collection, by the means accepted at the shop. A deposit is taken on site: [amount] euros per classic bike, [amount] euros per electrically assisted bike, [amount] euros per child's bike or trailer. It is returned when the equipment comes back in good order.</p>
+<p>Prices are per bike, all taxes included, for the chosen duration: half-day (morning 9 am – 1 pm or afternoon 2 pm – 6 pm) or one to seven days (9 am – 6 pm). Options (phone holder, reflective vest) are charged once, whatever the duration. Payment is made in full on site, at collection, by the means accepted at the shop. A deposit may be taken on site: [amount] euros per classic bike, [amount] euros per electrically assisted bike, [amount] euros per child's bike. It is returned when the equipment comes back in good order.</p>
 <h3>5. Hire over several days</h3>
 <p>For two days or more, the equipment stays in the customer's keeping, nights included. The customer undertakes to store it in a locked room or, failing that, to secure it by the frame to a fixed point using the lock provided. An electrically assisted bike charges from a standard domestic socket.</p>
 <h3>6. Handover and return</h3>
 <p>The equipment is checked jointly on departure and on return: brakes, tyres, lights, transmission and, where applicable, battery level. Return takes place at the shop, on the days and at the times stated in the contract. Any unannounced delay may be charged as an additional period at the prevailing rate.</p>
 <h3>7. Equipment and road rules</h3>
-<p>Every hire includes a helmet, a lock, a repair kit and compliant lights. The customer undertakes to obey the French highway code. Please note that a helmet is compulsory for riders and passengers under twelve years of age, that a reflective vest is compulsory outside built-up areas at night or in poor visibility, and that wearing earphones while riding is prohibited.</p>
+<p>Every hire includes a helmet, a lock, a puncture kit and mini pump, a removable basket, a bell, front and rear lights and a kickstand. The customer undertakes to obey the French highway code. Please note that a helmet is compulsory for riders and passengers under twelve years of age, that a reflective vest is compulsory outside built-up areas at night or in poor visibility, and that wearing earphones while riding is prohibited.</p>
 <h3>8. Customer's obligations</h3>
 <ul>
 <li>Use the equipment with due care, on roads open to traffic and on passable tracks.</li>
@@ -258,13 +258,13 @@ Telefon: +33 6 30 39 95 31 · E-Mail: [Adresse].</p>
 <li>Der Vermieter kann die Übergabe an offensichtlich fahruntüchtige Personen verweigern, insbesondere unter Einfluss von Alkohol oder Betäubungsmitteln.</li>
 </ul>
 <h3>4. Preise, Dauer und Zahlung</h3>
-<p>Die Preise gelten pro Rad, inklusive Steuern, für die gewählte Dauer: halber Tag, ganzer Tag, zwei Tage, drei Tage oder sieben Tage. Die Zahlung erfolgt vollständig vor Ort bei der Abholung mit den im Laden akzeptierten Mitteln. Vor Ort wird eine Kaution hinterlegt: [Betrag] Euro pro Cityrad, [Betrag] Euro pro Pedelec, [Betrag] Euro pro Kinderrad oder Anhänger. Sie wird bei ordnungsgemäßer Rückgabe erstattet.</p>
+<p>Die Preise gelten pro Rad, inklusive Steuern, für die gewählte Dauer: halber Tag (vormittags 9 – 13 Uhr oder nachmittags 14 – 18 Uhr) oder ein bis sieben Tage (9 – 18 Uhr). Optionen (Handyhalterung, Warnweste) werden einmalig berechnet, unabhängig von der Dauer. Die Zahlung erfolgt vollständig vor Ort bei der Abholung mit den im Laden akzeptierten Mitteln. Vor Ort kann eine Kaution hinterlegt werden: [Betrag] Euro pro klassischem Rad, [Betrag] Euro pro Pedelec, [Betrag] Euro pro Kinderrad. Sie wird bei ordnungsgemäßer Rückgabe erstattet.</p>
 <h3>5. Miete über mehrere Tage</h3>
 <p>Ab zwei Tagen verbleibt das Material in der Obhut des Mieters, Nächte eingeschlossen. Der Mieter verpflichtet sich, es in einem abschließbaren Raum unterzustellen oder andernfalls mit dem gestellten Schloss am Rahmen an einem festen Punkt anzuschließen. Ein Pedelec-Akku lädt an einer normalen Haushaltssteckdose.</p>
 <h3>6. Übergabe und Rückgabe</h3>
 <p>Das Material wird bei Abfahrt und Rückgabe gemeinsam geprüft: Bremsen, Reifen, Licht, Antrieb und gegebenenfalls Akkustand. Die Rückgabe erfolgt im Laden zu den im Vertrag genannten Tagen und Zeiten. Unangekündigte Verspätung kann als zusätzlicher Zeitraum zum geltenden Tarif berechnet werden.</p>
 <h3>7. Ausrüstung und Verkehrsregeln</h3>
-<p>Jede Miete umfasst Helm, Schloss, Reparaturset und vorschriftsmäßige Beleuchtung. Der Mieter verpflichtet sich, die französische Straßenverkehrsordnung einzuhalten. Es wird darauf hingewiesen, dass für Fahrer und Mitfahrer unter zwölf Jahren Helmpflicht besteht, dass außerorts bei Nacht oder schlechter Sicht eine Warnweste zu tragen ist und dass Kopfhörer während der Fahrt verboten sind.</p>
+<p>Jede Miete umfasst Helm, Schloss, Flickzeug und Minipumpe, abnehmbaren Korb, Klingel, Beleuchtung vorn und hinten sowie Ständer. Der Mieter verpflichtet sich, die französische Straßenverkehrsordnung einzuhalten. Es wird darauf hingewiesen, dass für Fahrer und Mitfahrer unter zwölf Jahren Helmpflicht besteht, dass außerorts bei Nacht oder schlechter Sicht eine Warnweste zu tragen ist und dass Kopfhörer während der Fahrt verboten sind.</p>
 <h3>8. Pflichten des Mieters</h3>
 <ul>
 <li>Das Material sorgfältig nutzen, auf für den Verkehr geöffneten Wegen und befahrbaren Pfaden.</li>
@@ -357,13 +357,13 @@ Teléfono: +33 6 30 39 95 31 · Correo electrónico: [dirección].</p>
 <li>El arrendador se reserva el derecho de no entregar una bicicleta a quien esté manifiestamente incapacitado para conducir, en particular bajo los efectos del alcohol o de estupefacientes.</li>
 </ul>
 <h3>4. Tarifas, duraciones y pago</h3>
-<p>Las tarifas se entienden por bicicleta, impuestos incluidos, para la duración elegida: media jornada, jornada, dos días, tres días o siete días. El pago se efectúa íntegramente en el local, al recoger, por los medios admitidos. Se deposita una fianza en el local: [importe] euros por bicicleta clásica, [importe] euros por eléctrica, [importe] euros por bicicleta infantil o remolque. Se devuelve al restituir el material en buen estado.</p>
+<p>Las tarifas se entienden por bicicleta, impuestos incluidos, para la duración elegida: media jornada (mañana 9 – 13 h o tarde 14 – 18 h) o de uno a siete días (9 – 18 h). Las opciones (soporte para móvil, chaleco reflectante) se cobran una sola vez, sea cual sea la duración. El pago se efectúa íntegramente en el local, al recoger, por los medios admitidos. Puede depositarse una fianza en el local: [importe] euros por bicicleta clásica, [importe] euros por eléctrica, [importe] euros por bicicleta infantil. Se devuelve al restituir el material en buen estado.</p>
 <h3>5. Alquiler de varios días</h3>
 <p>A partir de dos días, el material queda bajo la custodia del arrendatario, noches incluidas. Este se compromete a guardarlo en un local cerrado o, en su defecto, a atarlo por el cuadro a un punto fijo con el candado facilitado. La batería de una bicicleta eléctrica se recarga en un enchufe doméstico normal.</p>
 <h3>6. Entrega y devolución</h3>
 <p>El material se revisa de forma contradictoria a la salida y a la vuelta: frenos, neumáticos, luces, transmisión y, en su caso, nivel de batería. La devolución se hace en el punto de alquiler, en los días y horas indicados en el contrato. Todo retraso no avisado puede facturarse como un periodo adicional, según la tarifa vigente.</p>
 <h3>7. Equipamiento y normas de circulación</h3>
-<p>Cada alquiler incluye casco, candado, kit de reparación y luces reglamentarias. El arrendatario se compromete a respetar el código de circulación francés. Se recuerda que el casco es obligatorio para conductor y pasajero menores de doce años, que el chaleco reflectante es obligatorio fuera de poblado de noche o con visibilidad insuficiente, y que está prohibido llevar auriculares al circular.</p>
+<p>Cada alquiler incluye casco, candado, kit antipinchazos y minibomba, cesta extraíble, timbre, luces delantera y trasera y pata de cabra. El arrendatario se compromete a respetar el código de circulación francés. Se recuerda que el casco es obligatorio para conductor y pasajero menores de doce años, que el chaleco reflectante es obligatorio fuera de poblado de noche o con visibilidad insuficiente, y que está prohibido llevar auriculares al circular.</p>
 <h3>8. Obligaciones del arrendatario</h3>
 <ul>
 <li>Usar el material con diligencia, en vías abiertas al tráfico y caminos transitables.</li>
@@ -456,13 +456,13 @@ Telefono: +33 6 30 39 95 31 · E-mail: [indirizzo].</p>
 <li>Il noleggiatore si riserva di non consegnare una bici a chi sia manifestamente inidoneo alla guida, in particolare sotto effetto di alcol o stupefacenti.</li>
 </ul>
 <h3>4. Tariffe, durate e pagamento</h3>
-<p>Le tariffe si intendono per bici, tasse incluse, per la durata scelta: mezza giornata, giornata, due giorni, tre giorni o sette giorni. Il pagamento avviene interamente in sede, al ritiro, con i mezzi accettati al punto di noleggio. In sede è versata una cauzione: [importo] euro per bici classica, [importo] euro per bici a pedalata assistita, [importo] euro per bici bambino o rimorchio. È restituita alla riconsegna del materiale in buono stato.</p>
+<p>Le tariffe si intendono per bici, tasse incluse, per la durata scelta: mezza giornata (mattino 9 – 13 o pomeriggio 14 – 18) oppure da uno a sette giorni (9 – 18). Le opzioni (supporto smartphone, gilet riflettente) sono addebitate una sola volta, qualunque sia la durata. Il pagamento avviene interamente in sede, al ritiro, con i mezzi accettati al punto di noleggio. In sede può essere versata una cauzione: [importo] euro per bici classica, [importo] euro per bici a pedalata assistita, [importo] euro per bici bambino. È restituita alla riconsegna del materiale in buono stato.</p>
 <h3>5. Noleggio di più giorni</h3>
 <p>Da due giorni in su il materiale resta in custodia al cliente, notti comprese. Il cliente si impegna a riporlo in un locale chiuso o, in mancanza, a legarlo per il telaio a un punto fisso con il lucchetto fornito. La batteria di una bici elettrica si ricarica a una normale presa domestica.</p>
 <h3>6. Consegna e riconsegna</h3>
 <p>Il materiale è verificato in contraddittorio alla partenza e al rientro: freni, pneumatici, luci, trasmissione e, se del caso, livello di batteria. La riconsegna avviene al punto di noleggio, nei giorni e orari indicati nel contratto. Ogni ritardo non annunciato può essere fatturato come periodo aggiuntivo, alla tariffa in vigore.</p>
 <h3>7. Attrezzatura e regole di circolazione</h3>
-<p>Ogni noleggio comprende casco, lucchetto, kit di riparazione e luci a norma. Il cliente si impegna a rispettare il codice della strada francese. Si ricorda che il casco è obbligatorio per conducente e passeggero sotto i dodici anni, che il giubbotto catarifrangente è obbligatorio fuori dai centri abitati di notte o con scarsa visibilità, e che è vietato indossare auricolari durante la marcia.</p>
+<p>Ogni noleggio comprende casco, lucchetto, kit foratura e minipompa, cestino amovibile, campanello, luci anteriore e posteriore e cavalletto. Il cliente si impegna a rispettare il codice della strada francese. Si ricorda che il casco è obbligatorio per conducente e passeggero sotto i dodici anni, che il giubbotto catarifrangente è obbligatorio fuori dai centri abitati di notte o con scarsa visibilità, e che è vietato indossare auricolari durante la marcia.</p>
 <h3>8. Obblighi del cliente</h3>
 <ul>
 <li>Usare il materiale con diligenza, su strade aperte al traffico e sterrati percorribili.</li>

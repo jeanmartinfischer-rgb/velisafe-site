@@ -13,37 +13,52 @@ const BASE = [48.0794, 7.3585]; // dépôt, centre de Colmar
 
 /* Durées de location proposées. cle = valeur du menu déroulant,
    tarif = clé correspondante dans l'objet prix de chaque vélo. */
-const DUREES = ['demi','jour','j2','j3','j7'];
+/* Grille 2026 d'Antoine (10/09/2026) : demi-journée matin 9 h–13 h, demi-journée
+   après-midi 14 h–18 h, puis 1 à 7 jours (9 h–18 h). */
+const DUREES = ['demiAm','demiPm','jour','j2','j3','j4','j5','j6','j7'];
+
+/* Options facturées UNE fois, quelle que soit la durée (Antoine, 10/09/2026). */
+const OPTIONS = [
+ {id:'support', prix:5,
+  nom:{fr:"Support téléphone",en:"Phone holder",de:"Handyhalterung",es:"Soporte para móvil",it:"Supporto smartphone"}},
+ {id:'gilet', prix:3,
+  nom:{fr:"Gilet réfléchissant",en:"Reflective vest",de:"Warnweste",es:"Chaleco reflectante",it:"Gilet riflettente"}}
+];
 
 const VELOS = [
  {id:'ville', ico:'🚲', photo:'assets/velos/ville.jpg', stock:14, caution:300,
-  prix:{demi:12, jour:18, j2:32, j3:45, j7:90},
-  nom:{fr:"Vélo de ville",en:"City bike",de:"Cityrad",es:"Bicicleta urbana",it:"City bike"},
-  det:{fr:"7 vitesses, panier, cadre homme ou femme au choix",en:"7 speeds, basket, men's or step-through frame",de:"7 Gänge, Korb, Herren- oder Tiefeinsteiger-Rahmen",es:"7 marchas, cesta, cuadro de hombre o bajo",it:"7 rapporti, cesto, telaio da uomo o basso"},
+  prix:{demiAm:15, demiPm:15, jour:25, j2:45, j3:60, j4:75, j5:90, j6:105, j7:120},
+  nom:{fr:"Vélo classique tout terrain",en:"Classic all-terrain bike",de:"Klassisches Trekkingrad",es:"Bicicleta clásica todoterreno",it:"Bici classica da trekking"},
+  det:{fr:"VTC polyvalent : routes, pistes cyclables et chemins",en:"Versatile hybrid: roads, cycle paths and tracks",de:"Vielseitiges Trekkingrad: Straßen, Radwege und Feldwege",es:"Híbrida polivalente: carreteras, carriles bici y caminos",it:"Ibrida polivalente: strade, piste ciclabili e sterrati"},
   pour:{fr:"Colmar, la plaine et les balades jusqu'à 25 km. À l'aise sur le plat, honnête dans les côtes courtes.",
         en:"Colmar, the plain and rides up to 25 km. Comfortable on the flat, honest on short climbs.",
         de:"Colmar, die Ebene und Touren bis 25 km. Bequem im Flachen, ehrlich an kurzen Steigungen.",
         es:"Colmar, la llanura y rutas de hasta 25 km. Cómoda en llano, correcta en cuestas cortas.",
         it:"Colmar, la pianura e giri fino a 25 km. Comoda in piano, onesta sulle salite brevi."}},
  {id:'vae', ico:'⚡', photo:'assets/velos/vae.jpg', stock:10, caution:600,
-  prix:{demi:25, jour:38, j2:68, j3:96, j7:190},
-  nom:{fr:"Vélo électrique",en:"Electric bike",de:"E-Bike",es:"Bicicleta eléctrica",it:"Bici elettrica"},
-  det:{fr:"Assistance jusqu'à 25 km/h, 90 km d'autonomie, porte-bagages",en:"Assistance up to 25 kph, 90 km range, rear rack",de:"Unterstützung bis 25 km/h, 90 km Reichweite, Gepäckträger",es:"Asistencia hasta 25 km/h, 90 km de autonomía, portaequipajes",it:"Assistenza fino a 25 km/h, 90 km di autonomia, portapacchi"},
+  prix:{demiAm:29, demiPm:29, jour:45, j2:85, j3:120, j4:150, j5:175, j6:200, j7:245},
+  nom:{fr:"Vélo tout terrain électrique (VAE)",en:"Electric all-terrain bike",de:"E-Trekkingrad (Pedelec)",es:"Bicicleta eléctrica todoterreno",it:"Bici elettrica da trekking"},
+  det:{fr:"Assistance électrique jusqu'à 25 km/h ; autonomie précisée au retrait",en:"Electric assistance up to 25 km/h; range confirmed at collection",de:"Elektrische Unterstützung bis 25 km/h; Reichweite bei Abholung genannt",es:"Asistencia eléctrica hasta 25 km/h; autonomía indicada al recoger",it:"Assistenza elettrica fino a 25 km/h; autonomia indicata al ritiro"},
   pour:{fr:"Le vignoble et ses bosses, la vallée de Munster, le Haut-Kœnigsbourg. Le bon choix dès que ça monte.",
         en:"The vineyard hills, the Munster valley, Haut-Kœnigsbourg. The right choice as soon as it climbs.",
         de:"Die Weinberge, das Münstertal, die Hohkönigsburg. Die richtige Wahl, sobald es bergauf geht.",
         es:"El viñedo y sus cuestas, el valle de Munster, el Haut-Kœnigsbourg. La opción correcta en cuanto sube.",
         it:"Il vigneto e le sue salite, la valle di Munster, l'Haut-Kœnigsbourg. La scelta giusta appena si sale."}},
  {id:'enfant', ico:'🧒', photo:'assets/velos/enfant.jpg', stock:6, caution:150,
-  prix:{demi:8, jour:12, j2:21, j3:30, j7:60},
+  prix:{demiAm:10, demiPm:10, jour:18, j2:32, j3:45, j4:55, j5:65, j6:75, j7:85},
   nom:{fr:"Vélo enfant",en:"Child's bike",de:"Kinderrad",es:"Bicicleta infantil",it:"Bici per bambini"},
-  det:{fr:"20 ou 24 pouces, 6 à 11 ans, casque fourni",en:"20 or 24 inch, ages 6 to 11, helmet supplied",de:"20 oder 24 Zoll, 6 bis 11 Jahre, Helm inklusive",es:"20 o 24 pulgadas, de 6 a 11 años, casco incluido",it:"20 o 24 pollici, da 6 a 11 anni, casco incluso"},
+  det:{fr:"20 pouces de 6 à 9 ans, 24 pouces de 9 à 12 ans, casque fourni",en:"20-inch for ages 6 to 9, 24-inch for ages 9 to 12, helmet supplied",de:"20 Zoll für 6 bis 9 Jahre, 24 Zoll für 9 bis 12 Jahre, Helm inklusive",es:"20 pulgadas de 6 a 9 años, 24 pulgadas de 9 a 12 años, casco incluido",it:"20 pollici da 6 a 9 anni, 24 pollici da 9 a 12 anni, casco fornito"},
   pour:{fr:"Le casque est obligatoire pour les moins de 12 ans, conducteur comme passager. Il est fourni et réglé au retrait.",
         en:"A helmet is compulsory in France under the age of 12, for riders and passengers alike. It is supplied and fitted at collection.",
         de:"Für Kinder unter 12 Jahren ist ein Helm Pflicht, für Fahrer wie Mitfahrer. Er wird gestellt und angepasst.",
         es:"El casco es obligatorio para los menores de 12 años, tanto si conducen como si van de pasajeros. Se facilita y se ajusta al recoger.",
-        it:"Il casco è obbligatorio sotto i 12 anni, sia alla guida sia come passeggero. È fornito e regolato al ritiro."}},
- {id:'remorque', ico:'🛺', photo:'assets/velos/remorque.jpg', stock:4, caution:150,
+        it:"Il casco è obbligatorio sotto i 12 anni, sia alla guida sia come passeggero. È fornito e regolato al ritiro."}}
+];
+
+/* Remorque enfant : RETIRÉE de l'offre le 10/09/2026 à la demande d'Antoine
+   (gamme actuelle : VTC classique, VAE, vélo enfant). Bloc conservé pour la remettre :
+   le coller dans VELOS avec la grille tarifaire 2026 correspondante.
+REMORQUE_EN_RESERVE =  {id:'remorque', ico:'🛺', photo:'assets/velos/remorque.jpg', stock:4, caution:150,
   prix:{demi:10, jour:16, j2:28, j3:40, j7:80},
   nom:{fr:"Remorque enfant",en:"Child trailer",de:"Kinderanhänger",es:"Remolque infantil",it:"Rimorchio per bambini"},
   det:{fr:"2 places, s'adapte à tous nos vélos",en:"2 seats, fits all our bikes",de:"2 Plätze, passt an alle Räder",es:"2 plazas, compatible con todas",it:"2 posti, adattabile a tutte"},
@@ -52,7 +67,8 @@ const VELOS = [
         de:"Für die Ebene und die Radwege gedacht. In den Weinbergen mit engen Wegen besser vermeiden.",
         es:"Pensado para la llanura y los carriles bici. Evítelo en las viñas, donde los caminos se estrechan.",
         it:"Pensato per la pianura e le piste ciclabili. Da evitare tra le vigne, dove i sentieri si stringono."}}
-];
+*/
+
 
 
 /* ---------- BALADES ----------
