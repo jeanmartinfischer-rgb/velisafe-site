@@ -592,3 +592,16 @@ marche-a-suivre, LISEZ-MOI.pdf (mode d'emploi, Gatekeeper, 3 règles),
 decisions-attendues.pdf (12 questions + 4 points juriste). Script des PDF :
 scratchpad/gen-dossier.py. À transmettre par AirDrop ou clé USB, jamais
 par lien public.
+
+**10/09/2026, NUMÉRO D'ANTOINE : 07 71 81 99 17** (remplace le 06 30 39 95 31
+de Jean-Martin, qui servait aux tests). Formats à jour partout : wa.me/
+33771819917 (app.js), +33771819917 (JSON-LD), +33 7 71 81 99 17 (i18n
+en/de/es/it, legal ×5), 07 71 81 99 17 (fr, contrat atelier, docx, PDF
+marche-à-suivre, QR, lisez-moi, décisions). Aucun résidu de l'ancien numéro
+(vérifié : grep + rendu). **Directeur de la publication : Antoine Fischer,
+directeur général** (mentions ×5) ; contrat atelier et docx : « représentée
+par Antoine Fischer, directeur général », bloc de signature nommé. Raison
+sociale et forme juridique toujours à compléter. Dossier « Pour Antoine »
+resynchronisé (app, html, docx, 4 PDF). Scripts conservés dans le
+scratchpad : gen-qr.py, gen-dossier.py + gen-dossier-docs.py, contrat.js,
+marche.py — tous portent le nouveau numéro.
