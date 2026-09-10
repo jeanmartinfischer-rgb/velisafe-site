@@ -1068,3 +1068,14 @@ if(baladeURL && BALADES.some(b=>b.id===baladeURL)){
   addEventListener('scroll',()=>{ if(!enAttente){ enAttente=true; requestAnimationFrame(majDefilement); } },{passive:true});
   majDefilement();
 })();
+
+/* ===================== MESURE D'AUDIENCE (dormante) =====================
+   Activée seulement si AUDIENCE_CODE (data.js) est renseigné. GoatCounter ne
+   dépose aucun cookie ni identifiant persistant ; le script est chargé après
+   le rendu pour ne rien ralentir. */
+if(typeof AUDIENCE_CODE==='string' && AUDIENCE_CODE){
+  const sc=document.createElement('script');
+  sc.async=true; sc.src='https://gc.zgo.at/count.js';
+  sc.dataset.goatcounter='https://'+AUDIENCE_CODE+'.goatcounter.com/count';
+  document.head.appendChild(sc);
+}

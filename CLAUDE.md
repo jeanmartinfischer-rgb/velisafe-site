@@ -573,3 +573,22 @@ dans le rapport (§3, §4). Compteur d'audience : bloqué sur la création du
 compte GoatCounter par Jean-Martin. Contrôles : 178 clés ×5, 125 data-t et
 49 tr() existants, ids uniques, alt partout, JSON-LD valide, 0 résidu,
 7/7 tests dynamiques.
+
+**10/09/2026, compteur d'audience DORMANT + dossier de remise.** Vérifié :
+aucun compteur hébergé sérieux ne fonctionne sans compte (CounterAPI
+compris). Donc câblage complet mais inactif : `AUDIENCE_CODE=''` dans
+data.js (config partagée site + atelier). Si renseigné (ex. 'velisafe') :
+app.js injecte gc.zgo.at/count.js avec data-goatcounter, l'atelier lit
+https://CODE.goatcounter.com/counter/TOTAL.json (aujourd'hui / 7 jours /
+total, nécessite « Allow adding visitor counter » dans les réglages
+GoatCounter — à vérifier à l'activation, CORS compris) + bouton tableau de
+bord. Vide = zéro requête (vérifié). À L'ACTIVATION : pages Cookies et
+Données personnelles ×5 à réécrire (elles affirment aujourd'hui « aucun
+traceur »), rebuild atelier + démo. Recommandation : que le compte soit
+créé par ANTOINE (ses données, pas de transfert plus tard).
+Dossier `documents-internes/Pour Antoine/` (3,3 Mo, gitignoré) : Atelier
+VÉLI SAFE.app, atelier-velisafe.html (secours), contrat .docx, qr-balades,
+marche-a-suivre, LISEZ-MOI.pdf (mode d'emploi, Gatekeeper, 3 règles),
+decisions-attendues.pdf (12 questions + 4 points juriste). Script des PDF :
+scratchpad/gen-dossier.py. À transmettre par AirDrop ou clé USB, jamais
+par lien public.

@@ -17,6 +17,13 @@ const BASE = [48.0794, 7.3585]; // dépôt, centre de Colmar
    après-midi 14 h–18 h, puis 1 à 7 jours (9 h–18 h). */
 const DUREES = ['demiAm','demiPm','jour','j2','j3','j4','j5','j6','j7'];
 
+/* Mesure d'audience GoatCounter (sans cookie, exemptée de bandeau sous conditions CNIL).
+   Vide = aucun traceur chargé, rien ne part vers un tiers. Mettre le code du site
+   choisi à l'inscription sur goatcounter.com (ex. 'velisafe') pour activer :
+   le site charge alors gc.zgo.at/count.js et l'atelier lit le compteur public.
+   À l'activation : mettre à jour les pages Cookies et Données personnelles ×5. */
+const AUDIENCE_CODE = '';
+
 /* Options facturées UNE fois, quelle que soit la durée (Antoine, 10/09/2026). */
 const OPTIONS = [
  {id:'support', prix:5,
