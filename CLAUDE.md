@@ -452,3 +452,26 @@ https://velisafe.fr/js/app.js avec la date du dernier commit.
 NOTE : `git push` depuis la VM du pont échoue (identifiants GitHub dans le
 trousseau macOS, invisibles depuis Linux) — la publication passe forcément
 par GitHub Desktop.
+
+**10/09/2026, animation au défilement.** Le site s'anime, sans rien changer
+à la charte ni réintroduire d'angles arrondis. Effets ajoutés :
+1. APPARITION AU DÉFILEMENT (scroll reveal) sur .entete .atout .carte-info
+   .etape .bloc .tarifs-rapide .flotte .part .part-cta .encadre .filtres
+   .velo. Deux voies : la moderne en CSS pur
+   (`animation-timeline:view()`, `animation-range:entry 0% entry 42%`, sous
+   `@supports`) — aucun JavaScript, donc aucun clignotement ; et un repli
+   IntersectionObserver (.anim puis .vu) activé seulement si le navigateur
+   ignore animation-timeline, avec filet de sécurité à 4 s. Les deux voies
+   testées séparément : 27 blocs masqués puis révélés proprement.
+2. PARALLAXE : `background-attachment:fixed` sur .page::before, ordinateur
+   uniquement (`min-width:900px and hover:hover`) car saccadé sur iPhone.
+   C'est ce qui enchaîne les photos d'une section à l'autre.
+3. En-tête qui se compacte au-delà de 80 px (logo 48→38 px) + jauge de
+   progression #jauge (dégradé teal→lime) ; boutons, onglets, filtres,
+   jours du calendrier et vignettes de vélos réactifs au survol.
+RÈGLE : ne jamais animer un élément contenant une carte Leaflet — une
+transformation sur un parent déplace marqueurs et étiquettes. Le sélecteur
+JS filtre déjà `:has(.map)` et les pages dormantes. Tout est coupé sous
+`prefers-reduced-motion:reduce` (vérifié : blocs visibles, parallaxe en
+scroll). Vérifié aussi : 35 marqueurs et 3 cartes intacts, 5 langues sans
+erreur, mobile sans défilement horizontal.

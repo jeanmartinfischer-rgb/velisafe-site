@@ -937,3 +937,47 @@ const langURL=new URLSearchParams(location.search).get('lang');
 if(langURL && T[langURL]){ lang=langURL; document.getElementById('langue').value=langURL; }
 appliquerLangue();
 majOngletActif();
+
+/* ===================== VIE AU DÉFILEMENT (10/09/2026) =====================
+   1. Apparition des blocs. Les navigateurs récents s'en chargent seuls, en
+      CSS (animation-timeline:view()) : rien à faire ici. Pour les autres, on
+      pose la classe .anim puis .vu au passage devant l'écran.
+   2. En-tête qui se compacte et jauge de progression.
+   Rien n'est animé si le visiteur a demandé moins d'animations, et les
+   cartes Leaflet ne sont jamais touchées. */
+(function(){
+  const doux = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cssFait = window.CSS && CSS.supports && CSS.supports('animation-timeline','view()');
+
+  if(!doux && !cssFait && 'IntersectionObserver' in window){
+    const CIBLES='.entete,.atout,.carte-info,.etape,.bloc,.tarifs-rapide,.flotte,'+
+                 '.part,.part-cta,.encadre,.filtres,.velo';
+    const blocs=[...document.querySelectorAll(CIBLES)]
+      .filter(el=>!el.closest('.dormant') && !el.querySelector('.map'));
+    blocs.forEach(el=>{
+      el.classList.add('anim');
+      const rang=[...el.parentElement.children].indexOf(el);
+      if(rang>0 && rang<4) el.classList.add('d'+rang);
+    });
+    const io=new IntersectionObserver((es,obs)=>es.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('vu'); obs.unobserve(e.target); }
+    }),{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    blocs.forEach(el=>io.observe(el));
+    /* filet de sécurité : tout devient visible au bout de 4 s, quoi qu'il arrive */
+    setTimeout(()=>blocs.forEach(el=>el.classList.add('vu')),4000);
+  }
+
+  const entete=document.querySelector('header'), jauge=document.getElementById('jauge');
+  let enAttente=false;
+  function majDefilement(){
+    const y=scrollY||0;
+    entete.classList.toggle('compact', y>80);
+    if(jauge){
+      const h=document.documentElement.scrollHeight-innerHeight;
+      jauge.style.width=(h>0?Math.min(100,y/h*100):0)+'%';
+    }
+    enAttente=false;
+  }
+  addEventListener('scroll',()=>{ if(!enAttente){ enAttente=true; requestAnimationFrame(majDefilement); } },{passive:true});
+  majDefilement();
+})();

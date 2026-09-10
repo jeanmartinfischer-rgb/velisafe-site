@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<!-- Fichier unique, généré le 2026-09-04 par build/gen-demo.js. Ne pas modifier à la main : régénérer depuis les sources. -->
+<!-- Fichier unique, généré le 2026-09-10 par build/gen-demo.js. Ne pas modifier à la main : régénérer depuis les sources. -->
 <title>VÉLI SAFE — Location de vélos à Colmar, Alsace</title>
 <meta name="description" content="Location de vélos classiques et électriques à Colmar, de la demi-journée à la semaine. Onze balades mesurées dans le vignoble, la vallée de Munster et la plaine du Rhin.">
 <meta name="theme-color" content="#C7CFC0">
@@ -1132,6 +1132,90 @@ footer a{color:#F3EEEA;text-decoration:none;border-bottom:1px solid rgba(243,238
   .cal-c{min-height:46px}
 }
 
+/* ============ 10/09/2026 : le site prend vie au défilement ============
+   Trois familles d'effets, toutes neutralisées si le visiteur a demandé
+   moins d'animations (Réglages > Accessibilité > Réduire les animations) :
+   1. apparition au défilement — les blocs montent et se fondent en arrivant ;
+   2. parallaxe — la photo de section reste en place, le contenu glisse
+      dessus, ce qui enchaîne les photos l'une dans l'autre ;
+   3. en-tête vivant et boutons réactifs.
+   Les couleurs restent celles de la charte ; aucun angle arrondi n'est
+   réintroduit. Les cartes Leaflet ne sont JAMAIS animées (une transformation
+   sur un parent déplace les marqueurs). ================================ */
+
+@keyframes apparition{ from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:none} }
+
+/* — 1a. voie moderne : l'animation suit le défilement, sans JavaScript — */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion:no-preference){
+    .entete,.atout,.carte-info,.etape,.bloc,.tarifs-rapide,.flotte,
+    .part,.part-cta,.encadre,.filtres,.velo{
+      animation:apparition linear both;
+      animation-timeline:view();
+      animation-range:entry 0% entry 42%;
+    }
+  }
+}
+/* — 1b. repli pour les navigateurs sans cette nouveauté : même rendu,
+        piloté par JavaScript (classe .anim posée puis .vu au passage) — */
+.anim{opacity:0;transform:translateY(26px);
+  transition:opacity .75s cubic-bezier(.22,.8,.28,1),transform .75s cubic-bezier(.22,.8,.28,1)}
+.anim.vu{opacity:1;transform:none}
+.anim.d1{transition-delay:.09s} .anim.d2{transition-delay:.18s} .anim.d3{transition-delay:.27s}
+
+/* — 2. parallaxe : ordinateur seulement (saccadé sur iPhone) — */
+@media (min-width:900px) and (hover:hover){
+  @media (prefers-reduced-motion:no-preference){
+    .page::before{background-attachment:fixed}
+  }
+}
+
+/* — 3. en-tête vivant + jauge de progression aux couleurs du logo — */
+header{transition:background-color .3s ease,box-shadow .3s ease}
+header.compact{background:rgba(199,207,192,.74);box-shadow:0 6px 26px rgba(37,50,42,.18)}
+.logo,.head{transition:height .3s cubic-bezier(.22,.8,.28,1)}
+header.compact .logo{height:38px}
+header.compact .head{height:54px}
+#jauge{position:absolute;left:0;bottom:-1px;height:2px;width:0;pointer-events:none;
+  background:linear-gradient(90deg,var(--teal),var(--lime));transition:width .1s linear}
+
+/* — 4. boutons et cartes réactifs — */
+.btn,.filtre,.onglet,.langue,.doc-fermer,.pas button,.cal-c.ouvrable,.item,.velo .ico img{
+  transition:background-color .2s ease,color .2s ease,border-color .2s ease,
+             box-shadow .22s ease,transform .18s cubic-bezier(.22,.8,.28,1)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 9px 20px rgba(37,50,42,.24)}
+.btn:active{transform:translateY(0);box-shadow:none}
+.btn-lime:hover{box-shadow:0 9px 24px rgba(143,221,26,.48)}
+.btn-wa:hover{box-shadow:0 9px 24px rgba(37,211,102,.42)}
+.filtre:hover,.cal-c.ouvrable:hover{transform:translateY(-1px)}
+.onglet{position:relative}
+.onglet::after{content:"";position:absolute;left:13px;right:13px;bottom:5px;height:2px;
+  background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .24s ease}
+.onglet:hover::after{transform:scaleX(1)}
+.onglet.actif::after{content:none}
+.item:hover{transform:translateX(3px)}
+.velo .ico{overflow:hidden}
+.velo:hover .ico img{transform:scale(1.07)}
+
+/* — 5. accueil : la photo se pose, le texte arrive — */
+@media (prefers-reduced-motion:no-preference){
+  @keyframes heroPose{ from{transform:scale(1.07)} to{transform:scale(1)} }
+  .hero-fond{animation:heroPose 1.8s cubic-bezier(.22,.8,.28,1) both}
+  .hero .contenu>*{animation:apparition .85s cubic-bezier(.22,.8,.28,1) both}
+  .hero-logo{animation-delay:.05s}
+  .hero h1{animation-delay:.2s}
+  .hero p{animation-delay:.34s}
+  .hero .boutons{animation-delay:.48s}
+}
+
+/* — 6. interrupteur général d'accessibilité — */
+@media (prefers-reduced-motion:reduce){
+  .anim{opacity:1;transform:none;transition:none}
+  .page::before{background-attachment:scroll}
+  .hero-fond,.hero .contenu>*{animation:none}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
 </style>
 </head>
 <body>
@@ -1182,6 +1266,7 @@ footer a{color:#F3EEEA;text-decoration:none;border-bottom:1px solid rgba(243,238
       <option value="it">🇮🇹 IT</option>
     </select>
   </div>
+  <div id="jauge"></div>
 </header>
 
 <main class="wrap">
@@ -4465,6 +4550,50 @@ const langURL=new URLSearchParams(location.search).get('lang');
 if(langURL && T[langURL]){ lang=langURL; document.getElementById('langue').value=langURL; }
 appliquerLangue();
 majOngletActif();
+
+/* ===================== VIE AU DÉFILEMENT (10/09/2026) =====================
+   1. Apparition des blocs. Les navigateurs récents s'en chargent seuls, en
+      CSS (animation-timeline:view()) : rien à faire ici. Pour les autres, on
+      pose la classe .anim puis .vu au passage devant l'écran.
+   2. En-tête qui se compacte et jauge de progression.
+   Rien n'est animé si le visiteur a demandé moins d'animations, et les
+   cartes Leaflet ne sont jamais touchées. */
+(function(){
+  const doux = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cssFait = window.CSS && CSS.supports && CSS.supports('animation-timeline','view()');
+
+  if(!doux && !cssFait && 'IntersectionObserver' in window){
+    const CIBLES='.entete,.atout,.carte-info,.etape,.bloc,.tarifs-rapide,.flotte,'+
+                 '.part,.part-cta,.encadre,.filtres,.velo';
+    const blocs=[...document.querySelectorAll(CIBLES)]
+      .filter(el=>!el.closest('.dormant') && !el.querySelector('.map'));
+    blocs.forEach(el=>{
+      el.classList.add('anim');
+      const rang=[...el.parentElement.children].indexOf(el);
+      if(rang>0 && rang<4) el.classList.add('d'+rang);
+    });
+    const io=new IntersectionObserver((es,obs)=>es.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('vu'); obs.unobserve(e.target); }
+    }),{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    blocs.forEach(el=>io.observe(el));
+    /* filet de sécurité : tout devient visible au bout de 4 s, quoi qu'il arrive */
+    setTimeout(()=>blocs.forEach(el=>el.classList.add('vu')),4000);
+  }
+
+  const entete=document.querySelector('header'), jauge=document.getElementById('jauge');
+  let enAttente=false;
+  function majDefilement(){
+    const y=scrollY||0;
+    entete.classList.toggle('compact', y>80);
+    if(jauge){
+      const h=document.documentElement.scrollHeight-innerHeight;
+      jauge.style.width=(h>0?Math.min(100,y/h*100):0)+'%';
+    }
+    enAttente=false;
+  }
+  addEventListener('scroll',()=>{ if(!enAttente){ enAttente=true; requestAnimationFrame(majDefilement); } },{passive:true});
+  majDefilement();
+})();
 
 </script>
 </body>
